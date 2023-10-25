@@ -19,6 +19,10 @@ The [Rust TLV](https://www.meetup.com/rust-tlv/) group organizes in-person meeti
 
 * A series of introductory [videos about programming Rust in Hebrew](https://he.code-maven.com/rust)
 
+## Mailing list
+
+* Join our [mailing list](https://groups.google.com/g/rust-il/)!
+
 <!--
 ## Rust Training in Israel in Hebrew or English
 
