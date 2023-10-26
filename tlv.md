@@ -9,7 +9,6 @@
 * [Noam Tenne](https://www.linkedin.com/in/noam-tenne/)
 
 
-* Maintainer of this page is [Gabor Szabo](https://szabgab.com/).
 
 ## Upcoming events
 
