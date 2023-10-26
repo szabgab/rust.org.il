@@ -46,8 +46,8 @@ We're trying a somewhat different format this time, with one conventional talk, 
 
 #### Lightning Talks!
 
-* The Three R's - Redis, Raft & Rust- [Uri Shachar](https://www.linkedin.com/in/uri-shachar-852b29/)
-* Macros in Rust: Unleashing the Power of Metaprogramming- [Yael Tzirulnikov](https://www.linkedin.com/in/yael-ruthenberg-04bb18148/)
+* The Three R's - Redis, Raft & Rust- [Uri Shachar](https://www.linkedin.com/in/uri-shachar-852b29/) Senior Director at [Redis](https://redis.com/)
+* Macros in Rust: Unleashing the Power of Metaprogramming- [Yael Tzirulnikov Ruthenberg](https://www.linkedin.com/in/yael-ruthenberg-04bb18148/) Software Engineer at [Microsoft](https://www.microsoft.com/)
 * How to use Rust Const generics- [Gil Dafnai](https://www.linkedin.com/in/gil-dafnai/)
 * FFI - how C and Rust became BFFs- [Sharon Rosenfeld](https://www.linkedin.com/in/sharon-rosenfeld-972426b/)
 
