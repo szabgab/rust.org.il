@@ -2,12 +2,12 @@
 
 On this web site you should be able to find everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
 
-Despite the fact that our main goal is to reach the developers in Israel, most of the content will still be in English
-as that's the common (written) language for most of the programming world.
+Despite the fact that our main goal is to reach the developers in Israel, most of the content will be in English
+as that is the common (written) language for most of the programming world.
 
 ## In person meetings
 
-The [Rust TLV](https://www.meetup.com/rust-tlv/) group organizes in-person meetings for Rust programmers with presentations.
+The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
 
 
 ## Rust book in Hebrew
