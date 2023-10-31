@@ -5,6 +5,11 @@ On this web site you should be able to find everything about the [Rust programmi
 Despite the fact that our main goal is to reach the developers in Israel, most of the content will be in English
 as that is the common (written) language for most of the programming world.
 
+## Next Meeting
+
+* Due the to the security situation in Israel the next meeting will be online. [Register here](https://www.meetup.com/code-mavens/events/297064458/)
+
+
 ## In person and online meetings
 
 * The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
