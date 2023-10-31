@@ -28,6 +28,10 @@ as that is the common (written) language for most of the programming world.
 
 * Join our [mailing list](/mailing-list)!
 
+## Telegram
+
+* Join the [Rust Israel Telegram group](https://t.me/rustlang_il)!
+
 ## Discord
 
 * There is a Discord group called [Rust Open Source Committers](https://discord.com/channels/1027509789774839818/1027509790928273470). You are invited!
