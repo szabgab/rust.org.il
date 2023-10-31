@@ -27,6 +27,10 @@ as that is the common (written) language for most of the programming world.
 
 * Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/871267374412093)!
 
+## LinkedIn
+
+* Join us on the [Rust in Israel LinkedIn group](https://www.linkedin.com/groups/12915149/)
+
 <!--
 ## Rust Training in Israel in Hebrew or English
 
