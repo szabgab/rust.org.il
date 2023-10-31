@@ -145,7 +145,7 @@ Isan Rivkin, a software engineer part of the protocol team at Enigma.
 Enigma is an open-source project building a decentralized network in Rust for private computations.
 Isan is working on the Networking, p2p, system architecture and Hardware (SGX).
 
-* Re-Implementing Electrum Server by [Roman Zeyde](https://www.linkedin.com/in/roman-zeyde/):
+* Re-Implementing Electrum Server by [Roman Zeyde](https://www.linkedin.com/in/roman-zeyde/) - [slides](https://docs.google.com/presentation/d/1gZbykgg3oPurBWHB-tJD2jnRzJ61XCiZjaxHqJ7z4ag/edit#slide=id.p)
 
 In this talk, we will discuss the architecture of the Electrum Bitcoin wallet, current blockchain indexing solutions and their limitations, and present an efficient re-implementation of the [Electrum](bit.ly/electrs) indexing and query server in Rust.
 
