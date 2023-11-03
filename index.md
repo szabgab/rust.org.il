@@ -44,6 +44,10 @@ as that is the common (written) language for most of the programming world.
 
 * Join us on the [Rust in Israel LinkedIn group](https://www.linkedin.com/groups/12915149/)!
 
+## Open Source Rust projects by Israelis
+
+* [Projects](/projects)
+
 <!--
 ## Rust Training in Israel in Hebrew or English
 
