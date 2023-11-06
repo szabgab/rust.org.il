@@ -7,7 +7,9 @@ as that is the common (written) language for most of the programming world.
 
 ## Next Meeting
 
-* Due the to the security situation in Israel the next meeting will be online. [Register here](https://www.meetup.com/code-mavens/events/297064458/)
+* Due the to the security situation in Israel the next meeting, on November 12, 2023, will be online. [Register here](https://www.meetup.com/code-mavens/events/297064458/)
+
+* We are planning another meeting to be held on December 17, 2023. See the [announcement](https://groups.google.com/g/rust-il/c/CKtHACcn9es)
 
 
 ## In person and online meetings
@@ -48,9 +50,7 @@ as that is the common (written) language for most of the programming world.
 
 * [Projects](/projects)
 
-<!--
 ## Rust Training in Israel in Hebrew or English
 
 * [Gabor Szabo](https://szabgab.com/), who maintains this site as well, offers Rust training courses.
--->
 
