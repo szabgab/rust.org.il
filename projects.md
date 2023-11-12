@@ -6,6 +6,8 @@
 
 * Rusmux - tmux automation - [Source code](https://github.com/MeirKriheli/rusmux) - by [Meir Kriheli](https://www.linkedin.com/in/meirkriheli/)
 
+* mapping - [Source code](https://github.com/EmilyMatt/mapping-rs) - by [Emily Matheys](https://www.linkedin.com/in/emilymatheys/)
+
 * [Rust Digger](https://rust-digger.code-maven.com/) - [Source code](https://github.com/szabgab/rust-digger) - by [Gabor Szabo](https://www.linkedin.com/in/szabgab/).
 * [Rust Maven](https://rust.code-maven.com/) - [Source code](https://github.com/szabgab/code-maven.rs) of the program that generates the pages.
 * [This site](https://rust.org.il/) - [Source code](https://github.com/szabgab/rust.org.il)
