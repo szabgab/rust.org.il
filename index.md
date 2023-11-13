@@ -7,14 +7,12 @@ as that is the common (written) language for most of the programming world.
 
 ## Next Meeting
 
-* Due the to the security situation in Israel the next meeting, on November 12, 2023, will be online. [Register here](https://www.meetup.com/code-mavens/events/297064458/)
-
 * We are planning another meeting to be held on December 17, 2023. See the [announcement](https://groups.google.com/g/rust-il/c/CKtHACcn9es)
-
 
 ## In person and online meetings
 
 * The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
+* iThe [Code Mavens](/code-mavens) group also has Rust related meetings.
 
 
 ## Rust book in Hebrew
