@@ -50,6 +50,7 @@ We're trying a somewhat different format this time, with one conventional talk, 
 * Macros in Rust: Unleashing the Power of Metaprogramming- [Yael Tzirulnikov Ruthenberg](https://www.linkedin.com/in/yael-ruthenberg-04bb18148/) Software Engineer at [Microsoft](https://www.microsoft.com/)
 * How to use Rust Const generics- [Gil Dafnai](https://www.linkedin.com/in/gil-dafnai/)
 * FFI - how C and Rust became BFFs- [Sharon Rosenfeld](https://www.linkedin.com/in/sharon-rosenfeld-972426b/)
+* [slides of the lightning talks](redis-lightning-talks-2023-02-20.pdf)
 
 ### 2022.12.29 - [December Edition - xtask, macros and low level features](https://www.meetup.com/rust-tlv/events/290156141/)
 
