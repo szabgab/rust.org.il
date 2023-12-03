@@ -2,7 +2,7 @@
 
 * [CoCMD](https://cocmd.org/) - [Source code](https://github.com/cocmd) - by [Moshe Roth](https://www.linkedin.com/in/mosherot/).
 
-* [Loco](https://loco.rs/) - The one-person framework for Rust for side-projects and startups - [source code](https://github.com/loco-rs/loco) - by [Elad Kaplan](https://github.com/kaplanelad).
+* [Loco](https://loco.rs/) - The one-person framework for Rust for side-projects and startups - [source code](https://github.com/loco-rs/loco) - by [Elad Kaplan](https://github.com/kaplanelad) and [Dotan J. Nahum](https://github.com/jondot).
 
 * [Fast Node Manager (fnm)](https://fnm.vercel.app/) - [Source code](https://github.com/Schniz/fnm) - by [Gal Schlezinger](https://www.linkedin.com/in/schlez/).
 
