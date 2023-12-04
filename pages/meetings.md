@@ -4,7 +4,8 @@ timestamp: 2023-11-04T17:30:02
 description:
 ---
 
-Meeting are being organized by both the [Rust TLV](/tlv) group and the [Code Mavens](/code-mavens) group.
+* The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
+* The [Code Mavens](/code-mavens) group also has Rust related meetings.
 
 
 ## Next Meeting

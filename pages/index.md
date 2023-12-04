@@ -17,18 +17,7 @@ as that is the common (written) language for most of the programming world.
 
 ## In person and online meetings
 
-* The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
-* iThe [Code Mavens](/code-mavens) group also has Rust related meetings.
-
-
-## Rust book in Hebrew
-
-* [Ittay Weiss](https://github.com/IttayWeiss/) has been translating the Rust book to Hebrew. Check out the [GitHub repository](https://github.com/IttayWeiss/rustbook-heb).
-
-
-## Rust videos in Hebrew
-
-* A series of introductory [videos about programming Rust in Hebrew](https://he.code-maven.com/rust)
+* See the [meetings](/meetings) page
 
 ## Mailing list
 
@@ -53,6 +42,16 @@ as that is the common (written) language for most of the programming world.
 ## Open Source Rust projects by Israelis
 
 * [Projects](/projects)
+
+## Rust book in Hebrew
+
+* [Ittay Weiss](https://github.com/IttayWeiss/) has been translating the Rust book to Hebrew. Check out the [GitHub repository](https://github.com/IttayWeiss/rustbook-heb).
+
+
+## Rust videos in Hebrew
+
+* A series of introductory [videos about programming Rust in Hebrew](https://he.code-maven.com/rust)
+
 
 ## Rust Training in Israel in Hebrew or English
 
