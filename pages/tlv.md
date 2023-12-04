@@ -12,11 +12,6 @@ description:
 * [Adam Gutglick](https://www.linkedin.com/in/adam-gutglick-641675222/)
 * [Noam Tenne](https://www.linkedin.com/in/noam-tenne/)
 
-## Mailing list
-
-* Join our [mailing list](/mailing-list)!
-
-
 ## Upcoming events
 
 ------
