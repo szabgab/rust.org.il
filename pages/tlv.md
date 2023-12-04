@@ -14,6 +14,8 @@ description:
 
 ## Upcoming events
 
+See the [meetings](/meetings) page.
+
 ------
 
 ## Past Events
