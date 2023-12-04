@@ -1,4 +1,8 @@
-# Open Source Rust Projects developed by Israelies
+---
+title: Open Source Rust Projects developed by Israelies
+timestamp: 2023-11-03T19:30:05
+description:
+---
 
 * [CoCMD](https://cocmd.org/) - [Source code](https://github.com/cocmd) - by [Moshe Roth](https://www.linkedin.com/in/mosherot/).
 

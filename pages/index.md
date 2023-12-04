@@ -1,4 +1,10 @@
-# Rust programming in Israel
+---
+title: Rust programming in Israel
+timestamp: 2023-11-03T19:30:01
+description: The Israeli community of people programming in Rust
+---
+
+
 
 On this web site you should be able to find everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
 

@@ -1,0 +1,24 @@
+url: https://rust.org.il
+repo: https://github.com/szabgab/rust.org.il
+branch: main
+site_name: Rust in Israel
+link_to_source: true
+footer: "[Join our](/mailing-list)!"
+tags:
+  title: Tags
+  description: About Rust and Rust programmers in Israel
+archive:
+  title: Archive
+  description: List of all the articles
+navbar:
+  start:
+    - path: /
+      title: Home
+    - path: /projects
+      title: Projects
+    - path: /mailing-list
+      title: Newsletter
+  end:
+    - path: /
+      title: About
+

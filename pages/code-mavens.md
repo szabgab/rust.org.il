@@ -1,4 +1,9 @@
-# Code Mavens
+---
+title: Code Mavens
+timestamp: 2023-11-03T19:30:02
+description:
+---
+
 
 The [Code Mavens](https://www.meetup.com/Code-Mavens/) Meetup group exists for almost 10 years. During those years we had loads of meetings
 on a lot of different topics. Recently we started to have meetings about Rust.
