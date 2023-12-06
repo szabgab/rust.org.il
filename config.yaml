@@ -20,6 +20,8 @@ navbar:
       title: Newsletter
     - path: /meetings
       title: Meetings
+    - path: /companies
+      title: Companies
   end:
     - path: /
       title: About
