@@ -13,6 +13,8 @@
 * [Final](https://www.final.co.il/)
 
 * [Greenvibe](https://greenvibe.io/)
+    * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
+
 
 
 ## TODO
