@@ -11,6 +11,8 @@ description:
 
 * [Fast Node Manager (fnm)](https://fnm.vercel.app/) - [Source code](https://github.com/Schniz/fnm) - by [Gal Schlezinger](https://www.linkedin.com/in/schlez/).
 
+* [shellfirm](https://github.com/kaplanelad/shellfirm) by Elad Kaplan
+
 * Rusmux - tmux automation - [Source code](https://github.com/MeirKriheli/rusmux) - by [Meir Kriheli](https://www.linkedin.com/in/meirkriheli/).
 
 * mapping - [Source code](https://github.com/EmilyMatt/mapping-rs) - by [Emily Matheys](https://www.linkedin.com/in/emilymatheys/).
