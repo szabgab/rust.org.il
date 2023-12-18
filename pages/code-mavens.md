@@ -40,6 +40,7 @@ of our error-handling practices, discussing the pitfalls encountered, and lesson
 ### 2023.11.12 [Rust Digger](https://www.meetup.com/code-mavens/events/297064458/)
 
 * Speaker: [Gabor Szabo](https://szabgab.com/)
+* Author of [Rust Maven](https://rust.code-maven.com/)
 * Language: Hebrew
 * Location: online
 
