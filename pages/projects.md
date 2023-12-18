@@ -19,3 +19,13 @@ description:
 * [Rust Maven](https://rust.code-maven.com/) - [Source code](https://github.com/szabgab/code-maven.rs) of the program that generates the pages.
 * [This site](https://rust.org.il/) - [Source code](https://github.com/szabgab/rust.org.il).
 
+
+* [Ohad Dahan](https://github.com/ohaddahan) has a number of project in his account.
+    * [simple-grep](https://github.com/ohaddahan/simple-grep)
+
+
+## Our members on Cartes.io
+
+* [Crates by Gabor Szabo](https://crates.io/users/szabgab)
+* [Crates by Ohad Dahan](https://crates.io/users/ohaddahan)
+
