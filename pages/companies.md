@@ -1,6 +1,7 @@
 ---
 title: Companies in Israel using Rust
 timestamp: 2023-12-07T19:30:02
+published: true
 description: List of companies In Israel that use Rust along with some information on what they use it for.
 ---
 

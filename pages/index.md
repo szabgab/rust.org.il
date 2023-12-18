@@ -1,6 +1,7 @@
 ---
 title: Rust programming in Israel
 timestamp: 2023-11-03T19:30:01
+published: true
 description: The Israeli community of people programming in Rust
 ---
 

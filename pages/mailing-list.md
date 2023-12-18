@@ -1,6 +1,7 @@
 ---
 title: Mailing list
 timestamp: 2023-11-03T19:30:03
+published: true
 description:
 ---
 
