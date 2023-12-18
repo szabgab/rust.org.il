@@ -26,6 +26,8 @@ description:
 
 ## Our members on Cartes.io
 
+* [Crates by Elad Kaplan](https://crates.io/users/kaplanelad)
 * [Crates by Gabor Szabo](https://crates.io/users/szabgab)
+* [Crates by Gal Schlezinger](https://crates.io/users/schniz)
+* [Crates by Meir Kriheli](https://crates.io/users/meirkriheli)
 * [Crates by Ohad Dahan](https://crates.io/users/ohaddahan)
-
