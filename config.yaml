@@ -10,6 +10,12 @@ tags:
 archive:
   title: Archive
   description: List of all the articles
+
+authors:
+  - name: Gabor Szabo
+    nickname: szabgab
+    picture: szabgab.png
+
 navbar:
   start:
     - path: /
