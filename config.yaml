@@ -3,7 +3,7 @@ repo: https://github.com/szabgab/rust.org.il
 branch: main
 site_name: Rust in Israel
 link_to_source: true
-footer: "[Join our](/mailing-list)!"
+footer: "[Join our newsletter](/mailing-list)! "
 tags:
   title: Tags
   description: About Rust and Rust programmers in Israel
