@@ -21,6 +21,8 @@ description: List of companies In Israel that use Rust along with some informati
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
 
+* [Pelanor](https://www.pelanor.io/)
+    * They are building a cloud financial management platform and all (well, probably 99%) of the backend is written in Rust!
 
 
 ## TODO
