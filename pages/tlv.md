@@ -9,8 +9,8 @@ description:
 
 ## Organizers
 
-* [Yuval Adam](https://www.linkedin.com/in/yuvaladam/)
-* [Adam Gutglick](https://www.linkedin.com/in/adam-gutglick-641675222/)
+* [Yuval Adam](https://www.linkedin.com/in/yuvaladam/)  [website](https://yuv.al/)
+* [Adam Gutglick](https://www.linkedin.com/in/adam-gutglick-641675222/) Senior Software Engineer at [Pinecone](https://www.pinecone.io/)
 * [Noam Tenne](https://www.linkedin.com/in/noam-tenne/)
 
 ## Upcoming events
