@@ -29,6 +29,6 @@ navbar:
     - path: /companies
       title: Companies
   end:
-    #    - path: /
-    #      title: About
+    - path: /
+      title: About
 
