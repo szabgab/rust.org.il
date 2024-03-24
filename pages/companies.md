@@ -5,8 +5,10 @@ published: true
 description: List of companies In Israel that use Rust along with some information on what they use it for.
 ---
 
-On this page we try to showcase all the companies in Israel that have some Rust projects. We include local companies and international companies that have a local office where some people write Rust.
+On this page we try to showcase all the companies in Israel that use Rust. We include local companies and international companies that have a local office where some people write Rust.
 For each company we try to include some explanation what they use Rust for and some "evidence". e.g. A link to a presentation they gave. The fact that they hosted a Rust event. If they have Open Source projects written in Rust.
+
+If you know about more companies, if you know more details about the use of Rust in these companies, if you have other evidence that they use Rust, please send a Pull-Request to improve this page.
 
 * [Cynerio](https://www.cynerio.com/)
     See their [presentations](/tlv).
