@@ -6,32 +6,33 @@ description: List of companies In Israel that use Rust along with some informati
 ---
 
 * [Cynerio](https://www.cynerio.com/)
-    See the [presentations](/tlv)
+    See their [presentations](/tlv).
 
 * [Final](https://www.final.co.il/)
+    * They hosted the [Rust Meetup](/tlv) in September 2023.
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
 
 * [Intezer](https://intezer.com/)
-    * [GitHub](https://github.com/intezer)
+    * They have several Open Source projects written in Rust. See their [GitHub](https://github.com/intezer) account.
 
 * [MetalBear](https://metalbear.co)
-    * Developing [mirrord](https://github.com/metalbear-co/mirrord)
-    * [GitHub](https://github.com/metalbear-co)
+    * They are developing the [mirrord](https://github.com/metalbear-co/mirrord) project.
+    * They have many more Open Source projects written in Rust. See [GitHub](https://github.com/metalbear-co).
     * [Eyal Bukchin](https://www.linkedin.com/in/eyal-bukchin/) CTO and Co-Founder
 
 * [Microsoft](https://www.microsoft.com/)
-    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [meetings](/meetings)
+    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [meetings](/meetings). See the [Video](https://youtu.be/Fi--zxTU-8w).
 
 * [Spectral](https://spectralops.io/)
-    * [GitHub](https://github.com/SpectralOps)
+    * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
 
 * [Pelanor](https://www.pelanor.io/)
     * They are building a cloud financial management platform and all (well, probably 99%) of the backend is written in Rust!
 
 * [Pinecone](https://www.pinecone.io/)
-    * [GitHub](https://github.com/pinecone-io)
+    * A few Open Source projects on [GitHub](https://github.com/pinecone-io) written in Rust.
 
 * [Redis](https://redis.com/)
     * See the [presentation](/tlv)
