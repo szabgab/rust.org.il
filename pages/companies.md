@@ -11,6 +11,9 @@ For each company we try to include some explanation what they use Rust for and s
 * [Cynerio](https://www.cynerio.com/)
     See their [presentations](/tlv).
 
+* [DriveNets](https://drivenets.com/)
+    * Has an Open Source project on [GitHub](https://github.com/drivenets) written in Rust.
+
 * [Final](https://www.final.co.il/)
     * They hosted the [Rust Meetup](/tlv) in September 2023.
 
@@ -40,6 +43,8 @@ For each company we try to include some explanation what they use Rust for and s
 * [Redis](https://redis.com/)
     * See the [presentation](/tlv)
 
+* [StarkWare](https://starkware.co/)
+    * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).
 
 
 ## TODO
