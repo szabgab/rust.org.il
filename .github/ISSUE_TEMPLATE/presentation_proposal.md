@@ -1,12 +1,12 @@
 ---
 name: Presentation proposal
 about: Offering to give a presentation at one of the meetings
-title: ""
+title: "Presentation offer: "
 labels: issue
 assignees: octocat
 ---
 
-Title: (one liner)
+Title: add this to the title of the issue
 
 Description: (longer free text)
 
