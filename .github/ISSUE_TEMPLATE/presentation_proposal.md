@@ -1,7 +1,7 @@
 ---
 name: Presentation proposal
 about: Offering to give a presentation at one of the meetings
-title: "Presentation proposal: "
+title: ""
 labels: proposal
 assignees: octocat
 ---
