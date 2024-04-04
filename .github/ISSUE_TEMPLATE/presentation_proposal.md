@@ -8,9 +8,13 @@ assignees: octocat
 
 Title: add this to the title of the issue
 
-Description: (longer free text)
+## Description:
 
-Length: (We prefer presentations that are 20-40 minutes long)
+(longer free text)
+
+## Length:
+
+(We prefer presentations that are 20-40 minutes long)
 
 
 Who are  you? If your GitHub profile does not describe you then do it here.
