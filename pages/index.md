@@ -14,7 +14,7 @@ as that is the common (written) language for most of the programming world.
 
 ## Next Meeting
 
-* We are planning another meeting to be held on December 17, 2023. See the [announcement](https://groups.google.com/g/rust-il/c/CKtHACcn9es)
+* We are planning another meeting to be held on May 9, 2024 at Microsoft, Tel Aviv. [Register here](https://www.meetup.com/code-mavens/events/300144781/).
 
 ## In person and online meetings
 
