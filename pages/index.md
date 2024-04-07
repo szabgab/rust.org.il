@@ -12,9 +12,10 @@ On this web site you should be able to find everything about the [Rust programmi
 Despite the fact that our main goal is to reach the developers in Israel, most of the content will be in English
 as that is the common (written) language for most of the programming world.
 
-## Next Meeting
+## Upcoming Meetings
 
-* We are planning another meeting to be held on May 9, 2024 at Microsoft, Tel Aviv. [Register here](https://www.meetup.com/code-mavens/events/300144781/). Submit your talk proposals [here](https://github.com/szabgab/rust.org.il/labels/proposal).
+* April 21, 2024 [Using AstroNvim for Rust development (Online, in Hebrew)](https://www.meetup.com/code-mavens/events/300265648/)
+* May 9, 2024 at Microsoft, Tel Aviv. [Register here](https://www.meetup.com/code-mavens/events/300144781/). Submit your talk proposals [here](https://github.com/szabgab/rust.org.il/labels/proposal).
 
 ## In person and online meetings
 
