@@ -35,7 +35,11 @@ as that is the common (written) language for most of the programming world.
 
 ## Facebook
 
+* Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/israelrust/)!
+
+<!--
 * Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/871267374412093)!
+-->
 
 ## LinkedIn
 
