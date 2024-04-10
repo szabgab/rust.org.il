@@ -10,6 +10,8 @@ For each company we try to include some explanation what they use Rust for and s
 
 If you know about more companies, if you know more details about the use of Rust in these companies, if you have other evidence that they use Rust, please send a Pull-Request to improve this page.
 
+* [Amazon](https://www.amazon.com/)
+
 * [Cynerio](https://www.cynerio.com/)
     See their [presentations](/tlv).
 
