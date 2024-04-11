@@ -21,6 +21,8 @@ description:
 * [Rust Maven](https://rust.code-maven.com/) - [Source code](https://github.com/szabgab/code-maven.rs) of the program that generates the pages.
 * [This site](https://rust.org.il/) - [Source code](https://github.com/szabgab/rust.org.il).
 
+* [stamrust](https://github.com/maor1993/stamrust/) by Maor Malka.
+
 
 * [Ohad Dahan](https://github.com/ohaddahan) has a number of project in his account.
     * [simple-grep](https://github.com/ohaddahan/simple-grep)
