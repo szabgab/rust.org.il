@@ -18,9 +18,16 @@ as that is the common (written) language for most of the programming world.
 * June 24, 2024: [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra
 * September 17, 2024: [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra
 
+* [Code Mavens](/code-mavens)
+
+<!--
+
 ## In person and online meetings
 
 * See the [meetings](/meetings) page
+
+-->
+
 
 ## Mailing list
 

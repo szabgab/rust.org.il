@@ -11,7 +11,7 @@ description:
 
 ## Next Meeting
 
-TBD
+See the [main page](/).
 
 ## Future Meetings
 
