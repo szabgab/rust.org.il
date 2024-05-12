@@ -14,8 +14,9 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* April 21, 2024 [Using AstroNvim for Rust development (Online, in Hebrew)](https://www.meetup.com/code-mavens/events/300265648/)
-* May 9, 2024 at Microsoft, Tel Aviv. [Register here](https://www.meetup.com/code-mavens/events/300144781/). Submit your talk proposals [here](https://github.com/szabgab/rust.org.il/labels/proposal).
+* May 22, 2024: [Embedded Summer Camp Session #1 - Exploring Linux's Less-Known Depths](https://www.meetup.com/abra-rnd-solutions/events/300612047/) by Abra
+* June 24, 2024: [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra
+* September 17, 2024: [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra
 
 ## In person and online meetings
 
