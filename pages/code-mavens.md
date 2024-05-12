@@ -16,15 +16,18 @@ The main organizer of the group is [Gabor Szabo](https://szabgab.com/).
 
 See the [meetings](/meetings) page.
 
-### 2024.04.21 - [Using AstroNvim for Rust development (Online, in Hebrew)](https://www.meetup.com/code-mavens/events/300265648/)
 
-In this non-formal meeting [Meir Kriheli](https://www.meirkriheli.com/) a long time Open Source developer and a central figure of the Israeli Open Source community is going to share his decades of experience using AstroNvim and tmux.
+### 2024.06.?? -
 
-He will show his own setup with a focus on how he uses it for **programming in Rust**. He will help the interesting parties to set up their own environment.
+Agenda:
 
-He will also show [rusmux](https://www.meirkriheli.com/en/2023/04/introducing-rusmux/), his partial replacement for the tmuxinator written in Rust.
+* 18:00 Meeting amd mingling
+* Presentations. TBD, submit your [talk proposals](https://github.com/szabgab/rust.org.il/labels/proposal).
+* Pub
 
-The meeting will be in Zoom. It will start at 19:00 ILT. It will be held in Hebrew.
+------
+
+## Past Events
 
 ### 2024.05.09 - [In-person at Microsoft, Tel Aviv](https://www.meetup.com/code-mavens/events/300144781/)
 
@@ -45,6 +48,8 @@ I will show an example project, done on a custom STM32 microcontroller board wit
 
 Link to [Repo of stamrust](https://github.com/maor1993/stamrust/)
 
+[Are we embedded yet slides](files/are-we-embedded-yet.pptx)
+
 About Maor:
 
 Currently a Digital Design Engineer at [ARBE robotics](https://arberobotics.com/)
@@ -64,9 +69,17 @@ For many years his main language was Perl, then Python, and these days his focus
 these meetings and trying to energize the [Rust community in Israel](https://rust.org.il/).
 
 
-------
 
-## Past Events
+### 2024.04.21 - [Using AstroNvim for Rust development (Online, in Hebrew)](https://www.meetup.com/code-mavens/events/300265648/)
+
+In this non-formal meeting [Meir Kriheli](https://www.meirkriheli.com/) a long time Open Source developer and a central figure of the Israeli Open Source community is going to share his decades of experience using AstroNvim and tmux.
+
+He will show his own setup with a focus on how he uses it for **programming in Rust**. He will help the interesting parties to set up their own environment.
+
+He will also show [rusmux](https://www.meirkriheli.com/en/2023/04/introducing-rusmux/), his partial replacement for the tmuxinator written in Rust.
+
+The meeting will be in Zoom. It will start at 19:00 ILT. It will be held in Hebrew.
+
 
 
 ### 2023.12.17 - [Don't panic! - Our journey to error handling in Rust (Online and in Hebrew)](https://www.meetup.com/code-mavens/events/297334993/)
