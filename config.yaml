@@ -24,8 +24,6 @@ navbar:
       title: Projects
     - path: /mailing-list
       title: Newsletter
-    - path: /meetings
-      title: Meetings
     - path: /companies
       title: Companies
   end:

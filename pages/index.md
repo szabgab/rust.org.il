@@ -14,12 +14,12 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* May 22, 2024: [Embedded Summer Camp Session #1 - Exploring Linux's Less-Known Depths](https://www.meetup.com/abra-rnd-solutions/events/300612047/) by Abra
-* May 23, 2024: [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/300974367/)  (virtual event in Hebrew) by Gabor Szabo
-* June 6, 2024 [Rust Maven Workshop: Your first contribution to an Open Source Rust project](https://www.meetup.com/code-mavens/events/301156302/) (virtual event in English) by Gabor
-* June 23, 2024: [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/code-mavens/events/301170994/) by Gabor Szabo
-* June 24, 2024: [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra
-* September 17, 2024: [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra
+* 2024.06.16 [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/301294669/) by Gabor Szabo.
+* 2024.06.23 [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/code-mavens/events/301170994/) by Gabor Szabo.
+* 2024.06.24 [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra.
+* 2024.06.25 [Using the Liquid template system in Rust](https://www.meetup.com/code-mavens/events/301487547/) by Gabor Szabo.
+* 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) by Gabor Szabo.
+* 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra.
 
 * [Code Mavens](/code-mavens)
 

@@ -16,6 +16,19 @@ The main organizer of the group is [Gabor Szabo](https://szabgab.com/).
 
 See the [meetings](/meetings) page.
 
+### 2024.06.23 - [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/code-mavens/events/301170994/) at Microsift in Tel Aviv
+
+* When 18:00
+* Where: Microsoft, Tel Aviv
+* Language: Hebrew
+
+* [Yoray Herzberg](https://www.linkedin.com/in/yoray-herzberg-b8155621b/): Implementing a Neural Network in Rust (20 min)
+
+Neural Networks are one of the most popular models in Machine Learning, and are the basis for a lot of popular AI applications, such as Computer Vision (CV), Natural Language Processing (NLP), and more. In this presentation, I show the math behind Neural Nets, how to train them, and how I implemented one in Rust from scratch to recognize digits in images.
+
+The presentation is based on a post Yoray wrote: [Digit Recognition with Rust and WASM](https://vaktibabat.github.io/posts/Rust_WASM_Digit_Recognition_1/).
+
+
 ### 2024.05.23 - [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/300974367/) (virtual in Hebrew)
 
 In the most recent in-person meeting I talked about the [Rocket web framework](https://rocket.rs/). I am going to give an updated and extended version of the presentation, this time in Zoom.

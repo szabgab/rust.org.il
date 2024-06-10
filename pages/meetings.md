@@ -8,6 +8,8 @@ description:
 * The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
 * The [Code Mavens](/code-mavens) group also has Rust related meetings.
 
+* See list of meeting on the [front page](/).
+
 
 ## Next Meeting
 
