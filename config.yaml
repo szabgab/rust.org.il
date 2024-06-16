@@ -20,6 +20,8 @@ navbar:
   start:
     - path: /
       title: Home
+    - path: /meetings
+      title: Meetings
     - path: /projects
       title: Projects
     - path: /mailing-list
