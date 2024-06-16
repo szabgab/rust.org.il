@@ -5,8 +5,8 @@ published: true
 description:
 ---
 
+* The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
 * The [Rust TLV](/tlv) group organizes in-person meetings for Rust programmers with presentations.
-* The [Code Mavens](/code-mavens) group also has Rust related meetings.
 
 * See list of meeting on the [front page](/).
 
@@ -17,6 +17,14 @@ description:
 * When 18:00
 * Where: Microsoft, Tel Aviv
 * Language: Hebrew
+* Organizer: [Gabor Szabo](https://szabgab.com/)
+* Presentations start at 18:30
+* [Yoray Herzberg](https://www.linkedin.com/in/yoray-herzberg-b8155621b/): Implementing a Neural Network in Rust (20 min)
+* [Ron Zigelman](https://www.linkedin.com/in/ron-zigelman/): Microservices, Message Brokers, and Protobuf with Rust (20 min)
+* Pub
+* The host requires us to provide the names of attendees at least 24 before the event.
+
+----
 
 * [Yoray Herzberg](https://www.linkedin.com/in/yoray-herzberg-b8155621b/): Implementing a Neural Network in Rust (20 min)
 
