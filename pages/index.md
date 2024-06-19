@@ -36,6 +36,14 @@ as that is the common (written) language for most of the programming world.
 
 * Join our [mailing list](/mailing-list)!
 
+## WhatsApp
+
+* Join the [Rust in Hebrew](https://chat.whatsapp.com/GSDu36xgHTTKFlwsoO2CI5) WhatsApp group!
+
+## LinkedIn
+
+* Join us on the [Rust in Israel LinkedIn group](https://www.linkedin.com/groups/12915149/)!
+
 ## Telegram
 
 * Join the [Rust Israel Telegram group](https://t.me/rustlang_il)!
@@ -48,14 +56,6 @@ as that is the common (written) language for most of the programming world.
 
 * Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/israelrust/)!
 
-<!--
-* Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/871267374412093)!
--->
-
-## LinkedIn
-
-* Join us on the [Rust in Israel LinkedIn group](https://www.linkedin.com/groups/12915149/)!
-
 ## Open Source Rust projects by Israelis
 
 * [Projects](/projects)
@@ -63,7 +63,6 @@ as that is the common (written) language for most of the programming world.
 ## Rust book in Hebrew
 
 * [Ittay Weiss](https://github.com/IttayWeiss/) has been translating the Rust book to Hebrew. Check out the [GitHub repository](https://github.com/IttayWeiss/rustbook-heb).
-
 
 ## Rust videos in Hebrew
 
