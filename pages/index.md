@@ -31,10 +31,12 @@ as that is the common (written) language for most of the programming world.
 -->
 
 
-## Meetup groups
+## Meetup group
 
 * The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
+<!--
 * The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
+-->
 
 ## Mailing list
 
