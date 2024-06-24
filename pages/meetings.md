@@ -54,6 +54,8 @@ In this presentation, we'll explore how to use Protobuf and NATS to create a dis
 
 [GitHub of Ron Zigelman](https://github.com/r-zig)
 
+[slides of Modern Software Architecture with Rust](https://shorturl.at/XW1yu)
+
 About Ron: I am a Software Engineer, Architect, and Independent Software Consultant. I have extensive experience developing in .NET and, in recent years, have focused on building distributed systems using Rust. I am particularly interested in P2P and decentralized networks.
 
 * If time permits: [Gabor Szabo](https://szabgab.com/): Contribution to an Open Source Rust crate, and update on the [Rust Digger](https://rust-digger.code-maven.com/) project.
