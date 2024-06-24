@@ -6,7 +6,6 @@ description: The Israeli community of people programming in Rust
 ---
 
 
-
 On this web site you should be able to find everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
 
 Despite the fact that our main goal is to reach the developers in Israel, most of the content will be in English
@@ -14,14 +13,14 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* 2024.06.16 [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/301294669/) by Gabor Szabo.
-* 2024.06.23 [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/code-mavens/events/301170994/) by Gabor Szabo.
 * 2024.06.24 [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra.
 * 2024.06.25 [Using the Liquid template system in Rust](https://www.meetup.com/code-mavens/events/301487547/) by Gabor Szabo.
 * 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) by Gabor Szabo.
 * 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra.
+* 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/) by Gabor Szabo
+* 2024.07.16 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) by GaborSzabo
 
-* [Code Mavens](/code-mavens)
+* See the [meetings](/meetings) page for past events.
 
 <!--
 
@@ -31,6 +30,11 @@ as that is the common (written) language for most of the programming world.
 
 -->
 
+
+## Meetup groups
+
+* The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
+* The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
 
 ## Mailing list
 
