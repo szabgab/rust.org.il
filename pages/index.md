@@ -15,11 +15,10 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* 2024.06.24 [Embedded Summer Camp Session #2 - Rust Versus C: Enhancing Embedded Development](https://www.meetup.com/abra-rnd-solutions/events/300733104/) by Abra.
-* 2024.06.25 [Using the Liquid template system in Rust](https://www.meetup.com/code-mavens/events/301487547/) by Gábor Szabó.
 * 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) by Gábor Szabó.
 * 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra.
 * 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/) by Gábor Szabó.
+* 2024.07.12 [Getting started with Rust](https://www.meetup.com/rust-in-israel/events/301872689/) by Gábor Szabó.
 * 2024.07.16 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) by Gábor Szabó.
 
 * See the [meetings](/meetings) page for past events.
