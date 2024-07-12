@@ -15,7 +15,6 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) by Gábor Szabó.
 * 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) by Abra.
 * 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/) by Gábor Szabó.
 * 2024.07.12 [Getting started with Rust](https://www.meetup.com/rust-in-israel/events/301872689/) by Gábor Szabó.
