@@ -17,5 +17,7 @@ description: Learning Rust
 * There are several partial [Rust video courses in Hebrew](https://he.code-maven.com/rust).
 * Also the presentation [What I learned From Learning Rust](https://www.youtube.com/watch?v=HRhAkSdvGx4).
 
+## Discussion groups
 
+On our [front page](/) you'll find several channels to discuss Rust in Hebrew.
 

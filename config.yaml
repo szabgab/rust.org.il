@@ -29,7 +29,7 @@ navbar:
     - path: /companies
       title: Companies
     - path: /learning
-      title: /learning
+      title: Learning
   end:
     - path: /about
       title: About
