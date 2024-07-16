@@ -28,6 +28,8 @@ navbar:
       title: Newsletter
     - path: /companies
       title: Companies
+    - path: /learning
+      title: /learning
   end:
     - path: /about
       title: About
