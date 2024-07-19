@@ -21,6 +21,14 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 
 ## Past Events
 
+### 2024.07.19 [Threads in Rust](https://www.meetup.com/rust-in-israel/events/302219468/)
+
+* [video](https://youtu.be/edhM1vz536A)
+
+### 2024.07.12 [Getting started with Rust](https://www.meetup.com/rust-in-israel/events/301872689/)
+
+* [video](https://youtu.be/lbp2E-igAC8)
+
 ### 2024.06.23 - [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/rust-in-israel/events/301670916/) at Microsift in Tel Aviv
 
 * When 18:00
