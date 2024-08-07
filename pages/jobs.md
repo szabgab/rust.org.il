@@ -24,3 +24,6 @@ Contact [Gil Levy](https://www.linkedin.com/in/gil-levy-63a1b31/), 052-3502298.
 
 See the [companies that use Rust in Israel](/companies).
 
+## Rust job boards around the world
+
+[Rust job boards](https://rust.code-maven.com/rust-jobs)
