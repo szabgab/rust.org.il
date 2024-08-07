@@ -50,6 +50,15 @@ If you know about more companies, if you know more details about the use of Rust
 * [StarkWare](https://starkware.co/)
     * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).
 
+* Hyperspace Tel Aviv
+    * I saw a job post on LinkedIn
+
+* [Fireblocks](https://www.fireblocks.com/)
+    * In their job ads they mention Rust.
+    * They do not have Rust projects on [GitHub](https://github.com/fireblocks).
+
+* [Palo Alto Networks](https://www.paloaltonetworks.com/)
+    * [GitHub](https://github.com/PaloAltoNetworks)
 
 ## TODO
 
