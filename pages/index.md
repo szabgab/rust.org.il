@@ -15,9 +15,9 @@ as that is the common (written) language for most of the programming world.
 
 ## Upcoming Meetings
 
-* 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) (Virtual, English).
-* 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
+* 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
 * 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English).
+* 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
 * 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
 
 * See the [meetings](/meetings) page for past events.
