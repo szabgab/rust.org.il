@@ -12,14 +12,17 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Amazon](https://www.amazon.com/)
 
+* [Coralogix](https://coralogix.com/)
+    * They are hosting a meetup in September 2024.
+
 * [Cynerio](https://www.cynerio.com/)
-    * See their [presentations](/tlv).
+    * See their [presentations](/meetings).
 
 * [DriveNets](https://drivenets.com/)
     * Has an Open Source project on [GitHub](https://github.com/drivenets) written in Rust.
 
 * [Final](https://www.final.co.il/)
-    * They hosted the [Rust Meetup](/tlv) in September 2023.
+    * They hosted the [Rust Meetup](/meetings) in September 2023.
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
@@ -45,7 +48,7 @@ If you know about more companies, if you know more details about the use of Rust
     * A few Open Source projects on [GitHub](https://github.com/pinecone-io) written in Rust.
 
 * [Redis](https://redis.com/)
-    * See the [presentation](/tlv)
+    * See the [presentation](/meetings)
 
 * [StarkWare](https://starkware.co/)
     * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).

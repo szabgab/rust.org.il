@@ -10,8 +10,6 @@ description:
 * The [Code Mavens](https://www.meetup.com/code-mavens/) hosts virtual events in English about Rust, Python, and Perl.
 * The [Virtual events](https://events.code-maven.com/) site lists Virtual Rust events around the world with a possibility to filter by time and language.
 
-* See list of meeting on the [front page](/).
-
 ## Upcoming events
 
 ### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
