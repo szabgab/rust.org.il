@@ -16,11 +16,69 @@ description:
 
 ### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
 
+I am sure you have already used many macros, but have you written any?
+
+In this presentation you will learn how to write declarative macros. You will also see many examples from both the standard library and 3rd party Crates to get ideas for when declarative macros might help.
+
+* Language: Hebrew
+* Organizer and Speaker: [Gabor Szabo](https://szabgab.com/)
+* Location: This is a virtual event. We'll publish the Zoom link a few hours before the event.
+
+
 ### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English)
+
+During this presentation we'll re-implement the wc (word count) command line tool in Rust. We could call it "from 0 to full implementation" or "From 00 to WC" as you like.
+
+The event will be via Zoom (link will be announced close to the event)
+* Language: English.
+* Lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
+
 
 ### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English)
 
+The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
+
+During this even we'll go over the implementation of this crate.
+
+* The event will be via Zoom (link will be announced close to the event)
+* Language: English.
+* Lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
+
 ### 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
+
+Host: [Coralogix](https://coralogix.com/)
+* Time: 17:30-20:00
+
+At the event, you'll learn about:
+
+* Memory Allocators: Discover the variety of memory allocators available in Rust beyond the default; understand why tuning them is crucial even in a language without garbage collection.
+* DRY Principles: Find out how using Cargo Workspaces in Rust can simplify dependency management and reduce production issues.
+* Efficient Querying: See how Coralogix efficiently queries metrics in sub-seconds on object storage by decoupling storage from compute.
+
+* 17:30-18:00 Gathering and yummy food
+
+Please let us know in advance if you have any special dietary requirements (e.g. Vegan, Kosher, etc.). We will do our best to accommodate.
+
+* 18:00-18:15 The Coralogix Journey by [Ariel Assaraf](https://www.linkedin.com/in/ariel-assaraf-ab621896/), CEO
+
+Learn about the incredible journey of Coralogix in the observability space from the CEO himself.
+
+* 18:15-18:35 Simplifying Dependency Management with Workspaces by [Roy Prager](https://www.linkedin.com/in/roy-prager-40656a119/)
+
+Join us as we share our experience of simplifying dependency management by adopting Cargo Workspaces in Rust. See how this approach helped us to reduce overhead and prevent production issues across our services.
+
+* 18:35-19:10 Exploring Memory Allocators by Ronen Cohen
+
+Discover the variety of memory allocators available in Rust beyond the default, and learn why tuning them is crucial even in a language without garbage collection.
+
+* 19:25-20:00 Querying Metrics in Sub-Seconds on Object Storage by [Oron Sharabi](https://www.linkedin.com/in/oron-sharabi-27615b26/)
+
+When designing our metrics product at Coralogix, we decided to decouple storage from compute. Learn about how this allows our customers to store their metrics data cost-effectively in their own S3 buckets.
+
 
 ### 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
 
