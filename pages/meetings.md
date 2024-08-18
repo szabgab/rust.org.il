@@ -59,6 +59,8 @@ At the event, you'll learn about:
 * DRY Principles: Find out how using Cargo Workspaces in Rust can simplify dependency management and reduce production issues.
 * Efficient Querying: See how Coralogix efficiently queries metrics in sub-seconds on object storage by decoupling storage from compute.
 
+#### Agenda:
+
 * 17:30-18:00 Gathering and yummy food
 
 Please let us know in advance if you have any special dietary requirements (e.g. Vegan, Kosher, etc.). We will do our best to accommodate.
