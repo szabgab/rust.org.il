@@ -84,6 +84,15 @@ When designing our metrics product at Coralogix, we decided to decouple storage 
 
 ### 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
 
+Topics We Will Discuss:
+
+* Explore the pioneering integration of Rust into the Linux kernel, poised to transform kernel programming through improved safety and efficiency.
+* Get hands-on guidance on setting up, developing, and debugging a simple Rust-based kernel module.
+* Learn about the potential impacts and improvements Rust brings to kernel programming, highlighting synergies and differences from traditional C/C++ modules.
+
+When: Tuesday, Sep 17th, 2024, 17:00-20:00
+
+
 ## Future Meetings
 
 We are looking for speakers for our meetings. If you are interested to give a presentation, please [open an issue describing it](https://github.com/szabgab/rust.org.il/)
@@ -93,9 +102,19 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 
 ## Past Events
 
-## 2024.08.06 [Web development in Rust using Rocket - part 2](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
+## 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/)
 
-* [event](https://www.meetup.com/code-mavens/events/301736709/) |
+This is the second part of the Web development with Rocket series. It is strongly recommended that you watch the first part and even play around a bit with the framework before attending this meeting.
+
+The presentation is going to be about 1 hour long and then we open the floor for discussions about Rocket, web development and Rust in general.
+
+* The meeting will be via Zoom (link will be announced close to the event)
+* Language: English.
+* Workshop lead: Gabor Szabo
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
+
+* [notes and video](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
 
 ### 2024.07.19 [Threads in Rust](https://www.meetup.com/rust-in-israel/events/302219468/)
 
