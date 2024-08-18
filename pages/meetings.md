@@ -7,16 +7,14 @@ description:
 
 * The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
 * The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
+* The [Code Mavens](https://www.meetup.com/code-mavens/) hosts virtual events in English about Rust, Python, and Perl.
+* The [Virtual events](https://events.code-maven.com/) site lists Virtual Rust events around the world with a possibility to filter by time and language.
 
 * See list of meeting on the [front page](/).
 
 ## Upcoming events
 
-### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
-
-### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English).
-
-### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
+## 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
 
 ### 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
 
@@ -34,7 +32,6 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 ### [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/)
 
 * (English, Virtual)
-
 
 
 ## 2024.08.06 [Web development in Rust using Rocket - part 2](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
@@ -56,6 +53,10 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 ## 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) |
 
 * [notes and video](https://rust.code-maven.com/accepting-parameters-on-the-command-line-using-rust-clap)
+
+### 2024.06.25 [Using the Liquid template system in Rust](https://www.meetup.com/code-mavens/events/301487547/)
+
+* [notes and video](https://rust.code-maven.com/using-the-liquid-template-system-in-rust)
 
 ### 2024.06.23 - [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/rust-in-israel/events/301670916/) at Microsoft in Tel Aviv
 
@@ -96,7 +97,13 @@ About Ron: I am a Software Engineer, Architect, and Independent Software Consult
 
 * If time permits: [Gabor Szabo](https://szabgab.com/): Contribution to an Open Source Rust crate, and update on the [Rust Digger](https://rust-digger.code-maven.com/) project.
 
+### 2024.06.16 [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/301294669/)
 
+* [notes and video](https://rust.code-maven.com/web-development-in-rust-using-rocket)
+
+### 2024.06.09 [GitHub pages for Rust developers](https://www.meetup.com/code-mavens/events/301215326/)
+
+* [notes and video](https://rust.code-maven.com/github-pages-for-rust-developers)
 
 ### 2024.06.06 - [Rust Maven Workshop: Your first contribution to an Open Source Rust project](https://www.meetup.com/code-mavens/events/301156302/) (virtual in English)
 

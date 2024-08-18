@@ -8,11 +8,6 @@ description: The Israeli community of people programming in Rust
 
 On this web site you should be able to find everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
 
-<!--
-Despite the fact that our main goal is to reach the developers in Israel, most of the content will be in English
-as that is the common (written) language for most of the programming world.
--->
-
 ## Upcoming Meetings
 
 * 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
@@ -23,21 +18,11 @@ as that is the common (written) language for most of the programming world.
 
 * See the [meetings](/meetings) page for past events.
 
-<!--
-
-## In person and online meetings
-
-* See the [meetings](/meetings) page
-
--->
-
-
 ## Meetup group
 
 * The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
-<!--
 * The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
--->
+* The [Code Mavens](https://www.meetup.com/code-mavens/) group hosts virtual events in English. Some of the events are about Rust.
 
 ## Mailing list
 
