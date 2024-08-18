@@ -14,7 +14,11 @@ description:
 
 ## Upcoming events
 
-## 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
+### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
+
+### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English)
+
+### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English)
 
 ### 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
 
@@ -28,11 +32,6 @@ or talk to [Gabor Szabo](https://szabgab.com/contact). Presentation can be at an
 If you are interested hosting an in-person event or sponsoring one, please contact  [Gabor Szabo](https://szabgab.com/contact).
 
 ## Past Events
-
-### [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/)
-
-* (English, Virtual)
-
 
 ## 2024.08.06 [Web development in Rust using Rocket - part 2](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
 
