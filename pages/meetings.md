@@ -12,6 +12,16 @@ description:
 
 ## Upcoming events
 
+### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
+
+### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English).
+
+### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
+
+### 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
+
+### 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
+
 ## Future Meetings
 
 We are looking for speakers for our meetings. If you are interested to give a presentation, please [open an issue describing it](https://github.com/szabgab/rust.org.il/)
@@ -21,6 +31,16 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 
 ## Past Events
 
+### [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/)
+
+* (English, Virtual)
+
+
+
+## 2024.08.06 [Web development in Rust using Rocket - part 2](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
+
+* [event](https://www.meetup.com/code-mavens/events/301736709/) |
+
 ### 2024.07.19 [Threads in Rust](https://www.meetup.com/rust-in-israel/events/302219468/)
 
 * [video](https://youtu.be/edhM1vz536A)
@@ -29,7 +49,15 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 
 * [video](https://youtu.be/lbp2E-igAC8)
 
-### 2024.06.23 - [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/rust-in-israel/events/301670916/) at Microsift in Tel Aviv
+## 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/)
+
+* [notes and video](https://rust.code-maven.com/reading-json-files-in-rust)
+
+## 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) |
+
+* [notes and video](https://rust.code-maven.com/accepting-parameters-on-the-command-line-using-rust-clap)
+
+### 2024.06.23 - [Rust at Microsoft, Tel Aviv in June 2024](https://www.meetup.com/rust-in-israel/events/301670916/) at Microsoft in Tel Aviv
 
 * When 18:00
 * Where: Microsoft, Tel Aviv
@@ -88,7 +116,7 @@ Length: up to 3 hours.
 
 This workshop is free of charge thanks to the people who support me via one of the following systems: [Github sponsor](https://github.com/sponsors/szabgab/), [Patreon](https://www.patreon.com/szabgab), or directly via [PayPal](https://www.paypal.com/paypalme/szabgab).
 
-
+* [notes and video](https://rust.code-maven.com/your-first-contribution-to-an-open-source-rust-project)
 
 ### 2024.05.23 - [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/300974367/) (virtual in Hebrew)
 
