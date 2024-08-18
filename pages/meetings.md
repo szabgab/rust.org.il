@@ -102,15 +102,15 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 
 ## Past Events
 
-## 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/)
+### 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) (English)
 
 This is the second part of the Web development with Rocket series. It is strongly recommended that you watch the first part and even play around a bit with the framework before attending this meeting.
 
 The presentation is going to be about 1 hour long and then we open the floor for discussions about Rocket, web development and Rust in general.
 
-* The meeting will be via Zoom (link will be announced close to the event)
+* The meeting will be via Zoom
 * Language: English.
-* Workshop lead: Gabor Szabo
+* Workshop lead: [Gabor Szabo](https://szabgab.com/)
 * Requirements: Basic familiarity with writing Rust will be enough.
 * Length: up to 2 hours.
 
@@ -118,21 +118,88 @@ The presentation is going to be about 1 hour long and then we open the floor for
 
 ### 2024.07.19 [Threads in Rust](https://www.meetup.com/rust-in-israel/events/302219468/)
 
+In this presentation we will learn about threads in Rust.
+
+There presentation will take about 1 hour, maybe 1 and a half hour.
+After the presentation you'll have the opportunity to practice with the help of Gabor or just discuss any related topics.
+
+* Speaker: [Gabor Szabo](https://szabgab.com/)
+* Language: Hebrew
+* Location: Zoom
+
 * [video](https://youtu.be/edhM1vz536A)
 
 ### 2024.07.12 [Getting started with Rust](https://www.meetup.com/rust-in-israel/events/301872689/)
 
+In this presentation we get start programming in Rust.
+We assume no knowledge of Rust, we start from zero and we'll see where we can get to.
+
+There presentation will take about 1 hour, maybe 1 and a half hour.
+After the presentation you'll have the opportunity to practice with the help of Gabor or just discuss any related topics.
+
+* Speaker: [Gabor Szabo](https://szabgab.com/)
+* Language: Hebrew
+* Location: Zoom
+
 * [video](https://youtu.be/lbp2E-igAC8)
 
-## 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/)
+### 2024.07.11 [Reading JSON files in Rust](https://www.meetup.com/code-mavens/events/301636580/) (English)
+
+During this meeting we will go through a number of sample JSON files and we'll learn how to read them and convert them to data structures in Rust.
+
+* The event will be via Zoom
+* Language: English.
+* Lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
 
 * [notes and video](https://rust.code-maven.com/reading-json-files-in-rust)
 
-## 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) |
+### 2024.06.27 [Accepting parameters on the command line using Rust Clap](https://www.meetup.com/code-mavens/events/301506015/) (English)
+
+When you start writing a command line application you usually start out with a very limited number of parameters. Maybe just 2 values. In that case using the `std::env::args` is enough.
+
+However as you start adding more and more parameters that some of them depend on each other then very quickly you can get in trouble.
+
+The clap crate is an excellent solution for such cases.
+
+In this workshop you'll learn quite a few thing using the Clap crate.
+
+If you have any specific use-case in mind, please comment on this event so I might be able to prepare such an example as well.
+
+The workshop includes presentations and hands-on work.
+
+* The workshop will be via Zoom
+* Language: English.
+* Workshop lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
 
 * [notes and video](https://rust.code-maven.com/accepting-parameters-on-the-command-line-using-rust-clap)
 
 ### 2024.06.25 [Using the Liquid template system in Rust](https://www.meetup.com/code-mavens/events/301487547/)
+
+When you need to create many well-designed reports with different data, or when you create web pages where the content changes from one-page to another or from one visitor to another, it is common to use a template system.
+
+The template systems are not very complex, but many people, when they start writing a project feel that they only have very simple need and thus the use of a "real" template system is not warranted.
+
+So they create their own simple template system.
+
+Then as the project growth their needs get more and more complex and they end up with a full-fledged template system.
+
+It is so common that creating your own template system seems like a rite of passage in many circles.
+
+In this workshop you'll learn about one of the successful template systems called Liquid. It was originally written at Shopify in Ruby, but it has an implementation in Rust as well.
+
+We will learn how to use and extend the Rust version.
+
+The workshop includes a presentation which is about 1 hour long and then you can practice what we learned while I answer questions and help if there is any need.
+
+* The workshop will be via Zoom
+* Language: English.
+* Workshop lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 3 hours.
 
 * [notes and video](https://rust.code-maven.com/using-the-liquid-template-system-in-rust)
 
@@ -175,11 +242,32 @@ About Ron: I am a Software Engineer, Architect, and Independent Software Consult
 
 * If time permits: [Gabor Szabo](https://szabgab.com/): Contribution to an Open Source Rust crate, and update on the [Rust Digger](https://rust-digger.code-maven.com/) project.
 
-### 2024.06.16 [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/301294669/)
+### 2024.06.16 [Web development in Rust using Rocket](https://www.meetup.com/code-mavens/events/301294669/) (English)
+
+In this workshop we will create a web site using the [Rocket framework](https://rocket.rs/).
+We don't assume any background in web development. We'll use minimal HTML, we'll try to focus on getting started with the Rocket framework
+
+The workshop includes presentations and hands-on work.
+
+* The workshop will be via Zoom
+* Language: English.
+* Workshop lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 3 hours.
 
 * [notes and video](https://rust.code-maven.com/web-development-in-rust-using-rocket)
 
-### 2024.06.09 [GitHub pages for Rust developers](https://www.meetup.com/code-mavens/events/301215326/)
+### 2024.06.09 [GitHub pages for Rust developers](https://www.meetup.com/code-mavens/events/301215326/) (English)
+
+In this workshop you will create a web site on GitHub while using Rust. During the workshop I will provide explanation on how to setup Github pages first with plain Markdown and then using Rust. You will then have the opportunity to create your own web site and get help from me with any of the issues you encounter.
+
+The workshop includes presentations and hands-on work.
+
+* The workshop will be via Zoom
+* Language: English.
+* Workshop lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 3 hours.
 
 * [notes and video](https://rust.code-maven.com/github-pages-for-rust-developers)
 
