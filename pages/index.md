@@ -18,7 +18,7 @@ On this web site you should be able to find everything about the [Rust programmi
 
 * See the [meetings](/meetings) page for past events.
 
-## Meetup group
+## Meetup groups
 
 * The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
 * The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
@@ -40,13 +40,16 @@ On this web site you should be able to find everything about the [Rust programmi
 
 * Join the [Rust Israel Telegram group](https://t.me/rustlang_il)!
 
-## Discord
-
-* There is a Discord group called [Rust Open Source Committers](https://discord.com/channels/1027509789774839818/1027509790928273470). You are invited!
-
 ## Facebook
 
 * Join us on the [Rust in Israel Facebook group](https://www.facebook.com/groups/israelrust/)!
+
+## Discord
+
+* There is a Discord group called [Rust Open Source Committers](https://discord.com/channels/1027509789774839818/1027509790928273470). It isn't very active.
+
+
+----
 
 ## Open Source Rust projects by Israelis
 
