@@ -21,6 +21,9 @@ If you know about more companies, if you know more details about the use of Rust
 * [DriveNets](https://drivenets.com/)
     * Has an Open Source project on [GitHub](https://github.com/drivenets) written in Rust.
 
+* [Evinced](https://www.evinced.com/)
+    * Has a [Rust Engineer](https://www.evinced.com/careers/rust-engineer) position.
+
 * [Final](https://www.final.co.il/)
     * They hosted the [Rust Meetup](/meetings) in September 2023.
 
