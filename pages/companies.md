@@ -14,9 +14,14 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Coralogix](https://coralogix.com/)
     * They are hosting a meetup in September 2024.
+    * [Ariel Assaraf](https://www.linkedin.com/in/ariel-assaraf-ab621896/) CEO
+    * [Roy Prager](https://www.linkedin.com/in/roy-prager-40656a119/) Software Engineer
+    * [Oron Sharabi](https://www.linkedin.com/in/oron-sharabi-27615b26/) R&D Team leader
+
 
 * [Cynerio](https://www.cynerio.com/)
     * See their [presentations](/meetings).
+    * [Daniel Brodie](https://www.linkedin.com/in/danielbrodie/) CTO and Co-Founder at Cynero
 
 * [DriveNets](https://drivenets.com/)
     * Has an Open Source project on [GitHub](https://github.com/drivenets) written in Rust.
@@ -37,6 +42,7 @@ If you know about more companies, if you know more details about the use of Rust
     * They are developing the [mirrord](https://github.com/metalbear-co/mirrord) project.
     * They have many more Open Source projects written in Rust. See [GitHub](https://github.com/metalbear-co).
     * [Eyal Bukchin](https://www.linkedin.com/in/eyal-bukchin/) CTO and Co-Founder
+    * [Aviram Hassan](https://www.linkedin.com/in/aviram-hassan/) CEO and Co-Founder
 
 * [Microsoft](https://www.microsoft.com/)
     * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [meetings](/meetings). See the [Video](https://youtu.be/Fi--zxTU-8w).
