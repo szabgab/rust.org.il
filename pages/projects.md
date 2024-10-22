@@ -23,6 +23,8 @@ description:
 
 * [stamrust](https://github.com/maor1993/stamrust/) by Maor Malka.
 
+* Melody - A language that compiles to regular expressions and aims to be more readable and maintainable - [Source code](https://github.com/yoav-lavi/melody) - by [Yoav Lavi](https://www.linkedin.com/in/yoav-lavi-0b191a102).
+
 
 * [Ohad Dahan](https://github.com/ohaddahan) has a number of project in his account.
     * [simple-grep](https://github.com/ohaddahan/simple-grep)
