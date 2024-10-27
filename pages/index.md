@@ -10,6 +10,9 @@ On this web site you should be able to find everything about the [Rust programmi
 
 ## Upcoming Meetings
 
+
+## Previous Meetings
+
 * 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
 * 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English).
 * 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
