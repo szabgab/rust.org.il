@@ -10,6 +10,7 @@ On this web site you should be able to find everything about the [Rust programmi
 
 ## Upcoming Meetings
 
+* 2024.12.03 [Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/304302596/) (In-person, Hebrew).
 
 ## Previous Meetings
 
