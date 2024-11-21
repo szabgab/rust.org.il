@@ -21,3 +21,6 @@ description: Learning Rust
 
 On our [front page](/) you'll find several channels to discuss Rust in Hebrew.
 
+## Videos in Hebrew
+
+* [Meir Kriheli- PyWeb-il- tRust the process Hebrew](https://www.youtube.com/watch?v=XygLhh1Kcq8)
