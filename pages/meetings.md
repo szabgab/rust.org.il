@@ -12,39 +12,25 @@ description:
 
 ## Upcoming events
 
-### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
+## Future Meetings
 
-I am sure you have already used many macros, but have you written any?
+We are looking for speakers for our meetings. If you are interested to give a presentation, please [open an issue describing it](https://github.com/szabgab/rust.org.il/)
+or talk to [Gabor Szabo](https://szabgab.com/contact). Presentation can be at any level and any topic related to Rust.
 
-In this presentation you will learn how to write declarative macros. You will also see many examples from both the standard library and 3rd party Crates to get ideas for when declarative macros might help.
+If you are interested hosting an in-person event or sponsoring one, please contact  [Gabor Szabo](https://szabgab.com/contact).
 
-* Language: Hebrew
-* Organizer and Speaker: [Gabor Szabo](https://szabgab.com/)
-* Location: This is a virtual event. We'll publish the Zoom link a few hours before the event.
-
-
-### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English)
-
-During this presentation we'll re-implement the wc (word count) command line tool in Rust. We could call it "from 0 to full implementation" or "From 00 to WC" as you like.
-
-The event will be via Zoom (link will be announced close to the event)
-* Language: English.
-* Lead: [Gabor Szabo](https://szabgab.com/)
-* Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
+## Past Events
 
 
-### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English)
+### 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
 
-The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
+Topics We Will Discuss:
 
-During this even we'll go over the implementation of this crate.
+* Explore the pioneering integration of Rust into the Linux kernel, poised to transform kernel programming through improved safety and efficiency.
+* Get hands-on guidance on setting up, developing, and debugging a simple Rust-based kernel module.
+* Learn about the potential impacts and improvements Rust brings to kernel programming, highlighting synergies and differences from traditional C/C++ modules.
 
-* The event will be via Zoom (link will be announced close to the event)
-* Language: English.
-* Lead: [Gabor Szabo](https://szabgab.com/)
-* Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
+When: Tuesday, Sep 17th, 2024, 17:00-20:00
 
 ### 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
 
@@ -80,25 +66,43 @@ Discover the variety of memory allocators available in Rust beyond the default, 
 When designing our metrics product at Coralogix, we decided to decouple storage from compute. Learn about how this allows our customers to store their metrics data cost-effectively in their own S3 buckets.
 
 
-### 2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).
 
-Topics We Will Discuss:
+### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English)
 
-* Explore the pioneering integration of Rust into the Linux kernel, poised to transform kernel programming through improved safety and efficiency.
-* Get hands-on guidance on setting up, developing, and debugging a simple Rust-based kernel module.
-* Learn about the potential impacts and improvements Rust brings to kernel programming, highlighting synergies and differences from traditional C/C++ modules.
+The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
 
-When: Tuesday, Sep 17th, 2024, 17:00-20:00
+During this even we'll go over the implementation of this crate.
+
+* The event will be via Zoom (link will be announced close to the event)
+* Language: English.
+* Lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
 
 
-## Future Meetings
+### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English)
 
-We are looking for speakers for our meetings. If you are interested to give a presentation, please [open an issue describing it](https://github.com/szabgab/rust.org.il/)
-or talk to [Gabor Szabo](https://szabgab.com/contact). Presentation can be at any level and any topic related to Rust.
+During this presentation we'll re-implement the wc (word count) command line tool in Rust. We could call it "from 0 to full implementation" or "From 00 to WC" as you like.
 
-If you are interested hosting an in-person event or sponsoring one, please contact  [Gabor Szabo](https://szabgab.com/contact).
+The event will be via Zoom (link will be announced close to the event)
+* Language: English.
+* Lead: [Gabor Szabo](https://szabgab.com/)
+* Requirements: Basic familiarity with writing Rust will be enough.
+* Length: up to 2 hours.
 
-## Past Events
+
+
+### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
+
+I am sure you have already used many macros, but have you written any?
+
+In this presentation you will learn how to write declarative macros. You will also see many examples from both the standard library and 3rd party Crates to get ideas for when declarative macros might help.
+
+* Language: Hebrew
+* Organizer and Speaker: [Gabor Szabo](https://szabgab.com/)
+* Location: This is a virtual event. We'll publish the Zoom link a few hours before the event.
+
+
 
 ### 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) (English)
 
