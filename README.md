@@ -1,6 +1,14 @@
-# rust.org.il# The Web site of [Rust TLV](https://rust-tlv.github.io/)
+# The source of [Rust in Israel](https://rust.org.il/)
 
 
 Run `cargo run` to check the formatting of the speakers.yaml` file.
 
+
+## Generate the site locally
+
+Download the [Code Maven SSG](https://ssg.code-maven.com/) and run `code-maven web`.
+
+## See the site locally
+
+Install [Rustatic](https://rustatic.code-maven.com/) run `rustatic --nice --indexfile index.html --path _site/` and visit `http://localhost:5000/`
 
