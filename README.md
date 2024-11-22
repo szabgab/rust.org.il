@@ -1,12 +1,9 @@
 # The source of [Rust in Israel](https://rust.org.il/)
 
 
-Run `cargo run` to check the formatting of the speakers.yaml` file.
-
-
 ## Generate the site locally
 
-Download the [Code Maven SSG](https://ssg.code-maven.com/) and run `code-maven web`.
+Run `cargo run` to generate the web site in the `_site` folder.
 
 ## See the site locally
 

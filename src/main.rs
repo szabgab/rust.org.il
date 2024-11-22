@@ -8,6 +8,20 @@ pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySo
 #[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
+struct Page {
+    title: String,
+    description: String,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    content: String,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
 struct Person {
     name: String,
     linkedin: String,
@@ -58,7 +72,7 @@ fn main() {
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
     let events = load_events();
-    //print!("{:?}", events);
+    let pages = load_pages();
 
     let template = include_str!("../templates/people.html");
     let globals = liquid::object!({
@@ -77,6 +91,40 @@ fn main() {
     let events_path = path.join("events");
     std::fs::create_dir_all(&events_path).unwrap();
     render_page(globals, template, events_path.join("index.html")).unwrap();
+
+    for page in &pages {
+        if page.slug == "index" {
+            let template = include_str!("../templates/index.html");
+            let globals = liquid::object!({
+                "title": page.title,
+                "events": events,
+                "content": page.content,
+            });
+            render_page(globals, template, path.join("index.html")).unwrap();
+        } else {
+            let template = include_str!("../templates/page.html");
+            let globals = liquid::object!({
+                "title": page.title,
+                "content": page.content,
+            });
+            render_page(globals, template, path.join(format!("{}.html", page.slug))).unwrap();
+        }
+    }
+}
+
+fn load_pages() -> Vec<Page> {
+    let mut pages = Vec::new();
+    let paths = std::fs::read_dir("pages").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut page: Page = serde_yaml::from_str(&front_matter).unwrap();
+        page.content = markdown2html(&body);
+        page.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+
+        pages.push(page);
+    }
+    pages
 }
 
 fn load_people() -> Vec<Person> {

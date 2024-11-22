@@ -1,7 +1,5 @@
 ---
 title: Meetings
-timestamp: 2023-11-04T17:30:02
-published: true
 description:
 ---
 

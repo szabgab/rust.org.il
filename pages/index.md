@@ -1,7 +1,5 @@
 ---
 title: Rust programming in Israel
-timestamp: 2023-11-03T19:30:01
-published: true
 description: The Israeli community of people programming in Rust
 ---
 
@@ -42,7 +40,7 @@ On this web site you should be able to find everything about the [Rust programmi
 * There is a Discord group called [Rust Open Source Committers](https://discord.com/channels/1027509789774839818/1027509790928273470). It isn't very active.
 
 
-----
+_____
 
 ## Open Source Rust projects by Israelis
 

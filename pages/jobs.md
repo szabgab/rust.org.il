@@ -1,7 +1,5 @@
 ---
 title: Rust jobs in Israel
-timestamp: 2024-08-07T08:30:02
-published: true
 description: List of Rust jobs In Israel
 ---
 

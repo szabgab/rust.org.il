@@ -1,7 +1,5 @@
 ---
 title: Learning Rust
-timestamp: 2024-07-16T12:30:01
-published: true
 description: Learning Rust
 ---
 

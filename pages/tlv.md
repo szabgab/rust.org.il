@@ -1,7 +1,5 @@
 ---
 title: Rust TLV
-timestamp: 2023-11-03T19:30:06
-published: true
 description:
 ---
 

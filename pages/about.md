@@ -1,7 +1,5 @@
 ---
 title: About Rust in Israel
-timestamp: 2024-03-23T19:30:01
-published: true
 description: About the Rust in Israel web site
 ---
 

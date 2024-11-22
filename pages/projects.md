@@ -1,7 +1,5 @@
 ---
-title: Open Source Rust Projects developed by Israelies
-timestamp: 2023-11-03T19:30:05
-published: true
+title: Open Source Rust Projects developed by Israelis
 description:
 ---
 
