@@ -1,9 +1,12 @@
+use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use std::error::Error;
 use std::path::PathBuf;
+
 pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySource>;
 
 #[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
 #[allow(dead_code)]
 struct Person {
     name: String,
@@ -13,17 +16,27 @@ struct Person {
 }
 
 #[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
 #[allow(dead_code)]
 struct Event {
     date: String,
     title: String,
     online: bool,
 
+    register: String,
+
     #[serde(default = "get_default_empty_string")]
     slug: String,
 
     #[serde(default = "get_default_empty_string")]
     body: String,
+
+    #[serde(default = "get_default_false")]
+    future: bool,
+}
+
+fn get_default_false() -> bool {
+    false
 }
 
 fn get_default_empty_string() -> String {
@@ -31,6 +44,9 @@ fn get_default_empty_string() -> String {
 }
 
 fn main() {
+    // let utc: DateTime<Utc> = Utc::now();
+    // let today = utc.format("%Y.%m.%d");
+
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
     let events = load_events();
@@ -68,6 +84,9 @@ fn load_people() -> Vec<Person> {
 }
 
 fn load_events() -> Vec<Event> {
+    let utc: DateTime<Utc> = Utc::now();
+    let today = utc.format("%Y.%m.%d").to_string();
+
     let mut events = Vec::new();
     let paths = std::fs::read_dir("events").unwrap();
     for path in paths {
@@ -76,6 +95,7 @@ fn load_events() -> Vec<Event> {
         let mut event: Event = serde_yaml::from_str(&front_matter).unwrap();
         event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         event.body = markdown2html(&body);
+        event.future = event.date >= today;
         events.push(event);
     }
     events

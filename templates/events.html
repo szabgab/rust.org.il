@@ -9,6 +9,12 @@
           <div id="{{event.slug}}">
             <h2>{{event.date}} {{event.title}}</h2>
                 {{event.body}}
+                {% if event.future %}
+                    <a class="button is-primary" href="{{event.register}}">register</a>
+                {% else %}
+                    <a  href="{{event.register}}">register</a>
+                {% endif %}
+
             <hr>
           </div>
           {% endfor %}
