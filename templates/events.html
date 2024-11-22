@@ -25,7 +25,7 @@
           </h1>
     
           {% for event in events %}
-            {% if event.future %}
+            {% unless event.future %}
                 <div id="{{event.slug}}">
                     <h2>{{event.date}} {{event.title}}</h2>
                     {{event.language}}<br>
@@ -34,7 +34,7 @@
                 <a  href="{{event.register}}">register</a>
                 <hr>
                 </div>
-            {% endif %}
+            {% endunless %}
           {% endfor %}
         </div>
     </div>
