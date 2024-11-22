@@ -5,8 +5,7 @@ published: true
 description:
 ---
 
-* The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
-* The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
+* The [Rust TLV](https://www.meetup.com/rust-tlv/) group has both in-person and virtual events.
 * The [Code Mavens](https://www.meetup.com/code-mavens/) hosts virtual events in English about Rust, Python, and Perl.
 * The [Virtual events](https://events.code-maven.com/) site lists Virtual Rust events around the world with a possibility to filter by time and language.
 
@@ -519,7 +518,7 @@ Gavrie's current role is Cluster Architect at Redis Labs. He has been hacking aw
 
 * A feature-wise introduction for C/C++ programmers, part 1/3 by [Dan Aloni](https://www.linkedin.com/in/aloni/):
 
-This talk will focuse on Move semantics and Pattern matching, explaining their importance and the differences from the decades-old C / C++ arena.
+This talk will focus on Move semantics and Pattern matching, explaining their importance and the differences from the decades-old C / C++ arena.
 
 [Dan Aloni](https://blog.aloni.org/) develops software for more than 20 years. Dan is the original author of coLinux (wikipedia.org/wiki/Cooperative_Linux), has worked on the Linux kernel, gained specialty in virtualization, storage systems, niche languages and operating systems. Currently, Dan is an independent consultant, and helps maintaining the Rust plugin for Vim.
 
