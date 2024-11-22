@@ -10,18 +10,7 @@ On this web site you should be able to find everything about the [Rust programmi
 
 ## Upcoming Events
 
-* 2024.12.03 [Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/304302596/) (In-person, Hebrew).
-* 2024.12.08 [Rust and JSON](https://www.meetup.com/rust-tlv/events/304685546/) (Virtual, Hebrew)
-
-## Previous Events
-
-* 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew).
-* 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English).
-* 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English).
-* 2024.09.09 [Rust at Scale](https://coralogix.com/rust-coralogix-meetup/) (In-person, Hebrew)
-* <s>2024.09.17 [Embedded Summer Camp Session #3 - Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/300733258/) (In-person, Hebrew).</s> cancelled.
-
-* See the [events](/events/) page for past events.
+* See all the [events](/events/).
 
 ## Meetup groups
 

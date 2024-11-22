@@ -6,7 +6,7 @@ register: https://www.meetup.com/abra-rnd-solutions/events/300733258/
 language: Hebrew
 ---
 
-Language: Hebrew
+cancelled
 
 Topics We Will Discuss:
 
