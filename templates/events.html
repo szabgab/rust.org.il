@@ -8,6 +8,8 @@
           {% for event in events %}
           <div id="{{event.slug}}">
             <h2>{{event.date}} {{event.title}}</h2>
+                {{event.language}}<br>
+
                 {{event.body}}
                 {% if event.future %}
                     <a class="button is-primary" href="{{event.register}}">register</a>

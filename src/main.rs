@@ -16,6 +16,12 @@ struct Person {
 }
 
 #[derive(Deserialize, Debug, Serialize)]
+enum Language {
+    English,
+    Hebrew,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
 struct Event {
@@ -33,6 +39,8 @@ struct Event {
 
     #[serde(default = "get_default_false")]
     future: bool,
+
+    language: Language,
 }
 
 fn get_default_false() -> bool {

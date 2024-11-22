@@ -3,6 +3,7 @@ date: 2024.09.17
 title: Embedded Summer Camp Session #3 - Rust in the Linux Kernel
 online: false
 register: https://www.meetup.com/abra-rnd-solutions/events/300733258/
+language: Hebrew
 ---
 
 Language: Hebrew

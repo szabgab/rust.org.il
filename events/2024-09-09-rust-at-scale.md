@@ -3,10 +3,9 @@ title: Rust at Scale
 date: 2024.09.09
 online: false
 register: https://coralogix.com/rust-coralogix-meetup/
+language: Hebrew
 ---
 
-
-In Hebrew
 
 Host: [Coralogix](https://coralogix.com/)
 

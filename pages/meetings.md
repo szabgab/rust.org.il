@@ -21,59 +21,6 @@ If you are interested hosting an in-person event or sponsoring one, please conta
 ## Past Events
 
 
-
-
-### 2024.08.29 [Rust Source Code Reading: The thousands crate](https://www.meetup.com/code-mavens/events/302391142/) (Virtual, English)
-
-The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
-
-During this even we'll go over the implementation of this crate.
-
-* The event will be via Zoom (link will be announced close to the event)
-* Language: English.
-* Lead: [Gabor Szabo](https://szabgab.com/)
-* Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
-
-
-### 2024.08.28 [Command Line Tools: Implementing wc in Rust](https://www.meetup.com/code-mavens/events/302151487/) (Virtual, English)
-
-During this presentation we'll re-implement the wc (word count) command line tool in Rust. We could call it "from 0 to full implementation" or "From 00 to WC" as you like.
-
-The event will be via Zoom (link will be announced close to the event)
-* Language: English.
-* Lead: [Gabor Szabo](https://szabgab.com/)
-* Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
-
-
-
-### 2024.08.27 [Declarative macros in Rust](https://www.meetup.com/rust-in-israel/events/302327956/) (Virtual, Hebrew)
-
-I am sure you have already used many macros, but have you written any?
-
-In this presentation you will learn how to write declarative macros. You will also see many examples from both the standard library and 3rd party Crates to get ideas for when declarative macros might help.
-
-* Language: Hebrew
-* Organizer and Speaker: [Gabor Szabo](https://szabgab.com/)
-* Location: This is a virtual event. We'll publish the Zoom link a few hours before the event.
-
-
-
-### 2024.08.06 [Web development in Rust using Rocket - part 2](https://www.meetup.com/code-mavens/events/301736709/) (English)
-
-This is the second part of the Web development with Rocket series. It is strongly recommended that you watch the first part and even play around a bit with the framework before attending this meeting.
-
-The presentation is going to be about 1 hour long and then we open the floor for discussions about Rocket, web development and Rust in general.
-
-* The meeting will be via Zoom
-* Language: English.
-* Workshop lead: [Gabor Szabo](https://szabgab.com/)
-* Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
-
-* [notes and video](https://rust.code-maven.com/web-development-in-rust-using-rocket-building-a-job-board)
-
 ### 2024.07.28 [Implementing a Neural Network in Rust (Virtual)](https://www.meetup.com/rust-in-israel/events/302271449/)
 
 This the extended (~ 1 hour) version of the presentation Yoray gave at our in-person meeting last month.
