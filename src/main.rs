@@ -107,6 +107,7 @@ fn load_events() -> Vec<Event> {
         event.future = event.date >= today;
         events.push(event);
     }
+    events.sort_by(|a, b| b.date.cmp(&a.date));
     events
 }
 
