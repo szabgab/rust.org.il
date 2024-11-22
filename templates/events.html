@@ -5,11 +5,13 @@
         {{title}}
       </h1>
       <div class="content">
-        <ul>
           {% for event in events %}
-            <li>{{event.date}} {{event.slug}} {{event.title}}</li>
+          <div id="{{event.slug}}">
+            <h2>{{event.date}} {{event.title}}</h2>
+                {{event.body}}
+            <hr>
+          </div>
           {% endfor %}
-        </ul>
       </div>
     </div>
   </section>

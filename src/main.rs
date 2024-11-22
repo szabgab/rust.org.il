@@ -75,7 +75,7 @@ fn load_events() -> Vec<Event> {
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
         let mut event: Event = serde_yaml::from_str(&front_matter).unwrap();
         event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        event.body = body;
+        event.body = markdown2html(&body);
         events.push(event);
     }
     events
@@ -123,4 +123,19 @@ pub fn load_templates() -> Result<Partials, Box<dyn Error>> {
         include_str!("../templates/incl/navigation.html"),
     );
     Ok(partials)
+}
+
+fn markdown2html(content: &str) -> String {
+    markdown::to_html_with_options(
+        content,
+        &markdown::Options {
+            compile: markdown::CompileOptions {
+                allow_dangerous_html: true,
+                //allow_dangerous_protocol: true,
+                ..markdown::CompileOptions::default()
+            },
+            ..markdown::Options::gfm()
+        },
+    )
+    .unwrap()
 }
