@@ -37,13 +37,6 @@ jobs:
           ./code-maven web
           cp -r slides _site/
 
-      - name: Checkout slides
-        uses: actions/checkout@v4
-        with:
-          repository: 'szabgab/slides'
-          path: slides
-
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
