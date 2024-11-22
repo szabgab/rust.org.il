@@ -12,12 +12,29 @@ struct Person {
     home: String,
 }
 
+#[derive(Deserialize, Debug, Serialize)]
+#[allow(dead_code)]
+struct Event {
+    date: String,
+    title: String,
+    online: bool,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
+}
+
+fn get_default_empty_string() -> String {
+    String::new()
+}
+
 fn main() {
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
-    // for person in people {
-    //     println!("{:?}", person);
-    // }
+    let events = load_events();
+    //print!("{:?}", events);
 
     let template = include_str!("../templates/people.html");
     let globals = liquid::object!({
@@ -27,6 +44,15 @@ fn main() {
     let people_path = path.join("people");
     std::fs::create_dir_all(&people_path).unwrap();
     render_page(globals, template, people_path.join("index.html")).unwrap();
+
+    let template = include_str!("../templates/events.html");
+    let globals = liquid::object!({
+        "title": "Events",
+        "events": events,
+    });
+    let events_path = path.join("events");
+    std::fs::create_dir_all(&events_path).unwrap();
+    render_page(globals, template, events_path.join("index.html")).unwrap();
 }
 
 fn load_people() -> Vec<Person> {
@@ -39,6 +65,20 @@ fn load_people() -> Vec<Person> {
         people.push(person);
     }
     people
+}
+
+fn load_events() -> Vec<Event> {
+    let mut events = Vec::new();
+    let paths = std::fs::read_dir("events").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut event: Event = serde_yaml::from_str(&front_matter).unwrap();
+        event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        event.body = body;
+        events.push(event);
+    }
+    events
 }
 
 fn read_md_file_separate_front_matter(path: &PathBuf) -> (String, String) {
