@@ -100,7 +100,8 @@ fn load_events() -> Vec<Event> {
     for path in paths {
         let path = path.unwrap().path();
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut event: Event = serde_yaml::from_str(&front_matter).unwrap();
+        let mut event: Event = serde_yaml::from_str(&front_matter)
+            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
         event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         event.body = markdown2html(&body);
         event.future = event.date >= today;
