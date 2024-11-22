@@ -20,7 +20,7 @@ If you know about more companies, if you know more details about the use of Rust
 
 
 * [Cynerio](https://www.cynerio.com/)
-    * See their [presentations](/meetings).
+    * See their [presentations](/events/).
     * [Daniel Brodie](https://www.linkedin.com/in/danielbrodie/) CTO and Co-Founder at Cynero
 
 * [DriveNets](https://drivenets.com/)
@@ -30,7 +30,7 @@ If you know about more companies, if you know more details about the use of Rust
     * Has a [Rust Engineer](https://www.evinced.com/careers/rust-engineer) position.
 
 * [Final](https://www.final.co.il/)
-    * They hosted the [Rust Meetup](/meetings) in September 2023.
+    * They hosted the [Rust Meetup](/events/) in September 2023.
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
@@ -39,13 +39,13 @@ If you know about more companies, if you know more details about the use of Rust
     * They have several Open Source projects written in Rust. See their [GitHub](https://github.com/intezer) account.
 
 * [MetalBear](https://metalbear.co)
-    * They are developing the [mirrord](https://github.com/metalbear-co/mirrord) project.
+    * They are developing the [mirrored](https://github.com/metalbear-co/mirrord) project.
     * They have many more Open Source projects written in Rust. See [GitHub](https://github.com/metalbear-co).
     * [Eyal Bukchin](https://www.linkedin.com/in/eyal-bukchin/) CTO and Co-Founder
     * [Aviram Hassan](https://www.linkedin.com/in/aviram-hassan/) CEO and Co-Founder
 
 * [Microsoft](https://www.microsoft.com/)
-    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [meetings](/meetings). See the [Video](https://youtu.be/Fi--zxTU-8w).
+    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [events](/events/). See the [Video](https://youtu.be/Fi--zxTU-8w).
 
 * [Spectral](https://spectralops.io/)
     * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
@@ -57,7 +57,7 @@ If you know about more companies, if you know more details about the use of Rust
     * A few Open Source projects on [GitHub](https://github.com/pinecone-io) written in Rust.
 
 * [Redis](https://redis.com/)
-    * See the [presentation](/meetings)
+    * See the [presentation](/events/)
 
 * [StarkWare](https://starkware.co/)
     * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).
