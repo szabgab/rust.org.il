@@ -24,23 +24,17 @@ jobs:
       - name: Checkout site source
         uses: actions/checkout@v4
 
-      - name: Run our code
+      - name: Check our code
         run: |
           cargo fmt --all -- --check
           cargo clippy --all-targets --all-features -- -D warnings
-          cargo run --release
-
-      - name: Download processor
-        run: |
-          wget https://ssg.code-maven.com/code-maven
-          chmod +x code-maven
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Generate pages
         run: |
-          ./code-maven web
+          cargo run --release
           cp -r slides _site/
 
       - name: Upload artifact
