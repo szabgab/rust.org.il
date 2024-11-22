@@ -1,0 +1,16 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{title}}
+      </h1>
+      <div class="content">
+        <ul>
+          {% for person in people %}
+            <li>{{person.name}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}

@@ -1,8 +1,9 @@
+use serde::{Deserialize, Serialize};
+use std::error::Error;
 use std::path::PathBuf;
-use serde::Deserialize;
+pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySource>;
 
-
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Serialize)]
 #[allow(dead_code)]
 struct Person {
     name: String,
@@ -12,10 +13,20 @@ struct Person {
 }
 
 fn main() {
+    let path = std::path::PathBuf::from("_site");
     let people = load_people();
-    for person in people {
-        println!("{:?}", person);
-    }
+    // for person in people {
+    //     println!("{:?}", person);
+    // }
+
+    let template = include_str!("../templates/people.html");
+    let globals = liquid::object!({
+        "title": "People",
+        "people": people,
+    });
+    let people_path = path.join("people");
+    std::fs::create_dir_all(&people_path).unwrap();
+    render_page(globals, template, people_path.join("index.html")).unwrap();
 }
 
 fn load_people() -> Vec<Person> {
@@ -36,4 +47,40 @@ fn read_md_file_separate_front_matter(path: &PathBuf) -> (String, String) {
     let parts = content.split("---").collect::<Vec<_>>();
     assert!(parts.len() == 3, "File {path:?} does not have front matter");
     (parts[1].to_string(), parts[2].to_string())
+}
+
+fn render_page(
+    globals: liquid::Object,
+    template: &str,
+    path: PathBuf,
+) -> Result<(), Box<dyn Error>> {
+    let partials = load_templates()?;
+
+    let template = liquid::ParserBuilder::with_stdlib()
+        .partials(partials)
+        .build()?
+        .parse(template)?;
+
+    let content = template.render(&globals)?;
+
+    std::fs::write(path, content)?;
+
+    Ok(())
+}
+
+pub fn load_templates() -> Result<Partials, Box<dyn Error>> {
+    let mut partials = Partials::empty();
+    partials.add(
+        "templates/incl/header.html",
+        include_str!("../templates/incl/header.html"),
+    );
+    partials.add(
+        "templates/incl/footer.html",
+        include_str!("../templates/incl/footer.html"),
+    );
+    partials.add(
+        "templates/incl/navigation.html",
+        include_str!("../templates/incl/navigation.html"),
+    );
+    Ok(partials)
 }
