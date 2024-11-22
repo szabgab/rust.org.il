@@ -11,7 +11,7 @@ On this web site you should be able to find everything about the [Rust programmi
 ## Upcoming Meetings
 
 * 2024.12.03 [Rust in the Linux Kernel](https://www.meetup.com/abra-rnd-solutions/events/304302596/) (In-person, Hebrew).
-* 2024.12.08 [Rust and JSOON](https://www.meetup.com/rust-tlv/events/304685546/) (Virtual, Hebrew)
+* 2024.12.08 [Rust and JSON](https://www.meetup.com/rust-tlv/events/304685546/) (Virtual, Hebrew)
 
 ## Previous Meetings
 
