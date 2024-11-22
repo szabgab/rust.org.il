@@ -25,8 +25,7 @@ On this web site you should be able to find everything about the [Rust programmi
 
 ## Meetup groups
 
-* The [Rust in Israel](https://www.meetup.com/rust-in-israel/) group has both in-person and virtual events.
-* The [Rust TLV](https://www.meetup.com/rust-tlv/) is now inactive.
+* The [Rust TLV](https://www.meetup.com/rust-tlv/) group has both in-person and virtual events.
 * The [Code Mavens](https://www.meetup.com/code-mavens/) group hosts virtual events in English. Some of the events are about Rust.
 
 ## Mailing list
