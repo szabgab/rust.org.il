@@ -11,8 +11,26 @@
                     <h2>{{presentation.title}}</h2>
                     {{presentation.language}}<br>
                     <ul>
-                        {% for speaker in presentation.speakers %}
-                        <li>{{speaker}}</li>
+                        {% for speaker in presentation.people %}
+                            <li>{{speaker.name}}
+                                {% if speaker.github %}
+                                    <a href="https://github.com/{{speaker.github}}">GitHub</a>
+                                {% endif %}
+                                {% if speaker.linkedin %}
+                                    <a href="{{speaker.linkedin}}">LinkedIn</a>
+                                {% endif %}
+                                {% if speaker.home %}
+                                    <a href="{{speaker.home}}">home</a>
+                                {% endif %}
+
+
+                                {% if speaker.body %}
+                                <div>
+                                    {{speaker.body}}
+                                </div>
+                                    
+                                {% endif %}
+                            </li>
                         {% endfor %}
                     </ul>
  

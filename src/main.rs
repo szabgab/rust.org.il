@@ -20,7 +20,7 @@ struct Page {
     content: String,
 }
 
-#[derive(Deserialize, Debug, Serialize)]
+#[derive(Deserialize, Debug, Serialize, Clone)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
 struct Person {
@@ -42,6 +42,9 @@ struct Presentaton {
 
     #[serde(default = "get_default_empty_vector_of_strings")]
     speakers: Vec<String>,
+
+    #[serde(default = "get_default_empty_vector_of_people")]
+    people: Vec<Person>,
 
     #[serde(default = "get_default_empty_string")]
     slug: String,
@@ -84,6 +87,10 @@ struct Event {
     presentations: Vec<Presentaton>,
 }
 
+fn get_default_empty_vector_of_people() -> Vec<Person> {
+    Vec::new()
+}
+
 fn get_default_empty_vector_of_strings() -> Vec<String> {
     Vec::new()
 }
@@ -105,7 +112,7 @@ fn main() {
 
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
-    let presentations = load_presentations(&people);
+    let presentations = load_presentations(&people.clone());
     let events = load_events();
     let pages = load_pages();
 
@@ -183,14 +190,10 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         let speakers = presentation
             .speakers
             .iter()
-            .map(|speaker| people.get(speaker).unwrap())
+            .map(|speaker| people[speaker].clone())
             .collect::<Vec<_>>();
-        println!("{:?}", speakers);
-
-        // for speaker_file in &presentation.speakers {
-        //     let speaker = people.get(speaker_file).unwrap();
-        //     println!("{} {:?}", speaker_file, speaker);
-        // }
+        //println!("{:?}", speakers);
+        presentation.people = speakers;
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         presentations.insert(path_str, presentation);
