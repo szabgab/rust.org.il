@@ -7,7 +7,7 @@
       <div class="content">
         <ul>
           {% for person in people %}
-            <li>{{person.name}}</li>
+            <li><a href="/people/{{person.slug}}">{{person.name}}</a></li>
           {% endfor %}
         </ul>
       </div>

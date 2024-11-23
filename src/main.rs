@@ -28,6 +28,12 @@ struct Person {
     linkedin: String,
     github: String,
     home: String,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -125,6 +131,20 @@ fn main() {
     std::fs::create_dir_all(&people_path).unwrap();
     render_page(globals, template, people_path.join("index.html")).unwrap();
 
+    let template = include_str!("../templates/person.html");
+    for person in people.values() {
+        let globals = liquid::object!({
+            "title": person.name,
+            "person": person,
+        });
+        render_page(
+            globals,
+            template,
+            people_path.join(format!("{}.html", person.slug)),
+        )
+        .unwrap();
+    }
+
     let template = include_str!("../templates/events.html");
     let globals = liquid::object!({
         "title": "Events",
@@ -206,8 +226,10 @@ fn load_people() -> HashMap<String, Person> {
     let paths = std::fs::read_dir("people").unwrap();
     for path in paths {
         let path = path.unwrap().path();
-        let (front_matter, _body) = read_md_file_separate_front_matter(&path);
-        let person: Person = serde_yaml::from_str(&front_matter).unwrap();
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
+        person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        person.body = markdown2html(&body);
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         people.insert(path_str, person);

@@ -1,0 +1,27 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <div class="content">
+          <h1 class="title">
+            {{title}}
+          </h1>
+             
+            {% if person.github %}
+                <div><a href="https://github.com/{{person.github}}">GitHub</a></div>
+            {% endif %}
+            {% if person.linkedin %}
+                <div><a href="{{person.linkedin}}">LinkedIn</a></div>
+            {% endif %}
+            {% if person.home %}
+                <div><a href="{{person.home}}">home</a></div>
+            {% endif %}
+
+            {% if person.body %}
+              <div>
+                {{person.body}}
+              </div>
+            {% endif %}
+        </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}
