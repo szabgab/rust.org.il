@@ -1,5 +1,6 @@
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::error::Error;
 use std::path::PathBuf;
 
@@ -30,6 +31,26 @@ struct Person {
 }
 
 #[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
+struct Presentaton {
+    title: String,
+
+    length: u8,
+
+    language: Language,
+
+    #[serde(default = "get_default_empty_vector_of_strings")]
+    speakers: Vec<String>,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
 enum Language {
     English,
     Hebrew,
@@ -55,6 +76,19 @@ struct Event {
     future: bool,
 
     language: Language,
+
+    #[serde(default = "get_default_empty_vector_of_strings")]
+    schedule: Vec<String>,
+
+    #[serde(default = "get_default_empty_vector_of_presentations")]
+    presentations: Vec<Presentaton>,
+}
+
+fn get_default_empty_vector_of_strings() -> Vec<String> {
+    Vec::new()
+}
+fn get_default_empty_vector_of_presentations() -> Vec<Presentaton> {
+    Vec::new()
 }
 
 fn get_default_false() -> bool {
@@ -71,6 +105,7 @@ fn main() {
 
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
+    let presentations = load_presentations();
     let events = load_events();
     let pages = load_pages();
 
@@ -91,6 +126,15 @@ fn main() {
     let events_path = path.join("events");
     std::fs::create_dir_all(&events_path).unwrap();
     render_page(globals, template, events_path.join("index.html")).unwrap();
+
+    let template = include_str!("../templates/presentations.html");
+    let globals = liquid::object!({
+        "title": "Presentations",
+        "presentations": presentations.values().collect::<Vec<&Presentaton>>(),
+    });
+    let presentations_path = path.join("presentations");
+    std::fs::create_dir_all(&presentations_path).unwrap();
+    render_page(globals, template, presentations_path.join("index.html")).unwrap();
 
     for page in &pages {
         if page.slug == "index" {
@@ -125,6 +169,22 @@ fn load_pages() -> Vec<Page> {
         pages.push(page);
     }
     pages
+}
+
+fn load_presentations() -> HashMap<String, Presentaton> {
+    let mut presentations = HashMap::new();
+    let paths = std::fs::read_dir("presentations").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut presentation: Presentaton = serde_yaml::from_str(&front_matter).unwrap();
+        presentation.body = markdown2html(&body);
+        presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        presentations.insert(path_str, presentation);
+    }
+    presentations
 }
 
 fn load_people() -> Vec<Person> {

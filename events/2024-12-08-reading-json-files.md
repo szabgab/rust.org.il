@@ -4,6 +4,8 @@ date: 2024.12.08
 online: true
 register: https://www.meetup.com/rust-tlv/events/304685546/
 language: Hebrew
+schedule:
+    - presentations/reading-json-files.md
 ---
 
 In this virtual meeting we are going to see how to read and parse any JSON file into a data structure in Rust.

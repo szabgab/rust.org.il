@@ -1,0 +1,27 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <div class="content">
+          <h1 class="title">
+            {{title}}
+          </h1>
+             
+          {% for presentation in presentations %}
+                <div id="{{presentation.slug}}">
+                    <h2>{{presentation.title}}</h2>
+                    {{presentation.language}}<br>
+                    <ul>
+                        {% for speaker in presentation.speakers %}
+                        <li>{{speaker}}</li>
+                        {% endfor %}
+                    </ul>
+ 
+                    {{presentation.body}}
+                    <hr>
+                </div>
+          {% endfor %}
+
+        </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}
