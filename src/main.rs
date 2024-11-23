@@ -105,7 +105,7 @@ fn main() {
 
     let path = std::path::PathBuf::from("_site");
     let people = load_people();
-    let presentations = load_presentations();
+    let presentations = load_presentations(&people);
     let events = load_events();
     let pages = load_pages();
 
@@ -171,7 +171,7 @@ fn load_pages() -> Vec<Page> {
     pages
 }
 
-fn load_presentations() -> HashMap<String, Presentaton> {
+fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Presentaton> {
     let mut presentations = HashMap::new();
     let paths = std::fs::read_dir("presentations").unwrap();
     for path in paths {
@@ -180,6 +180,17 @@ fn load_presentations() -> HashMap<String, Presentaton> {
         let mut presentation: Presentaton = serde_yaml::from_str(&front_matter).unwrap();
         presentation.body = markdown2html(&body);
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        let speakers = presentation
+            .speakers
+            .iter()
+            .map(|speaker| people.get(speaker).unwrap())
+            .collect::<Vec<_>>();
+        println!("{:?}", speakers);
+
+        // for speaker_file in &presentation.speakers {
+        //     let speaker = people.get(speaker_file).unwrap();
+        //     println!("{} {:?}", speaker_file, speaker);
+        // }
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         presentations.insert(path_str, presentation);
