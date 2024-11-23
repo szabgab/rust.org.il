@@ -112,7 +112,7 @@ fn main() {
     let template = include_str!("../templates/people.html");
     let globals = liquid::object!({
         "title": "People",
-        "people": people,
+        "people": people.values().collect::<Vec<&Person>>(),
     });
     let people_path = path.join("people");
     std::fs::create_dir_all(&people_path).unwrap();
@@ -187,14 +187,16 @@ fn load_presentations() -> HashMap<String, Presentaton> {
     presentations
 }
 
-fn load_people() -> Vec<Person> {
-    let mut people = Vec::new();
+fn load_people() -> HashMap<String, Person> {
+    let mut people = HashMap::new();
     let paths = std::fs::read_dir("people").unwrap();
     for path in paths {
         let path = path.unwrap().path();
         let (front_matter, _body) = read_md_file_separate_front_matter(&path);
         let person: Person = serde_yaml::from_str(&front_matter).unwrap();
-        people.push(person);
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        people.insert(path_str, person);
     }
     people
 }
