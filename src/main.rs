@@ -128,6 +128,10 @@ fn main() {
 
     generate_presentation_pages(presentations, &path);
 
+    generate_markdown_pages(pages, events, path);
+}
+
+fn generate_markdown_pages(pages: Vec<Page>, events: Vec<Event>, path: PathBuf) {
     for page in &pages {
         if page.slug == "index" {
             let template = include_str!("../templates/index.html");
