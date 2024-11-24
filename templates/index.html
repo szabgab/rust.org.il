@@ -13,6 +13,15 @@
                   {{event.language}}<br>
 
                   {{event.body}}
+
+                  <h2>Presentations</h2>
+                  {% for presentation in event.presentations %}
+                      <div>
+                          <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
+                          {{ presentation.body}}
+                      </div>
+                  {% endfor %}
+
                   <a class="button is-primary" href="{{event.register}}">register</a>
                   <hr>
               </div>

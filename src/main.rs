@@ -36,7 +36,7 @@ struct Person {
     body: String,
 }
 
-#[derive(Deserialize, Debug, Serialize)]
+#[derive(Deserialize, Debug, Serialize, Clone)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
 struct Presentaton {
@@ -59,7 +59,7 @@ struct Presentaton {
     body: String,
 }
 
-#[derive(Deserialize, Debug, Serialize)]
+#[derive(Deserialize, Debug, Serialize, Clone)]
 enum Language {
     English,
     Hebrew,
@@ -120,7 +120,7 @@ fn main() {
     let pages = load_pages();
     let people = load_people();
     let presentations = load_presentations(&people.clone());
-    let events = load_events();
+    let events = load_events(&presentations.clone());
 
     generate_people_pages(people, &path);
 
@@ -131,13 +131,19 @@ fn main() {
     generate_markdown_pages(pages, events, path);
 }
 
-fn generate_markdown_pages(pages: Vec<Page>, events: Vec<Event>, path: PathBuf) {
+fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, path: PathBuf) {
+    let mut future_events = events
+        .values()
+        .filter(|event| event.future)
+        .collect::<Vec<&Event>>();
+    future_events.sort_by(|a, b| a.date.cmp(&b.date));
+
     for page in &pages {
         if page.slug == "index" {
             let template = include_str!("../templates/index.html");
             let globals = liquid::object!({
                 "title": page.title,
-                "events": events,
+                "events": future_events,
                 "content": page.content,
             });
             render_page(globals, template, path.join("index.html")).unwrap();
@@ -177,18 +183,20 @@ fn generate_presentation_pages(presentations: HashMap<String, Presentaton>, path
     }
 }
 
-fn generate_event_pages(events: &Vec<Event>, path: &Path) {
+fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
     let template = include_str!("../templates/events.html");
+    let mut values = events.values().collect::<Vec<&Event>>();
+    values.sort_by(|a, b| b.date.cmp(&a.date));
     let globals = liquid::object!({
         "title": "Events",
-        "events": events,
+        "events": values,
     });
     let events_path = path.join("events");
     std::fs::create_dir_all(&events_path).unwrap();
     render_page(globals, template, events_path.join("index.html")).unwrap();
 
     let template = include_str!("../templates/event.html");
-    for event in events {
+    for event in events.values() {
         let globals = liquid::object!({
             "title": event.title,
             "event": event,
@@ -283,11 +291,11 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
     presentations
 }
 
-fn load_events() -> Vec<Event> {
+fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, Event> {
     let utc: DateTime<Utc> = Utc::now();
     let today = utc.format("%Y.%m.%d").to_string();
 
-    let mut events = Vec::new();
+    let mut events = HashMap::new();
     let paths = std::fs::read_dir("events").unwrap();
     for path in paths {
         let path = path.unwrap().path();
@@ -297,9 +305,18 @@ fn load_events() -> Vec<Event> {
         event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         event.body = markdown2html(&body);
         event.future = event.date >= today;
-        events.push(event);
+
+        let presentations = event
+            .schedule
+            .iter()
+            .map(|presentation_slug| presentatons[presentation_slug].clone())
+            .collect::<Vec<_>>();
+        event.presentations = presentations;
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        events.insert(path_str, event);
     }
-    events.sort_by(|a, b| b.date.cmp(&a.date));
+
     events
 }
 
