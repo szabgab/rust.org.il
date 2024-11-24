@@ -164,9 +164,11 @@ fn main() {
 
 fn generate_people_pages(people: HashMap<String, Person>, path: &Path) {
     let template = include_str!("../templates/people.html");
+    let mut values = people.values().collect::<Vec<&Person>>();
+    values.sort_by(|a, b| a.name.cmp(&b.name));
     let globals = liquid::object!({
         "title": "People",
-        "people": people.values().collect::<Vec<&Person>>(),
+        "people": values,
     });
     let people_path = path.join("people");
     std::fs::create_dir_all(&people_path).unwrap();
