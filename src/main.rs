@@ -126,14 +126,7 @@ fn main() {
 
     generate_event_pages(&events, &path);
 
-    let template = include_str!("../templates/presentations.html");
-    let globals = liquid::object!({
-        "title": "Presentations",
-        "presentations": presentations.values().collect::<Vec<&Presentaton>>(),
-    });
-    let presentations_path = path.join("presentations");
-    std::fs::create_dir_all(&presentations_path).unwrap();
-    render_page(globals, template, presentations_path.join("index.html")).unwrap();
+    generate_presentation_pages(presentations, &path);
 
     for page in &pages {
         if page.slug == "index" {
@@ -153,6 +146,17 @@ fn main() {
             render_page(globals, template, path.join(format!("{}.html", page.slug))).unwrap();
         }
     }
+}
+
+fn generate_presentation_pages(presentations: HashMap<String, Presentaton>, path: &Path) {
+    let template = include_str!("../templates/presentations.html");
+    let globals = liquid::object!({
+        "title": "Presentations",
+        "presentations": presentations.values().collect::<Vec<&Presentaton>>(),
+    });
+    let presentations_path = path.join("presentations");
+    std::fs::create_dir_all(&presentations_path).unwrap();
+    render_page(globals, template, presentations_path.join("index.html")).unwrap();
 }
 
 fn generate_event_pages(events: &Vec<Event>, path: &Path) {
