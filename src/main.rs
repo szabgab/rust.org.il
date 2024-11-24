@@ -117,10 +117,10 @@ fn main() {
     // let today = utc.format("%Y.%m.%d");
 
     let path = std::path::PathBuf::from("_site");
+    let pages = load_pages();
     let people = load_people();
     let presentations = load_presentations(&people.clone());
     let events = load_events();
-    let pages = load_pages();
 
     generate_people_pages(people, &path);
 
@@ -244,6 +244,22 @@ fn load_pages() -> Vec<Page> {
     pages
 }
 
+fn load_people() -> HashMap<String, Person> {
+    let mut people = HashMap::new();
+    let paths = std::fs::read_dir("people").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
+        person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        person.body = markdown2html(&body);
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        people.insert(path_str, person);
+    }
+    people
+}
+
 fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Presentaton> {
     let mut presentations = HashMap::new();
     let paths = std::fs::read_dir("presentations").unwrap();
@@ -265,22 +281,6 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         presentations.insert(path_str, presentation);
     }
     presentations
-}
-
-fn load_people() -> HashMap<String, Person> {
-    let mut people = HashMap::new();
-    let paths = std::fs::read_dir("people").unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
-        person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        person.body = markdown2html(&body);
-
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
-        people.insert(path_str, person);
-    }
-    people
 }
 
 fn load_events() -> Vec<Event> {
