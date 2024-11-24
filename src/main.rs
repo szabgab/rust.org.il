@@ -2,7 +2,7 @@ use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::error::Error;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySource>;
 
@@ -122,28 +122,7 @@ fn main() {
     let events = load_events();
     let pages = load_pages();
 
-    let template = include_str!("../templates/people.html");
-    let globals = liquid::object!({
-        "title": "People",
-        "people": people.values().collect::<Vec<&Person>>(),
-    });
-    let people_path = path.join("people");
-    std::fs::create_dir_all(&people_path).unwrap();
-    render_page(globals, template, people_path.join("index.html")).unwrap();
-
-    let template = include_str!("../templates/person.html");
-    for person in people.values() {
-        let globals = liquid::object!({
-            "title": person.name,
-            "person": person,
-        });
-        render_page(
-            globals,
-            template,
-            people_path.join(format!("{}.html", person.slug)),
-        )
-        .unwrap();
-    }
+    generate_people_pages(people, &path);
 
     let template = include_str!("../templates/events.html");
     let globals = liquid::object!({
@@ -180,6 +159,31 @@ fn main() {
             });
             render_page(globals, template, path.join(format!("{}.html", page.slug))).unwrap();
         }
+    }
+}
+
+fn generate_people_pages(people: HashMap<String, Person>, path: &Path) {
+    let template = include_str!("../templates/people.html");
+    let globals = liquid::object!({
+        "title": "People",
+        "people": people.values().collect::<Vec<&Person>>(),
+    });
+    let people_path = path.join("people");
+    std::fs::create_dir_all(&people_path).unwrap();
+    render_page(globals, template, people_path.join("index.html")).unwrap();
+
+    let template = include_str!("../templates/person.html");
+    for person in people.values() {
+        let globals = liquid::object!({
+            "title": person.name,
+            "person": person,
+        });
+        render_page(
+            globals,
+            template,
+            people_path.join(format!("{}.html", person.slug)),
+        )
+        .unwrap();
     }
 }
 
