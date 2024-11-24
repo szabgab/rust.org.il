@@ -6,9 +6,7 @@
             {{title}}
           </h1>
              
-          {% for presentation in presentations %}
             <div id="{{presentation.slug}}">
-                <h2><a href="{{presentation.slug}}">{{presentation.title}}</a></h2>
                 {{presentation.language}}<br>
                 <ul>
                     {% for speaker in presentation.people %}
@@ -37,7 +35,6 @@
                 {{presentation.body}}
                 <hr>
             </div>
-          {% endfor %}
 
         </div>
     </div>

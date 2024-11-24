@@ -157,6 +157,20 @@ fn generate_presentation_pages(presentations: HashMap<String, Presentaton>, path
     let presentations_path = path.join("presentations");
     std::fs::create_dir_all(&presentations_path).unwrap();
     render_page(globals, template, presentations_path.join("index.html")).unwrap();
+
+    let template = include_str!("../templates/presentation.html");
+    for presentation in presentations.values() {
+        let globals = liquid::object!({
+            "title": presentation.title,
+            "presentation": presentation,
+        });
+        render_page(
+            globals,
+            template,
+            presentations_path.join(format!("{}.html", presentation.slug)),
+        )
+        .unwrap();
+    }
 }
 
 fn generate_event_pages(events: &Vec<Event>, path: &Path) {
