@@ -124,14 +124,7 @@ fn main() {
 
     generate_people_pages(people, &path);
 
-    let template = include_str!("../templates/events.html");
-    let globals = liquid::object!({
-        "title": "Events",
-        "events": events,
-    });
-    let events_path = path.join("events");
-    std::fs::create_dir_all(&events_path).unwrap();
-    render_page(globals, template, events_path.join("index.html")).unwrap();
+    generate_event_pages(&events, &path);
 
     let template = include_str!("../templates/presentations.html");
     let globals = liquid::object!({
@@ -160,6 +153,17 @@ fn main() {
             render_page(globals, template, path.join(format!("{}.html", page.slug))).unwrap();
         }
     }
+}
+
+fn generate_event_pages(events: &Vec<Event>, path: &Path) {
+    let template = include_str!("../templates/events.html");
+    let globals = liquid::object!({
+        "title": "Events",
+        "events": events,
+    });
+    let events_path = path.join("events");
+    std::fs::create_dir_all(&events_path).unwrap();
+    render_page(globals, template, events_path.join("index.html")).unwrap();
 }
 
 fn generate_people_pages(people: HashMap<String, Person>, path: &Path) {
