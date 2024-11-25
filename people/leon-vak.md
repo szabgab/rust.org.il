@@ -3,6 +3,7 @@ name: Leon Vak
 linkedin: https://www.linkedin.com/in/leon-vak-24445922/
 github:
 home:
+img: leon-vak.jpeg
 ---
 
 Embedded Division Manager @ abra R&D Solutions
