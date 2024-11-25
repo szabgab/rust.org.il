@@ -11,7 +11,22 @@
             {{event.language}}<br>
 
             {{event.body}}
-            <a class="button is-primary" href="{{event.register}}">register</a>
+            {% if event.future %}
+                <a class="button is-primary" href="{{event.register}}">register</a>
+            {% endif %}
+            
+            {% if event.presentations.size > 0 %}
+            <h2>Presentations</h2>
+                {% for presentation in event.presentations %}
+                    <div>
+                        <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
+                        {{ presentation.body}}
+                    </div>
+                {% endfor %}
+
+                <hr>
+            {% endif %}
+
             <hr>
         </div>
 
