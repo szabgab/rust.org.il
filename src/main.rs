@@ -35,8 +35,7 @@ struct Person {
     #[serde(default = "get_default_empty_string")]
     body: String,
 
-    #[serde(default = "get_default_empty_string")]
-    img: String,
+    img: Option<String>,
 }
 
 #[derive(Deserialize, Debug, Serialize, Clone)]
@@ -283,8 +282,8 @@ fn load_people() -> HashMap<String, Person> {
         let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         person.body = markdown2html(&body);
-        if !person.img.is_empty() {
-            let file = PathBuf::from(format!("img/{}", person.img));
+        if let Some(img) = &person.img {
+            let file = PathBuf::from(format!("img/{}", img));
             if !file.exists() {
                 panic!("File '{file:?}' used in '{path:?}' does not exist");
             }
