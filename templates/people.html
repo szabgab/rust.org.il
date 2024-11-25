@@ -7,7 +7,7 @@
       <div class="content">
         {% for person in people %}
           {% if person.img %}
-            <a  href="/people/{{person.slug}}"><img src="/img/{{person.img}}" width="200px" alt="{{person.name}}"></a>
+            <a  href="/people/{{person.slug}}"><img src="/img/{{person.img}}" width="200px" alt="{{person.name}}" title="{{person.name}}"></a>
           {% endif %}
         {% endfor %}
 
