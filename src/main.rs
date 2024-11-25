@@ -25,9 +25,9 @@ struct Page {
 #[allow(dead_code)]
 struct Person {
     name: String,
-    linkedin: String,
-    github: String,
-    home: String,
+    linkedin: Option<String>,
+    github: Option<String>,
+    home: Option<String>,
 
     #[serde(default = "get_default_empty_string")]
     slug: String,
