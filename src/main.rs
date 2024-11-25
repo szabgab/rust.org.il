@@ -243,7 +243,8 @@ fn load_pages() -> Vec<Page> {
     for path in paths {
         let path = path.unwrap().path();
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut page: Page = serde_yaml::from_str(&front_matter).unwrap();
+        let mut page: Page = serde_yaml::from_str(&front_matter)
+            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
         page.content = markdown2html(&body);
         page.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
 

@@ -4,6 +4,11 @@ date: 2024.09.09
 online: false
 register: https://coralogix.com/rust-coralogix-meetup/
 language: Hebrew
+schedule:
+    - presentations/the-coralogix-journey.md
+    - presentations/simplifying-dependency-management-with-workspaces.md
+    - presentations/exploring-memory-allocators.md
+    - presentations/querying-metrics-in-sub-seconds-on-object-storage.md
 ---
 
 
