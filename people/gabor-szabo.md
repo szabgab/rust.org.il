@@ -3,6 +3,7 @@ name: Gabor Szabo
 linkedin: https://www.linkedin.com/in/szabgab/
 github: szabgab
 home: https://szabgab.com/
+img: gabor-szabo.jpeg
 ---
 
 Gabor is a Rust, Python, and Perl teacher who also loves helping companies improve their development process by introducing Test Automation, TDD, BDD, CI and other techniques.
