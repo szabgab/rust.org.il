@@ -34,6 +34,9 @@ struct Person {
 
     #[serde(default = "get_default_empty_string")]
     body: String,
+
+    #[serde(default = "get_default_empty_string")]
+    img: String,
 }
 
 #[derive(Deserialize, Debug, Serialize, Clone)]
@@ -128,10 +131,28 @@ fn main() {
 
     generate_presentation_pages(presentations, &path);
 
-    generate_markdown_pages(pages, events, path);
+    generate_markdown_pages(pages, events, &path);
+
+    copy_static_files(&path);
 }
 
-fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, path: PathBuf) {
+fn copy_static_files(path: &Path) {
+    for folder in &["img", "slides"] {
+        let src = PathBuf::from(folder);
+        let dest = path.join(folder);
+        std::fs::create_dir_all(&dest).unwrap();
+        for entry in
+            std::fs::read_dir(&src).unwrap_or_else(|err| panic!("Could not read {src:?} {err}"))
+        {
+            let entry = entry.unwrap();
+            let src = entry.path();
+            let dest = dest.join(entry.file_name());
+            std::fs::copy(&src, &dest).unwrap();
+        }
+    }
+}
+
+fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, path: &Path) {
     let mut future_events = events
         .values()
         .filter(|event| event.future)
@@ -262,6 +283,12 @@ fn load_people() -> HashMap<String, Person> {
         let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         person.body = markdown2html(&body);
+        if !person.img.is_empty() {
+            let file = PathBuf::from(format!("img/{}", person.img));
+            if !file.exists() {
+                panic!("File '{file:?}' used in '{path:?}' does not exist");
+            }
+        }
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         people.insert(path_str, person);

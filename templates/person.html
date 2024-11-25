@@ -21,6 +21,11 @@
                 {{person.body}}
               </div>
             {% endif %}
+
+            {% if person.img != "" %}
+              <img src="/img/{{person.img}}" alt="{{person.name}}">
+            {% endif %}
+
         </div>
     </div>
   </section>
