@@ -381,10 +381,22 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
     let paths = std::fs::read_dir("presentations").unwrap();
     for path in paths {
         let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
+
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
         let mut presentation: Presentaton = serde_yaml::from_str(&front_matter).unwrap();
         presentation.body = markdown2html(&body);
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        for speaker in &presentation.speakers {
+            if !people.contains_key(speaker) {
+                panic!("Speaker '{speaker}' in '{path:?}' does not exist");
+            }
+        }
         let speakers = presentation
             .speakers
             .iter()
