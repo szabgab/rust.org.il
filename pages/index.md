@@ -44,7 +44,7 @@ _____
 
 ## Open Source Rust projects by Israelis
 
-* [Projects](/projects)
+* [Projects](/projects/)
 
 ## Rust book in Hebrew
 

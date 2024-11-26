@@ -22,7 +22,7 @@ navbar:
       title: Home
     - path: /events/
       title: Events
-    - path: /projects
+    - path: /projects/
       title: Projects
     - path: /mailing-list
       title: Newsletter

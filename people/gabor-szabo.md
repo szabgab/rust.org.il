@@ -2,6 +2,7 @@
 name: Gabor Szabo
 linkedin: https://www.linkedin.com/in/szabgab/
 github: szabgab
+crates: szabgab
 home: https://szabgab.com/
 img: gabor-szabo.jpeg
 ---

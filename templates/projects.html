@@ -1,0 +1,45 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{title}}
+      </h1>
+      <div class="content">
+        {% for project in projects %}
+          <div>
+            {% if project.home %}
+                <h3><a href="{{project.home}}">{{project.name}}</a></h3>
+            {% else %}
+                <h3>{{project.name}}</h3>
+            {% endif %}
+
+            {% if project.body %}
+              <div>
+                {{project.body}}
+              </div>
+            {% endif %}
+
+            <a href="{{project.source}}">source code</a></h3>
+
+            <ul>
+            {% for person in project.people %}
+              <li><a href="/people/{{person.slug}}">{{person.name}}</a></li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+
+
+        <h2>Our members on Cartes.io</h2>
+        <ul>
+        {% for person in people %}
+            {% if person.crates %}
+              <li><a href="https://crates.io/users/{{person.crates}}">Crates by {{person.name}}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}

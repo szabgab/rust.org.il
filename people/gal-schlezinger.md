@@ -1,9 +1,10 @@
 ---
 name: Gal Schlezinger
 linkedin: https://www.linkedin.com/in/schlez/
-github:
+github: schniz
+crates: schniz
 home:
-img:
+img: gal-schlezinger.jpeg
 ---
 
 

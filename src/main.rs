@@ -9,6 +9,25 @@ pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySo
 #[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
+struct Project {
+    name: String,
+    home: Option<String>,
+    source: String,
+    authors: Vec<String>,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_vector_of_people")]
+    people: Vec<Person>,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
 struct Page {
     title: String,
     description: String,
@@ -27,6 +46,7 @@ struct Person {
     name: String,
     linkedin: Option<String>,
     github: Option<String>,
+    crates: Option<String>,
     home: Option<String>,
 
     #[serde(default = "get_default_empty_string")]
@@ -123,14 +143,17 @@ fn main() {
     let people = load_people();
     let presentations = load_presentations(&people.clone());
     let events = load_events(&presentations.clone());
+    let projects = load_projects(&people.clone());
 
-    generate_people_pages(people, &path);
+    generate_people_pages(&people, &path);
 
     generate_event_pages(&events, &path);
 
     generate_presentation_pages(presentations, &path);
 
     generate_markdown_pages(pages, events, &path);
+
+    generate_project_pages(projects, &people, &path);
 
     copy_static_files(&path);
 }
@@ -149,6 +172,22 @@ fn copy_static_files(path: &Path) {
             std::fs::copy(&src, &dest).unwrap();
         }
     }
+}
+
+fn generate_project_pages(
+    projects: HashMap<String, Project>,
+    people: &HashMap<String, Person>,
+    path: &Path,
+) {
+    let template = include_str!("../templates/projects.html");
+    let globals = liquid::object!({
+        "title": "Open Source Rust Projects developed by Israelis",
+        "projects": projects.values().collect::<Vec<&Project>>(),
+        "people": people.values().collect::<Vec<&Person>>(),
+    });
+    let projects_path = path.join("projects");
+    std::fs::create_dir_all(&projects_path).unwrap();
+    render_page(globals, template, projects_path.join("index.html")).unwrap();
 }
 
 fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, path: &Path) {
@@ -230,7 +269,7 @@ fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
     }
 }
 
-fn generate_people_pages(people: HashMap<String, Person>, path: &Path) {
+fn generate_people_pages(people: &HashMap<String, Person>, path: &Path) {
     let template = include_str!("../templates/people.html");
     let mut values = people.values().collect::<Vec<&Person>>();
     values.sort_by(|a, b| a.name.cmp(&b.name));
@@ -257,11 +296,47 @@ fn generate_people_pages(people: HashMap<String, Person>, path: &Path) {
     }
 }
 
+fn load_projects(people: &HashMap<String, Person>) -> HashMap<String, Project> {
+    let mut projects = HashMap::new();
+    let paths = std::fs::read_dir("projects").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
+
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut project: Project = serde_yaml::from_str(&front_matter)
+            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
+        project.body = markdown2html(&body);
+        project.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        let authors = project
+            .authors
+            .iter()
+            .map(|speaker| people[speaker].clone())
+            .collect::<Vec<_>>();
+        //println!("{:?}", speakers);
+        project.people = authors;
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        projects.insert(path_str, project);
+    }
+
+    projects
+}
+
 fn load_pages() -> Vec<Page> {
     let mut pages = Vec::new();
     let paths = std::fs::read_dir("pages").unwrap();
     for path in paths {
         let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
         let mut page: Page = serde_yaml::from_str(&front_matter)
             .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
@@ -278,6 +353,12 @@ fn load_people() -> HashMap<String, Person> {
     let paths = std::fs::read_dir("people").unwrap();
     for path in paths {
         let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
         let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
