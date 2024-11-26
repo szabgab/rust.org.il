@@ -1,6 +1,6 @@
 ---
 name: Aviram Hassan
-linkedin:
+linkedin: https://www.linkedin.com/in/aviram-hassan/
 github: aviramha
 crates: aviramha
 home:
