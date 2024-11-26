@@ -2,7 +2,7 @@
 title: 
 speakers:
     - 
-length: 35
+length: 0
 language: Hebrew
 ---
 
