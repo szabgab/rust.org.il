@@ -6,3 +6,6 @@ crates: jondot
 home:
 img: dotan-nahum.jpeg
 ---
+
+
+CEO and Co-Founder @ Spectral, a Check Point company and a Rust foundation member
