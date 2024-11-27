@@ -4,5 +4,5 @@ linkedin: https://www.linkedin.com/in/antonweiss/
 github:
 crates:
 home:
-img:
+img: anton-weiss.jpeg
 ---

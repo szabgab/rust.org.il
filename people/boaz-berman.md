@@ -4,5 +4,5 @@ linkedin: https://www.linkedin.com/in/boaz-berman/
 github:
 crates:
 home:
-img:
+img: boaz-berman.jpeg
 ---
