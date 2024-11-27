@@ -1,0 +1,51 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{title}}
+      </h1>
+      <div class="content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>LinkedIn</th>
+                    <th>GitHub</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in people %}
+                <tr>
+                    <td><a href="/people/{{person.slug}}">{{person.name}}</a></td>
+                    <td>
+                        {% if person.img %}
+                            <a  href="/people/{{person.slug}}"><img src="/img/{{person.img}}" width="32px" alt="{{person.name}}" title="{{person.name}}"></a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if person.linkedin %}
+                            <a  href="{{person.linkedin}}">LinkedIn</a>
+                        {% else %}
+                            LikedIn
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {% if person.github %}
+                            <a  href="{{person.github}}">GitHub</a>
+                        {% else %}
+                            LikedIn
+                        {% endif %}
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>      
+        </table>
+
+
+      </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}
