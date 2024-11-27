@@ -6,3 +6,4 @@ home:
 img: uri-shachar.jpeg
 ---
 
+Senior Director at [Redis](https://redis.com/)
