@@ -6,6 +6,8 @@ register: https://www.meetup.com/rust-in-israel/events/302327956/
 language: Hebrew
 ---
 
+cancelled
+
 I am sure you have already used many macros, but have you written any?
 
 In this presentation you will learn how to write declarative macros. You will also see many examples from both the standard library and 3rd party Crates to get ideas for when declarative macros might help.

@@ -6,6 +6,7 @@ register: https://www.meetup.com/code-mavens/events/302391142/
 language: English
 ---
 
+cancelled
 
 The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
 
