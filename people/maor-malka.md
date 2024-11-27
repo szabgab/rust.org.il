@@ -1,6 +1,6 @@
 ---
 name: Maor Malka
-linkedin:
+linkedin: https://www.linkedin.com/in/maor-malka-a46640134/
 github: maor1993
 home:
 img:
