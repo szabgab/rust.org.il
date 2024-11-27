@@ -9,6 +9,7 @@ schedule:
     - presentations/the-three-rs-redis-raft-rust.md
     - presentations/macros-in-rust-unleashing-the-power-of-metaprogramming.md
     - presentations/how-to-use-rust-const-generics.md
+    - presentations/ffi-how-c-and-rust-became-bffs.md
 ---
 
 RustTLV is back to celebrate a new year of events, this time hosted by [BioCatch](https://www.biocatch.com/) with Redis! We'll have great speakers from both companies, on a varied list of topics.
@@ -16,7 +17,6 @@ We're trying a somewhat different format this time, with one conventional talk, 
 
 #### Lightning Talks!
 
-* FFI - how C and Rust became BFFs- [Sharon Rosenfeld](https://www.linkedin.com/in/sharon-rosenfeld-972426b/)
 * [slides of the lightning talks](/slides/redis-lightning-talks-2023-02-20.pdf)
 
 
