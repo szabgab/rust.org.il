@@ -223,15 +223,17 @@ fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, pat
 }
 
 fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Path) {
-    let presentations_in_hebrew = presentations
+    let mut presentations_in_hebrew = presentations
         .values()
         .filter(|presentation| presentation.video_he.is_some())
         .collect::<Vec<&Presentaton>>();
+    presentations_in_hebrew.sort_by_key(|presentation| &presentation.title);
 
-    let presentations_in_english = presentations
+    let mut presentations_in_english = presentations
         .values()
         .filter(|presentation| presentation.video_en.is_some())
         .collect::<Vec<&Presentaton>>();
+    presentations_in_english.sort_by_key(|presentation| &presentation.title);
 
     let template = include_str!("../templates/videos.html");
     let globals = liquid::object!({
@@ -244,9 +246,12 @@ fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Pat
 
 fn generate_presentation_pages(presentations: &HashMap<String, Presentaton>, path: &Path) {
     let template = include_str!("../templates/presentations.html");
+    let mut all_presentations = presentations.values().collect::<Vec<&Presentaton>>();
+    all_presentations.sort_by_key(|presentation| &presentation.title);
+
     let globals = liquid::object!({
         "title": "Presentations",
-        "presentations": presentations.values().collect::<Vec<&Presentaton>>(),
+        "presentations": all_presentations,
     });
     let presentations_path = path.join("presentations");
     std::fs::create_dir_all(&presentations_path).unwrap();
