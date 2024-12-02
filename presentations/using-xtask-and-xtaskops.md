@@ -2,7 +2,7 @@
 title: Using xtask & xtaskops
 speakers:
     - people/dotan-nahum.md
-length: 0
+length: 25
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=kUvCwBgesuw
 ---

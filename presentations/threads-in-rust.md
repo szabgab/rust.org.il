@@ -2,7 +2,7 @@
 title: Threads in Rust
 speakers:
     - people/gabor-szabo.md
-length: 60
+length: 75
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=edhM1vz536A
 ---

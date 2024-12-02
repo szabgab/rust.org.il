@@ -2,7 +2,7 @@
 title: What I learned from learning Rust
 speakers:
     - people/gabor-szabo.md
-length: 0
+length: 30
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=HRhAkSdvGx4
 ---

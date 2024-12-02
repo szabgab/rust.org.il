@@ -2,7 +2,7 @@
 title: Going Low with Rust
 speakers:
     - people/aviram-hassan.md
-length: 0
+length: 30
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=R2bJu-TqhwE
 ---

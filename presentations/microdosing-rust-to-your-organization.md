@@ -2,7 +2,7 @@
 title: Microdosing Rust to your organization
 speakers:
     - people/aviram-hassan.md
-length: 0
+length: 35
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=SvbvadSZFyM
 ---

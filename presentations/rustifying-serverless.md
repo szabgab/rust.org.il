@@ -2,7 +2,7 @@
 title: Rustifying Serverless
 speakers:
     - people/efi-merdler-kravitz.md
-length: 0
+length: 45
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=Luk-nXPaC88
 ---

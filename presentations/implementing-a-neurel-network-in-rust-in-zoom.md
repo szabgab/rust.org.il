@@ -2,7 +2,7 @@
 title: Implementing a Neural Network in Rust
 speakers:
     - people/yoray-herzberg.md
-length: 0
+length: 45
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=QlBbr_srFTQ
 ---

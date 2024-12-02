@@ -2,7 +2,7 @@
 title: Getting started with Rust
 speakers:
     - people/gabor-szabo.md
-length: 0
+length: 90
 language: Hebrew
 video_he: https://www.youtube.com/watch?v=lbp2E-igAC8
 ---
