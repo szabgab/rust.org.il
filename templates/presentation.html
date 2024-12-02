@@ -21,6 +21,7 @@
                                 <a href="{{speaker.home}}">home</a>
                             {% endif %}
 
+                            
 
                             {% if speaker.body %}
                             <div>
@@ -31,7 +32,12 @@
                         </li>
                     {% endfor %}
                 </ul>
-
+                {% if presentation.video_he %}
+                    <div><a href="{{ presentation.video_he }}">video in Hebrew</a></div>
+                {% endif %}
+                {% if presentation.video_en %}
+                    <div><a href="{{ presentation.video_en }}">video in English</a></div>
+                {% endif %}                
                 {{presentation.body}}
                 <hr>
             </div>

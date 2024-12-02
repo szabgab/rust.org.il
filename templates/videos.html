@@ -1,0 +1,30 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <div class="content">
+          <h1 class="title">
+            {{title}}
+          </h1>
+
+          {% if presentations_in_hebrew %}
+            <h2>Presentations in Hebrew</h2>
+            <ul>
+              {% for presentation in presentations_in_hebrew %}
+                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          
+          {% if presentations_in_english %}
+            <h2>Presentations in English</h2>
+            <ul>
+              {% for presentation in presentations_in_english %}
+                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+              {% endfor %}
+            </ul>  
+          {% endif %}
+
+        </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}

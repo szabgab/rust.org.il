@@ -79,6 +79,9 @@ struct Presentaton {
 
     #[serde(default = "get_default_empty_string")]
     body: String,
+
+    video_he: Option<String>,
+    video_en: Option<String>,
 }
 
 #[derive(Deserialize, Debug, Serialize, Clone)]
@@ -149,7 +152,9 @@ fn main() {
 
     generate_event_pages(&events, &path);
 
-    generate_presentation_pages(presentations, &path);
+    generate_presentation_pages(&presentations, &path);
+
+    generate_videos_page(&presentations, &path);
 
     generate_markdown_pages(pages, events, &path);
 
@@ -217,7 +222,27 @@ fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, pat
     }
 }
 
-fn generate_presentation_pages(presentations: HashMap<String, Presentaton>, path: &Path) {
+fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Path) {
+    let presentations_in_hebrew = presentations
+        .values()
+        .filter(|presentation| presentation.video_he.is_some())
+        .collect::<Vec<&Presentaton>>();
+
+    let presentations_in_english = presentations
+        .values()
+        .filter(|presentation| presentation.video_en.is_some())
+        .collect::<Vec<&Presentaton>>();
+
+    let template = include_str!("../templates/videos.html");
+    let globals = liquid::object!({
+        "title": "Videos",
+        "presentations_in_english": presentations_in_english,
+        "presentations_in_hebrew": presentations_in_hebrew,
+    });
+    render_page(globals, template, path.join("videos.html")).unwrap();
+}
+
+fn generate_presentation_pages(presentations: &HashMap<String, Presentaton>, path: &Path) {
     let template = include_str!("../templates/presentations.html");
     let globals = liquid::object!({
         "title": "Presentations",
