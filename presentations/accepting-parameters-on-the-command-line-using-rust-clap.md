@@ -3,7 +3,8 @@ title: Accepting parameters on the command line using Rust Clap
 speakers:
     - people/gabor-szabo.md
 length: 60
-language: Hebrew
+language: English
+video_en: https://www.youtube.com/watch?v=lAKji6VNAIU
 ---
 
 When you start writing a command line application you usually start out with a very limited number of parameters. Maybe just 2 values. In that case using the `std::env::args` is enough.
@@ -19,7 +20,6 @@ If you have any specific use-case in mind, please comment on this event so I mig
 The workshop includes presentations and hands-on work.
 
 * Requirements: Basic familiarity with writing Rust will be enough.
-* Length: up to 2 hours.
 
 * [notes and video](https://rust.code-maven.com/accepting-parameters-on-the-command-line-using-rust-clap)
 

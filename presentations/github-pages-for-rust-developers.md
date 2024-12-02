@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 0
 language: English
+video_en: https://www.youtube.com/watch?v=n1IZ5bjPX90
 ---
 
 In this workshop you will create a web site on GitHub while using Rust. During the workshop I will provide explanation on how to setup Github pages first with plain Markdown and then using Rust. You will then have the opportunity to create your own web site and get help from me with any of the issues you encounter.

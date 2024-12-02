@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 0
 language: English
+video_en: https://www.youtube.com/watch?v=Vf5-DRykoMI
 ---
 
 During this workshop you will learn about various side of contribution to an open source project. We will cover both the technical and the human aspects of contributing to an open source project. We will discuss both the technical and cultural differences between working in a company and contributing to an open source project.

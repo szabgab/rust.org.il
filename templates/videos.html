@@ -10,7 +10,12 @@
             <h2>Presentations in Hebrew</h2>
             <ul>
               {% for presentation in presentations_in_hebrew %}
-                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+                <li>
+                    <a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> | <a href="{{presentation.video_he}}">video</a> |
+                    {% for speaker in presentation.people %}
+                        <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
+                    {% endfor %}
+                </li>
               {% endfor %}
             </ul>
           {% endif %}
@@ -19,7 +24,11 @@
             <h2>Presentations in English</h2>
             <ul>
               {% for presentation in presentations_in_english %}
-                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> | <a href="{{presentation.video_he}}">video</a> |
+                    {% for speaker in presentation.people %}
+                        <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
+                    {% endfor %}
+                </li>
               {% endfor %}
             </ul>  
           {% endif %}

@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 60
 language: English
+video_en: https://www.youtube.com/watch?v=2fGWoo6ZXrA
 ---
 
 When you need to create many well-designed reports with different data, or when you create web pages where the content changes from one-page to another or from one visitor to another, it is common to use a template system.

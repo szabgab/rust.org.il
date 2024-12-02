@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 60
 language: Hebrew
+video_he: https://www.youtube.com/watch?v=WiiMj60RXkE
 ---
 
 Overview and current status of [Rust Digger](https://rust-digger.code-maven.com/)

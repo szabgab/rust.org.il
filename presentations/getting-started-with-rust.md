@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 0
 language: Hebrew
+video_he: https://www.youtube.com/watch?v=lbp2E-igAC8
 ---
 
 In this presentation we get start programming in Rust.
@@ -12,6 +13,5 @@ We assume no knowledge of Rust, we start from zero and we'll see where we can ge
 There presentation will take about 1 hour, maybe 1 and a half hour.
 After the presentation you'll have the opportunity to practice with the help of Gabor or just discuss any related topics.
 
-* [video](https://youtu.be/lbp2E-igAC8)
 
 
