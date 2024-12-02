@@ -24,7 +24,7 @@
             <h2>Presentations in English</h2>
             <ul>
               {% for presentation in presentations_in_english %}
-                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> | <a href="{{presentation.video_he}}">video</a> |
+                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> | <a href="{{presentation.video_en}}">video</a> |
                     {% for speaker in presentation.people %}
                         <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
                     {% endfor %}
