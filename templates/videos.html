@@ -6,8 +6,8 @@
             {{title}}
           </h1>
 
-          {% if presentations_in_hebrew %}
-            <h2>Presentations in Hebrew</h2>
+          {% if presentations_in_hebrew.size > 0 %}
+            <h2>Presentations with videos in Hebrew</h2>
             <ul>
               {% for presentation in presentations_in_hebrew %}
                 <li>
@@ -20,8 +20,8 @@
             </ul>
           {% endif %}
           
-          {% if presentations_in_english %}
-            <h2>Presentations in English</h2>
+          {% if presentations_in_english.size > 0 %}
+            <h2>Presentations with videos in English</h2>
             <ul>
               {% for presentation in presentations_in_english %}
                 <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> | <a href="{{presentation.video_en}}">video</a> |

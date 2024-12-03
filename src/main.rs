@@ -148,7 +148,7 @@ fn main() {
     let events = load_events(&presentations.clone());
     let projects = load_projects(&people.clone());
 
-    generate_people_pages(&people, &presentations, &path);
+    generate_people_pages(&people, &presentations, &projects, &path);
 
     generate_event_pages(&events, &path);
 
@@ -313,6 +313,7 @@ fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
 fn generate_people_pages(
     people: &HashMap<String, Person>,
     presentations: &HashMap<String, Presentaton>,
+    projects: &HashMap<String, Project>,
     path: &Path,
 ) {
     let template = include_str!("../templates/people.html");
@@ -348,10 +349,17 @@ fn generate_people_pages(
             .collect::<Vec<&Presentaton>>();
         presentations_by_this_person.sort_by_key(|presentation| &presentation.title);
 
+        let mut projects_by_this_person = projects
+            .values()
+            .filter(|project| project.authors.contains(&filename))
+            .collect::<Vec<&Project>>();
+        projects_by_this_person.sort_by_key(|project| &project.name);
+
         let globals = liquid::object!({
             "title": person.name,
             "person": person,
             "presentations": presentations_by_this_person,
+            "projects": projects_by_this_person,
         });
         render_page(
             globals,

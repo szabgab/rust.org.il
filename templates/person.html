@@ -26,12 +26,35 @@
               <img src="/img/{{person.img}}" width="200px" alt="{{person.name}}" title="{{person.name}}">
             {% endif %}
 
-            <h2>Presentations</h2>
-            <ul>
-              {% for presentation in presentations %}
-                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
-              {% endfor %}
-            </ul>
+            {% if presentations.size > 0 %}
+              <h2>Presentations</h2>
+              <ul>
+                {% for presentation in presentations %}
+                  <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% if projects.size > 0 %}
+              <h2>Projects</h2>
+              <ul>
+                {% for project in projects %}
+                  {% if project.home %}
+                    <a href="{{project.home}}">{{project.name}}</a>
+                  {% else %}
+                    {{project.name}}
+                  {% endif %}
+
+                  {% if project.source %}
+                    <a href="{{project.source}}">source</a>
+                  {% endif %}
+
+                  <div>
+                    {{project.body}}
+                  </div>
+                {% endfor %}
+              </ul>
+            {% endif %}
 
         </div>
     </div>
