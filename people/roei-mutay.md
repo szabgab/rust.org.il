@@ -4,7 +4,7 @@ linkedin: https://www.linkedin.com/in/roei-mutay-bb3743200/
 github:
 crates:
 home:
-img:
+img: roei-mutay.jpeg
 ---
 
 Engineering Manager @ Pinecone

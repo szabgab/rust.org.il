@@ -1,8 +1,8 @@
 ---
 name: Yoav Yanilov
-linkedin: https://www.linkedin.com/in/yoav-yanilov/
+linkedin: https://www.linkedin.com/in/yanilov/
 github:
 crates:
 home:
-img:
+img: yoav-yanilov.jpeg
 ---

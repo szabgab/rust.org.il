@@ -1,6 +1,6 @@
 ---
 name: Roman Zeyde
-linkedin:
+linkedin: https://www.linkedin.com/in/roman-zeyde/
 github:
 crates:
 home: https://romanzey.de/

@@ -4,5 +4,5 @@ linkedin: https://www.linkedin.com/in/rotemyaari/
 github:
 crates:
 home:
-img:
+img: rotem-yaari.jpeg
 ---

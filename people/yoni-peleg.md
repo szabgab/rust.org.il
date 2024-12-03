@@ -4,5 +4,5 @@ linkedin: https://www.linkedin.com/in/yoni-peleg/
 github:
 crates:
 home:
-img:
+img: yoni-peleg.jpeg
 ---
