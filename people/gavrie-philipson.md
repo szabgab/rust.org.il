@@ -4,5 +4,5 @@ linkedin: https://www.linkedin.com/in/gavrie/
 github:
 crates:
 home:
-img:
+img: gavrie-philipson.jpeg
 ---

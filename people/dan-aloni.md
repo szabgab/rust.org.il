@@ -4,7 +4,7 @@ linkedin: https://www.linkedin.com/in/aloni/
 github:
 crates:
 home: https://blog.aloni.org/
-img:
+img: dan-aloni.jpeg
 ---
 
 

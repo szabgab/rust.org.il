@@ -4,7 +4,7 @@ linkedin: https://www.linkedin.com/in/danielbrodie/
 github:
 crates:
 home:
-img:
+img: daniel-brodie.jpeg
 ---
 
 CTO  & Co-Founder at [Cynerio](https://www.cynerio.com/):
