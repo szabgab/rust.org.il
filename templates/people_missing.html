@@ -12,6 +12,7 @@
                     <th>Image</th>
                     <th>LinkedIn</th>
                     <th>GitHub</th>
+                    <th>Crates</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,9 +34,17 @@
 
                     <td>
                         {% if person.github %}
-                            <a  href="{{person.github}}">GitHub</a>
+                            <a  href="https://github.com/{{person.github}}">GitHub</a>
                         {% else %}
-                            GitHub
+                            no GitHub
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {% if person.crates %}
+                            <a  href="https://crates.io/users/{{person.crates}}">Crates</a>
+                        {% else %}
+                            no crates
                         {% endif %}
                     </td>
 
