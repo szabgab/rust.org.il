@@ -70,6 +70,14 @@ If you know about more companies, if you know more details about the use of Rust
 * [Palo Alto Networks](https://www.paloaltonetworks.com/)
     * [GitHub](https://github.com/PaloAltoNetworks)
 
+* [Tabnine](https://www.tabnine.com/)
+    * Presentation: [Enum variants](/presentations/enum-variants)
+
+* [BioCatch](https://www.biocatch.com/)
+    * Presentation: [Microdosing Rust to your organization](/presentations/microdosing-rust-to-your-organization)
+
+
+
 ## TODO
 
 * If the companies have open source projects in Rust, link to them.
