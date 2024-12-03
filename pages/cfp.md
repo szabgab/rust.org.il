@@ -1,5 +1,6 @@
 ---
 title: Rust in Israel - offer you presentation "Call for proposal"
+description: The Israeli community of people programming in Rust - Call for presentation proposals
 ---
 
 ## Regular talks (10-40 min)
