@@ -9,7 +9,13 @@
         {% for event in events %}
           {% if event.future %}
               <div id="{{event.slug}}">
-                  <h2><a href="/events/{{event.slug}}">{{event.date}} {{event.title}}</a></h2>
+                  <h2><a href="/events/{{event.slug}}">{{event.date}} {{event.title}}</a>
+                    {% if event.online %}
+                      (virtual)
+                    {% else %}
+                      (in-person)
+                    {% endif %}
+                  </h2>
                   <ul>
                   {% for presentation in event.presentations %}
                       <li>
