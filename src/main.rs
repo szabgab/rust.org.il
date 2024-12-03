@@ -148,7 +148,7 @@ fn main() {
     let events = load_events(&presentations.clone());
     let projects = load_projects(&people.clone());
 
-    generate_people_pages(&people, &path);
+    generate_people_pages(&people, &presentations, &path);
 
     generate_event_pages(&events, &path);
 
@@ -299,7 +299,11 @@ fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
     }
 }
 
-fn generate_people_pages(people: &HashMap<String, Person>, path: &Path) {
+fn generate_people_pages(
+    people: &HashMap<String, Person>,
+    presentations: &HashMap<String, Presentaton>,
+    path: &Path,
+) {
     let template = include_str!("../templates/people.html");
     let mut values = people.values().collect::<Vec<&Person>>();
     values.sort_by(|a, b| a.name.cmp(&b.name));
@@ -323,10 +327,20 @@ fn generate_people_pages(people: &HashMap<String, Person>, path: &Path) {
     render_page(globals, template, people_path.join("missing.html")).unwrap();
 
     let template = include_str!("../templates/person.html");
+
     for person in people.values() {
+        let filename = format!("people/{}.md", person.slug);
+
+        let mut presentations_by_this_person = presentations
+            .values()
+            .filter(|presentation| presentation.speakers.contains(&filename))
+            .collect::<Vec<&Presentaton>>();
+        presentations_by_this_person.sort_by_key(|presentation| &presentation.title);
+
         let globals = liquid::object!({
             "title": person.name,
             "person": person,
+            "presentations": presentations_by_this_person,
         });
         render_page(
             globals,

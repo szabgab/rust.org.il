@@ -26,6 +26,13 @@
               <img src="/img/{{person.img}}" width="200px" alt="{{person.name}}" title="{{person.name}}">
             {% endif %}
 
+            <h2>Presentations</h2>
+            <ul>
+              {% for presentation in presentations %}
+                <li><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a></li>
+              {% endfor %}
+            </ul>
+
         </div>
     </div>
   </section>
