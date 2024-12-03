@@ -35,6 +35,12 @@
               </ul>
             {% endif %}
 
+            {% if person.crates %}
+            <h2>Crates</h2>
+            <div><a href="https://crates.io/crates/person.crates">crates</a></div>
+            {% endif %}
+
+
             {% if projects.size > 0 %}
               <h2>Projects</h2>
               <ul>
