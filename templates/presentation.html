@@ -3,11 +3,21 @@
     <div class="container">
       <div class="content">
           <h1 class="title">
-            {{title}}
+            {{title}} ({{presentation.language}})
           </h1>
-             
+          <div>
+            Presented at <a href="/events/{{event.slug}}">{{event.title}}</a> on {{event.date}}
+          </div>
+          
+
             <div id="{{presentation.slug}}">
-                {{presentation.language}}<br>
+                {% if presentation.video_en %}
+                    <a href="{{presentation.video_en}}">video</a>
+                {% endif %}
+                {% if presentation.video_he %}
+                    <a href="{{presentation.video_he}}">video</a>
+                {% endif %}
+
                 <ul>
                     {% for speaker in presentation.people %}
                         <li><a href="/people/{{speaker.slug}}">{{speaker.name}}</a>

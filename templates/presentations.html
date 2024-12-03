@@ -8,8 +8,15 @@
              
           {% for presentation in presentations %}
             <div id="{{presentation.slug}}">
-                <h2><a href="{{presentation.slug}}">{{presentation.title}}</a></h2>
-                {{presentation.language}}<br>
+                <h2><a href="{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})
+                  {% if presentation.video_en %}
+                      <a href="{{presentation.video_en}}">video</a>
+                  {% endif %}
+                  {% if presentation.video_he %}
+                      <a href="{{presentation.video_he}}">video</a>
+                  {% endif %}
+                </h2>
+
                 <ul>
                     {% for speaker in presentation.people %}
                         <li><a href="/people/{{speaker.slug}}">{{speaker.name}}</a>

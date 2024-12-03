@@ -152,7 +152,7 @@ fn main() {
 
     generate_event_pages(&events, &path);
 
-    generate_presentation_pages(&presentations, &path);
+    generate_presentation_pages(&presentations, &events, &path);
 
     generate_videos_page(&presentations, &path);
 
@@ -244,7 +244,11 @@ fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Pat
     render_page(globals, template, path.join("videos.html")).unwrap();
 }
 
-fn generate_presentation_pages(presentations: &HashMap<String, Presentaton>, path: &Path) {
+fn generate_presentation_pages(
+    presentations: &HashMap<String, Presentaton>,
+    events: &HashMap<String, Event>,
+    path: &Path,
+) {
     let template = include_str!("../templates/presentations.html");
     let mut all_presentations = presentations.values().collect::<Vec<&Presentaton>>();
     all_presentations.sort_by_key(|presentation| &presentation.title);
@@ -259,9 +263,16 @@ fn generate_presentation_pages(presentations: &HashMap<String, Presentaton>, pat
 
     let template = include_str!("../templates/presentation.html");
     for presentation in presentations.values() {
+        let filename = format!("presentations/{}.md", presentation.slug);
+        let event = events
+            .values()
+            .find(|event| event.schedule.contains(&filename))
+            .unwrap();
+
         let globals = liquid::object!({
             "title": presentation.title,
             "presentation": presentation,
+            "event": event,
         });
         render_page(
             globals,
