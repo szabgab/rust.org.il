@@ -485,6 +485,13 @@ fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, E
     let paths = std::fs::read_dir("events").unwrap();
     for path in paths {
         let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
+
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
         let mut event: Event = serde_yaml::from_str(&front_matter)
             .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));

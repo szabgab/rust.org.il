@@ -3,6 +3,6 @@ title:
 speakers:
     - 
 length: 0
-language: Hebrew
+language: Hebrew English
 ---
 
