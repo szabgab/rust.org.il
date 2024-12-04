@@ -4,11 +4,7 @@ description: The Israeli community of people programming in Rust
 ---
 
 
-On this web site you should be able to find everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
-
-## Upcoming Events
-
-* See all the [events](/events/).
+Everything about the [Rust programming language](https://www.rust-lang.org/) in Israel.
 
 ## Meetup groups
 
@@ -41,10 +37,6 @@ On this web site you should be able to find everything about the [Rust programmi
 
 
 _____
-
-## Open Source Rust projects by Israelis
-
-* [Projects](/projects/)
 
 ## Rust book in Hebrew
 
