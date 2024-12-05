@@ -5,6 +5,12 @@
           <h1 class="title">
             {{title}} ({{presentation.language}})
           </h1>
+          {% if presentation.length == 0 %}
+            Length: unknown
+          {% else %}
+            Length: {{presentation.length}}
+          {% endif %}
+
           <div>
             Presented at <a href="/events/{{event.slug}}">{{event.title}}</a> on {{event.date}}
           </div>
