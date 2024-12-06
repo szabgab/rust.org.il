@@ -14,7 +14,6 @@
           <div>
             Presented at <a href="/events/{{event.slug}}">{{event.title}}</a> on {{event.date}}
           </div>
-          
 
             <div id="{{presentation.slug}}">
                 {% if presentation.video_en %}
@@ -37,13 +36,11 @@
                                 <a href="{{speaker.home}}">home</a>
                             {% endif %}
 
-                            
 
                             {% if speaker.body %}
                             <div>
                                 {{speaker.body}}
                             </div>
-                                
                             {% endif %}
                         </li>
                     {% endfor %}
@@ -53,7 +50,7 @@
                 {% endif %}
                 {% if presentation.video_en %}
                     <div><a href="{{ presentation.video_en }}">video in English</a></div>
-                {% endif %}                
+                {% endif %}
                 {{presentation.body}}
                 <hr>
             </div>
