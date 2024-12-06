@@ -16,7 +16,7 @@ I will show an example project, done on a custom STM32 microcontroller board wit
 
 Link to [Repo of stamrust](https://github.com/maor1993/stamrust/)
 
-"Are we embedded yet" slides in [pptx](slides/are-we-embedded-yet.pptx) and converted to [pdf](slides/are-we-embedded-yet.pdf).
+"Are we embedded yet" slides in [pptx](/slides/are-we-embedded-yet.pptx) and converted to [pdf](/slides/are-we-embedded-yet.pdf).
 
 About Maor:
 
