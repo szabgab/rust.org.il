@@ -4,6 +4,7 @@ speakers:
     - people/tomer-cohen.md
 length: 0
 language: Hebrew
+video_he: https://www.youtube.com/watch?v=Fi--zxTU-8w
 ---
 
 * View the [blog of Tomer Cohen](https://www.tomercode.com/)
@@ -14,8 +15,5 @@ root causes of crashes, we navigated through the Rust ecosystem to establish a r
 
 Utilizing some of the most common error handling crates, I will share insights into the evolution
 of our error-handling practices, discussing the pitfalls encountered, and lessons learned, that led to a more resilient and maintainable codebase.
-
-* [Video](https://youtu.be/Fi--zxTU-8w)
-
 
 
