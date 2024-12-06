@@ -26,15 +26,6 @@
                 <ul>
                     {% for speaker in presentation.people %}
                         <li><a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
-                            {% if speaker.github %}
-                                <a href="https://github.com/{{speaker.github}}">GitHub</a>
-                            {% endif %}
-                            {% if speaker.linkedin %}
-                                <a href="{{speaker.linkedin}}">LinkedIn</a>
-                            {% endif %}
-                            {% if speaker.home %}
-                                <a href="{{speaker.home}}">home</a>
-                            {% endif %}
 
 
                             {% if speaker.body %}
