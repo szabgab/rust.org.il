@@ -7,7 +7,13 @@ Run `cargo run` to generate the web site in the `_site` folder.
 
 ## See the site locally
 
-Install [Rustatic](https://rustatic.code-maven.com/) run `rustatic --nice --indexfile index.html --path _site/` and visit `http://localhost:5000/`
+Install [Rustatic](https://rustatic.code-maven.com/) run
+
+```
+rustatic --nice --indexfile index.html --path _site/
+```
+
+then visit `http://localhost:5000/`
 
 ## Contribute
 
