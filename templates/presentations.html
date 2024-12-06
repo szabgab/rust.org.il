@@ -2,10 +2,8 @@
   <section class="section">
     <div class="container">
       <div class="content">
-          <h1 class="title">
-            {{title}}
-          </h1>
-             
+          <h1 class="title">{{title}}</h1>
+
           {% for presentation in presentations %}
             <div id="{{presentation.slug}}">
                 <h2><a href="{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})
@@ -23,19 +21,11 @@
                             {% if speaker.github %}
                                 <a href="https://github.com/{{speaker.github}}">GitHub</a>
                             {% endif %}
-                            {% if speaker.linkedin %}
-                                <a href="{{speaker.linkedin}}">LinkedIn</a>
-                            {% endif %}
-                            {% if speaker.home %}
-                                <a href="{{speaker.home}}">home</a>
-                            {% endif %}
-
 
                             {% if speaker.body %}
                             <div>
                                 {{speaker.body}}
                             </div>
-                                
                             {% endif %}
                         </li>
                     {% endfor %}
