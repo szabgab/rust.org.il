@@ -18,12 +18,12 @@ We at [Rust TLV](/) like to go to old and new places with our meetings. For an i
 
 ## Refreshment
 
-* Pizza or sandwitches or some more interesting snacks. Preferably Kosher with some vegan and some gluten-free options.
+* Pizza or sandwiches or some more interesting snacks. Preferably Kosher with some vegan and some gluten-free options.
 * Beer and soft drinks including plain water.
 * Optionally fruits.
 * Optionally sweets.
 * Optionally snacks (Bamba, Bissli, Tapuchips, Snyder's etc.)
-* Think also about the people who prefer to eat healhy.
+* Think also about the people who prefer to eat healthy.
 
 How much food? We never know how many people will arrive, but our experience shows that it is between 25-40% of the registered people.
 
