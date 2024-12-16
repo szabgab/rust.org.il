@@ -23,8 +23,28 @@ In order to propose a presentation for, please open an issue [in our repo](https
 
 ## Lightning talks (up to 5 min)
 
-In addition to the scheduled presentatons we also have "lightning talks". These are short, up to 5 min long presentations.
+In addition to the scheduled presentations we also have "lightning talks". These are short, up to 5 min long presentations.
 Sometimes given without any slides. We don't schedule them up-front. If you show up at our meeting and talk to the
 organizer you might get the chance to give your talk. Mostly depending on the available time.
+
+## Ideas for topics
+
+The following are some ideas for topic for presentations, even series of presentations.
+
+* How to write embedded software in Rust?
+* How to write a web application using Actix/Axum/.../Loco/.../Rocket/... (pick any framework)?
+* How to write web front-end code in Rust? (WASM - Web Assembly)
+* Introduction to crypto currency (from the technical and especially Rust point of view).
+* Introduction to Block chain (via Rust).
+* Writing a TUI.
+* Writing a desktop application. (GUI)
+* Accessing SQLite/MySQL/PostgreSQL/... Other relational dbs in Rust.
+* Using an ORM in Rust.
+* Accessing Redis/MongoDB etc.
+* How to avoid data copying in Rust. How to find places in your code where data is copied unnecessarily?
+* Introduction to parallel programming in Rust.
+* How to use Tokio?
+* How to improve the speed of a Python / PHP / Java application using Rust?
+* ...
 
 
