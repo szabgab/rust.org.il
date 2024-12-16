@@ -36,7 +36,7 @@ The following are some ideas for topic for presentations, even series of present
 * How to write web front-end code in Rust? (WASM - Web Assembly)
 * Introduction to crypto currency (from the technical and especially Rust point of view).
 * Introduction to Block chain (via Rust).
-* Writing a TUI.
+* Writing a TUI (Ratatui).
 * Writing a desktop application. (GUI)
 * Accessing SQLite/MySQL/PostgreSQL/... Other relational dbs in Rust.
 * Using an ORM in Rust.
