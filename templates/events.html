@@ -9,8 +9,8 @@
           {% for event in events %}
             {% if event.future %}
                 <div id="{{event.slug}}">
-                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a></h2>
-                    {{event.language}}<br>
+                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
+                    <br>
 
                     {{event.body}}
                     <a class="button is-primary" href="{{event.register}}">register</a>
@@ -27,7 +27,7 @@
           {% for event in events %}
             {% unless event.future %}
                 <div id="{{event.slug}}">
-                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a></h2>
+                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
                     {{event.language}}<br>
 
                     {{event.body}}
