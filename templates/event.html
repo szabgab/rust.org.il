@@ -31,6 +31,9 @@
                     {% for speaker in presentation.people %}
                       <div>
                         <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
+                        {% if speaker.img %}
+                        <img src="/img/{{speaker.img}}" alt="{{speaker.name}}" title="{{speaker.name}}">
+                        {% endif %}
                       </div>
                     {% endfor %}
                   </div>
