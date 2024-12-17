@@ -5,21 +5,27 @@
           <h1 class="title">
             {{title}}
           </h1>
-             
+
         <div id="{{event.slug}}">
           <h2>{{event.date}} {{event.title}}</h2>
           {% if event.future %}
           <a class="button is-primary" href="{{event.register}}">register</a>
           {% endif %}
-  
+
           {{event.body}}
-          
+
           {% if event.presentations.size > 0 %}
             <h2>Presentations</h2>
               {% for presentation in event.presentations %}
                 <div>
                     <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
+                    <div>
+                    Length: {{presentation.length}} min
+                    </div>
+
+                    <div>
                     {{ presentation.body}}
+                    </div>
 
                     <h4>Speakers</h4>
                     {% for speaker in presentation.people %}
