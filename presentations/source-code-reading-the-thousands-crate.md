@@ -4,6 +4,7 @@ speakers:
     - people/gabor-szabo.md
 length: 60
 language: English
+video_en: https://www.youtube.com/watch?v=ITTj7ByNStE
 ---
 
 The [thousands](https://crates.io/crates/thousands) crate is a small crate that will help "commafy" a number. That is, put commas between triplets of digits to make the number more readable. So it will convert 1234567 to 1,234,567.
