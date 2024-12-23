@@ -4,6 +4,7 @@ speakers:
     - people/maor-malka.md
 length: 40
 language: Hebrew
+video_he: https://www.youtube.com/watch?v=hgOfR8iuKjM
 ---
 
 Given Rust's destiny to become the go-to replacement for C, a clear target for such a change would be the world of embedded microcontrollers.
