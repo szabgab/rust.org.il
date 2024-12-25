@@ -29,6 +29,8 @@ description: Learning Rust
 * [Rust on Exercism](https://exercism.org/tracks/rust)
 * [Rust Exercises by Mainmatter](https://rust-exercises.com/)
 
+* [Rust Roadmap](https://roadmap.sh/rust)
+
 
 ## Discussion groups
 
