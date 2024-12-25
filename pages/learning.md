@@ -15,6 +15,21 @@ description: Learning Rust
 * There are several partial [Rust video courses in Hebrew](https://he.code-maven.com/rust).
 * Also the presentation [What I learned From Learning Rust](https://www.youtube.com/watch?v=HRhAkSdvGx4).
 
+## Learning materials in English
+
+* [The official Rust material](https://www.rust-lang.org/learn)
+    * [The Rust Programming Language](https://doc.rust-lang.org/stable/book/) (aka. The Rust Book)
+    * [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
+    * [Rustlings](https://github.com/rust-lang/rustlings/)
+* [Rust Maven](https://rust.code-maven.com/)
+* [Rust Maven slides](https://rust.code-maven.com/slides/rust/)
+
+* [List of Rust books](https://rust.code-maven.com/slides/rust/rust-books.html)
+* [Free Rust ebooks for Amazon Kindle](https://rust-ebooks.code-maven.com/)
+* [Rust on Exercism](https://exercism.org/tracks/rust)
+* [Rust Exercises by Mainmatter](https://rust-exercises.com/)
+
+
 ## Discussion groups
 
 On our [front page](/) you'll find several channels to discuss Rust in Hebrew.
