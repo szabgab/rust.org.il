@@ -15,3 +15,5 @@ Draft Agenda:
 * Architectural concerns ("Who is driving the linker?")
 * Time permitting: the bigger ecosystem - [autocxx](https://github.com/google/autocxx), [cxx-qt](https://github.com/KDAB/cxx-qt), [Corrosion](https://corrosion-rs.github.io/corrosion/).
 
+[slides](/slides/bridging-rust-and-cpp-with-cxx.pdf)
+
