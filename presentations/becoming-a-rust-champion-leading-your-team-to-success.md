@@ -2,7 +2,7 @@
 title: "Becoming a Rust Champion: Leading Your Team to Success"
 speakers:
     - people/yoni-peleg.md
-length: 30
+length: 40
 language: Hebrew
 ---
 
