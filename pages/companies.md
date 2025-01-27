@@ -84,3 +84,8 @@ If you know about more companies, if you know more details about the use of Rust
 * Add more details explaining the type of applications each one writes in Rust.
 * Link to the presentation given by employees of each company.
 * Add contact info. (e.g. a community member)
+
+## Other
+
+* [42 Companies using Rust in production](https://kerkour.com/rust-in-production-2021) from April 8, 2021.
+
