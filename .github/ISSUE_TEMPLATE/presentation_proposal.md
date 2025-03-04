@@ -16,7 +16,7 @@ Title: (add this to the title of the issue as well)
 
 ## Length:
 
-(We prefer presentations that are 20-40 minutes long)
+(Please give the minutes you need so we can schedule properly. We prefer presentations that are 20-40 minutes long)
 
 ## Language:
 
@@ -24,7 +24,7 @@ Hebrew / English (we would prefer presentations given in Hebrew, but if you are 
 
 ## On-line or in-person?
 
-(Would you prefer to give your presentation on-line where we can record and publish or off-line where you can get face-to-face with the audience? We would prefer in-person presentations that we might later repeate on-line as well.)
+(Would you prefer to give your presentation on-line where we can record and publish or off-line where you can get face-to-face with the audience? We would prefer in-person presentations that we might later repeat on-line as well.)
 
 ## Date?
 
