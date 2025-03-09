@@ -5,7 +5,7 @@
       <div class="content">
 
         <h2 class="title">Future Events</h2>
-           
+
         {% for event in events %}
           {% if event.future %}
               <div id="{{event.slug}}">
@@ -32,28 +32,6 @@
                   </ul>
                   <a class="button is-primary" href="{{event.register}}">register</a>
 
-                  <!--
-                  
-                  {{event.body}}
-
-                  {% if event.presentations.size > 0 %}
-                      <h2>Presentations</h2>
-                      {% for presentation in event.presentations %}
-                          <div>
-                              <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
-                              {{ presentation.body}}
-                              <h3>Speakers</h3>
-                              {% for speaker in presentation.people %}
-                              <div>
-                                  <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
-                              </div>
-                              {% endfor %}
-                          </div>
-                      {% endfor %}
-
-                      <hr>
-                  {% endif %}
--->
                   <hr>
               </div>
           {% endif %}
