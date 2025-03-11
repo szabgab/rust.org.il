@@ -1,5 +1,6 @@
 ---
 title: Rust at Scale
+time: "17:30"
 date: 2024.09.09
 online: false
 register: https://coralogix.com/rust-coralogix-meetup/

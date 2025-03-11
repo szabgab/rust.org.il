@@ -1,5 +1,6 @@
 ---
 date: 2024.08.28
+time: "10:00"
 title: "Command Line Tools: Implementing wc in Rust"
 online: true
 register: https://www.meetup.com/code-mavens/events/302151487/

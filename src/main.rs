@@ -95,6 +95,7 @@ enum Language {
 #[allow(dead_code)]
 struct Event {
     date: String,
+    time: String,
     title: String,
     online: bool,
 

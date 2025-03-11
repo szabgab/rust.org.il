@@ -1,5 +1,6 @@
 ---
 date: 2022.09.05
+time: "17:30"
 title: September Edition
 register: https://www.meetup.com/rust-tlv/events/287754162/
 online: false

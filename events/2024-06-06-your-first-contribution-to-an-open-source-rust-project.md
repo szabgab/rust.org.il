@@ -1,5 +1,6 @@
 ---
 date: 2024.06.06
+time: "18:00"
 title: Your first contribution to an Open Source Rust project
 register: https://www.meetup.com/code-mavens/events/301156302/
 language: English

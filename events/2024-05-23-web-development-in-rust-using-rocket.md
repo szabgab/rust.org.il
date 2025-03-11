@@ -1,5 +1,6 @@
 ---
 date: 2024.05.23
+time: "18:00"
 title: Web development in Rust using Rocket
 register: https://www.meetup.com/code-mavens/events/300974367/
 language: Hebrew

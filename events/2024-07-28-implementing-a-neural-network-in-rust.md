@@ -1,5 +1,6 @@
 ---
 date: 2024.07.28
+time: "18:00"
 title: Implementing a Neural Network in Rust
 online: true
 register: https://www.meetup.com/rust-in-israel/events/302271449/

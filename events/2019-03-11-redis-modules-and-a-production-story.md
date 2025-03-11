@@ -1,5 +1,6 @@
 ---
 date: 2019.03.11
+time: "18:00"
 title: Redis modules and a production story
 register: https://www.meetup.com/rust-tlv/events/259099506/
 online: false

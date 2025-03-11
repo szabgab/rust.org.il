@@ -1,5 +1,6 @@
 ---
 date: 2018.09.02
+time: "18:00"
 title: Cursive, Production and N00bing
 register: https://www.meetup.com/rust-tlv/events/253408497/
 online: false

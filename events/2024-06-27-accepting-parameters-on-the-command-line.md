@@ -1,5 +1,6 @@
 ---
 date: 2024.06.27
+time: "18:00"
 title: Accepting parameters on the command line using Rust Clap
 online: true
 language: English

@@ -1,5 +1,6 @@
 ---
 date: 2018.10.23
+time: "18:00"
 title: Under The Hood, Electrum
 register: https://www.meetup.com/rust-tlv/events/254349265/
 online: false

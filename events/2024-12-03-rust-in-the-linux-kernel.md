@@ -1,5 +1,6 @@
 ---
 date: 2024.12.03
+time: "17:00"
 title: Rust in the Linux Kernel
 register: https://www.meetup.com/abra-rnd-solutions/events/304302596/
 online: false

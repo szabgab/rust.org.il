@@ -1,5 +1,6 @@
 ---
 date: 2024.07.12
+time: "18:00"
 title: Getting started with Rust
 online: true
 language: Hebrew

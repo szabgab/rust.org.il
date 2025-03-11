@@ -1,5 +1,6 @@
 ---
 date: 2024.08.27
+time: "18:00"
 title: Declarative macros in Rust
 online: true
 register: https://www.meetup.com/rust-in-israel/events/302327956/

@@ -1,5 +1,6 @@
 ---
 date: 2024.06.25
+time: "18:00"
 title: Using the Liquid template system in Rust
 online: true
 language: English

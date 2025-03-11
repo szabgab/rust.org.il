@@ -1,5 +1,6 @@
 ---
 date: 2024.07.11
+time: "18:00"
 title: Reading JSON files in Rust
 online: true
 language: English

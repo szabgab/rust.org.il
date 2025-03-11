@@ -1,5 +1,6 @@
 ---
 date: 2023.02.20
+time: "17:30"
 title: Februrary Edition - Redis and BioCatch talking Rust!
 register: https://www.meetup.com/rust-tlv/events/291182881/
 online: false

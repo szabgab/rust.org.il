@@ -1,5 +1,6 @@
 ---
 date: 2023.12.17
+time: "19:00"
 title: Don't panic! - Our journey to error handling in Rust
 online: true
 language: Hebrew

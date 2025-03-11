@@ -1,5 +1,6 @@
 ---
 date: 2024.05.09
+time: "18:00"
 title: In-person at Microsoft, Tel Aviv
 register: https://www.meetup.com/code-mavens/events/300144781/
 online: false

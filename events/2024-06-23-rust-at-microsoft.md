@@ -1,5 +1,6 @@
 ---
 date: 2024.06.23
+time: "18:00"
 title: Rust at Microsoft, Tel Aviv in June 2024
 online: false
 language: Hebrew

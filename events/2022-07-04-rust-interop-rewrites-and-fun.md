@@ -1,5 +1,6 @@
 ---
 date: 2022.07.04
+time: "18:00"
 title: Rust TLV - Rust Interop, Rewrites and fun
 register: https://www.meetup.com/rust-tlv/events/286610368/
 online: false

@@ -1,5 +1,6 @@
 ---
 title: Reading JSON files in Rust
+time: "19:00"
 date: 2024.12.08
 online: true
 register: https://www.meetup.com/rust-tlv/events/304685546/

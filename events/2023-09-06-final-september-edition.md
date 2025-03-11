@@ -1,5 +1,6 @@
 ---
 date: 2023.09.06
+time: "17:30"
 title: RustTLV @ Final - September Edition
 register: https://www.meetup.com/rust-tlv/events/295441355/
 online: false
