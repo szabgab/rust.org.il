@@ -1,5 +1,5 @@
 ---
-name: Gabor Szabo
+name: Gábor Szabó
 linkedin: https://www.linkedin.com/in/szabgab/
 github: szabgab
 crates: szabgab
