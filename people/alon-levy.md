@@ -1,7 +1,7 @@
 ---
-name: alefminus
+name: Alon Levy
 linkedin:
-github:
+github: alefminus
 crates:
 home:
 img:

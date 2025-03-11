@@ -1,7 +1,7 @@
 ---
 title: Lilos, a small async embedded operating system
 speakers:
-    - people/alefminus.md
+    - people/alon-levy.md
 length: 10
 language: Hebrew
 ---
