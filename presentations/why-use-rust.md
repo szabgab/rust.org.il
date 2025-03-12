@@ -1,5 +1,5 @@
 ---
-title: Why use Rust?
+title: Why use Rust? With a focus on Python developers.
 speakers:
     - people/gabor-szabo.md
 length: 10
