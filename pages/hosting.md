@@ -8,9 +8,9 @@ We at [Rust TLV](/) like to go to old and new places with our meetings. For an i
 ## Venue requirements
 
 * A space that can host at least 30 people.
-* Has a projector and something we can use as a lectern next to the screen where we project.
+* A projector and something we can use as a lectern next to the screen where we project.
 * Sponsoring refreshment (e.g. pizza or sandwiches + beer and soft-drinks)
-* Preferable in a place that easily accessible with public transportation.
+* We prefer locations that are easily accessible using public transportation.
 * Our meetings are usually in Tel Aviv, but we are open to host events elsewhere as well.
 * We would prefer places that would want to host us regularly every few months, but one-time hosts might be also accepted.
 * An optional advantage: Video recording equipment.
@@ -35,5 +35,16 @@ Alternatively, or even in addition, we welcome employees of the host to give a r
 
 Tell us early if you'd like to do either of those so we can make sure to allocate time in the schedule.
 
+## Schedule
+
+Our usual schedule is:
+
+* 18:00 Meeting
+* 18:30 Welcome by the hosting company (5-15 min)
+* The rest is flexible: 2-4 presentations of 10-40 min each; a few lightning talks of less than 5 min each; a 15-20 min long break.
+* 20:30 We usually end our meetings around that time.
+* Sometimes people like to stay and talk some more. If that can be facilitated it would be nice.
+
+## Contact
 
 * Contact [Gabor Szabo](https://szabgab.com/contact) if you are interested hosting one of our monthly events.
