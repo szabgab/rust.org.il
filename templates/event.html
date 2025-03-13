@@ -9,43 +9,64 @@
         <div id="{{event.slug}}">
           <h2>{{event.date}} {{event.title}}</h2>
           {% if event.future %}
-          <a class="button is-primary" href="{{event.register}}">register</a>
+            <a class="button is-primary" href="{{event.register}}">register</a>
           {% endif %}
 
           {{event.body}}
 
           {% if event.presentations.size > 0 %}
             <h2>Presentations</h2>
-              {% for presentation in event.presentations %}
-                <div>
-                    <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
-                    <div>
-                    Length: {{presentation.length}} min
-                    </div>
+            {% for presentation in event.presentations %}
+              <div>
+                  <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
+                  <div>Length: {{presentation.length}} min</div>
 
-                    <div>
-                    {{ presentation.body}}
-                    </div>
+                  <div>{{ presentation.body}}</div>
 
-                    <h4>Speakers</h4>
-                    {% for speaker in presentation.people %}
-                      <div>
-                        <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
-                        {% if speaker.img %}
+                  <h4>Speakers</h4>
+                  {% for speaker in presentation.people %}
+                    <div>
+                      <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
+                      {% if speaker.img %}
                         <img src="/img/{{speaker.img}}" alt="{{speaker.name}}" title="{{speaker.name}}">
-                        {% endif %}
-                      </div>
-                    {% endfor %}
-                  </div>
-                  <hr>
-              {% endfor %}
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+              </div>
+              <hr>
+            {% endfor %}
           {% endif %}
         </div>
         {% if event.future %}
         <a class="button is-primary" href="{{event.register}}">register</a>
         {% endif %}
 
+        <div>
+          <h2>To copy to Meetup</h2>
+          <p>Title: {{event.title}}</p>
+          <p>Date: {{event.date}}</p>
+          <p>Start: {{event.time}}</p>
+          <p>{{event.body}}</p>
+          {% if event.presentations.size > 0 %}
+            {% for presentation in event.presentations %}
+              <p>
+              * <b>{{presentation.title}}</b> 
+              {% for speaker in presentation.people %}
+                  by <a href="https://rust.org.il/people/{{speaker.slug}}">{{speaker.name}}</a>
+              {% endfor %}
+
+              </p>
+              <p>Language: ({{presentation.language}})</p>
+              <p>Length: {{presentation.length}} min</p>
+
+              <p>{{ presentation.body}}</p>
+
+            {% endfor %}
+          {% endif %}
         </div>
+
+      </div>
+
     </div>
   </section>
 {% include 'templates/incl/footer.html' %}
