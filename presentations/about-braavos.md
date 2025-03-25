@@ -1,5 +1,5 @@
 ---
-title: About Braavos
+title: Opening words, welcome and intro
 speakers:
     - people/motty-lavie.md
 length: 10
