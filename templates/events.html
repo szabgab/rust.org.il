@@ -2,17 +2,13 @@
   <section class="section">
     <div class="container">
       <div class="content">
-          <h1 class="title">
-            Future Events
-          </h1>
-             
-          {% for event in events %}
+          <h1 class="title">Future Events</h1>
+          {% for event in future_events %}
             {% if event.future %}
                 <div id="{{event.slug}}">
                     <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
-                    <br>
-
                     {{event.body}}
+                    {% include 'templates/incl/event_presentations_short_list.html' %}
                     <a class="button is-primary" href="{{event.register}}">register</a>
                     <hr>
                 </div>
@@ -20,23 +16,19 @@
           {% endfor %}
 
 
-          <h1 class="title">
-            Past Events
-          </h1>
-    
+          <h1 class="title">Past Events </h1>
           {% for event in events %}
             {% unless event.future %}
                 <div id="{{event.slug}}">
                     <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
-                    {{event.language}}<br>
-
                     {{event.body}}
-                <a  href="{{event.register}}">register</a>
-                <hr>
+                    {% include 'templates/incl/event_presentations_short_list.html' %}
+                    <!-- <a href="{{event.register}}">register</a> -->
+                    <hr>
                 </div>
             {% endunless %}
           {% endfor %}
-        </div>
+      </div>
     </div>
   </section>
 {% include 'templates/incl/footer.html' %}

@@ -15,7 +15,7 @@
                     {% else %}
                     <i class="fa-solid fa-people-group" arial-hidden="true" title="In-person"></i>
                     {% endif %}
-                    
+
                     <a href="/events/{{event.slug}}">{{event.date}} {{event.title}}</a>
                       (
                          {% if event.online %}
@@ -26,17 +26,7 @@
                          in {{event.language}}
                       )
                   </h2>
-                  <ul>
-                  {% for presentation in event.presentations %}
-                      <li>
-                        <a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a>
-                          ({{presentation.language}})
-                          {% for speaker in presentation.people %}
-                             <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
-                          {% endfor %}
-                      </li>
-                  {% endfor %}
-                  </ul>
+                  {% include 'templates/incl/event_presentations_short_list.html' %}
                   <a class="button is-primary" href="{{event.register}}">register</a>
 
                   <hr>

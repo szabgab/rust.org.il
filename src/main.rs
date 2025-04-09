@@ -285,12 +285,19 @@ fn generate_presentation_pages(
 }
 
 fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
+    let mut future_events = events
+        .values()
+        .filter(|event| event.future)
+        .collect::<Vec<&Event>>();
+    future_events.sort_by(|a, b| a.date.cmp(&b.date));
+
     let template = include_str!("../templates/events.html");
     let mut values = events.values().collect::<Vec<&Event>>();
     values.sort_by(|a, b| b.date.cmp(&a.date));
     let globals = liquid::object!({
         "title": "Events",
         "events": values,
+        "future_events": future_events,
     });
     let events_path = path.join("events");
     std::fs::create_dir_all(&events_path).unwrap();
@@ -562,6 +569,10 @@ pub fn load_templates() -> Result<Partials, Box<dyn Error>> {
     partials.add(
         "templates/incl/navigation.html",
         include_str!("../templates/incl/navigation.html"),
+    );
+    partials.add(
+        "templates/incl/event_presentations_short_list.html",
+        include_str!("../templates/incl/event_presentations_short_list.html"),
     );
     Ok(partials)
 }
