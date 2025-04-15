@@ -474,23 +474,29 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         let mut presentation: Presentaton = serde_yaml::from_str(&front_matter).unwrap();
         presentation.body = markdown2html(&body);
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        for speaker in &presentation.speakers {
-            if !people.contains_key(speaker) {
-                panic!("Speaker '{speaker}' in '{path:?}' does not exist");
-            }
-        }
-        let speakers = presentation
-            .speakers
-            .iter()
-            .map(|speaker| people[speaker].clone())
-            .collect::<Vec<_>>();
-        //println!("{:?}", speakers);
-        presentation.people = speakers;
+        presentation.people = get_people(people, &presentation.speakers, &path);
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         presentations.insert(path_str, presentation);
     }
     presentations
+}
+
+fn get_people(
+    people: &HashMap<String, Person>,
+    people_files: &[String],
+    path: &PathBuf,
+) -> Vec<Person> {
+    for speaker in people_files.iter() {
+        if !people.contains_key(speaker) {
+            panic!("Speaker '{speaker}' in '{path:?}' does not exist");
+        }
+    }
+
+    people_files
+        .iter()
+        .map(|speaker| people[speaker].clone())
+        .collect::<Vec<_>>()
 }
 
 fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, Event> {
