@@ -9,6 +9,25 @@ pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySo
 #[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
+struct Job {
+    title: String,
+    company: String,
+    posted: String,  // YYYY.MM.DD
+    updated: String, // YYYY.MM.DD
+    contacts: Vec<String>,
+    #[serde(default = "get_default_empty_vector_of_people")]
+    people: Vec<Person>,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
 struct Project {
     name: String,
     home: Option<String>,
@@ -48,6 +67,7 @@ struct Person {
     github: Option<String>,
     crates: Option<String>,
     home: Option<String>,
+    phone: Option<String>,
 
     #[serde(default = "get_default_empty_string")]
     slug: String,
@@ -145,6 +165,7 @@ fn main() {
     let path = std::path::PathBuf::from("_site");
     let pages = load_pages();
     let people = load_people();
+    let jobs = load_jobs(&people.clone());
     let presentations = load_presentations(&people.clone());
     let events = load_events(&presentations.clone());
     let projects = load_projects(&people.clone());
@@ -160,7 +181,7 @@ fn main() {
     generate_markdown_pages(pages, events, &path);
 
     generate_project_pages(projects, &people, &path);
-
+    generate_job_pages(jobs, &people, &path);
     copy_static_files(&path);
 }
 
@@ -194,6 +215,18 @@ fn generate_project_pages(
     let projects_path = path.join("projects");
     std::fs::create_dir_all(&projects_path).unwrap();
     render_page(globals, template, projects_path.join("index.html")).unwrap();
+}
+
+fn generate_job_pages(jobs: HashMap<String, Job>, people: &HashMap<String, Person>, path: &Path) {
+    let template = include_str!("../templates/jobs.html");
+    let globals = liquid::object!({
+        "title": "Rust Jobs in Israel",
+        "jobs": jobs.values().collect::<Vec<&Job>>(),
+        "people": people.values().collect::<Vec<&Person>>(),
+    });
+    let jobs_path = path.join("jobs");
+    std::fs::create_dir_all(&jobs_path).unwrap();
+    render_page(globals, template, jobs_path.join("index.html")).unwrap();
 }
 
 fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, path: &Path) {
@@ -533,6 +566,29 @@ fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, E
     }
 
     events
+}
+
+fn load_jobs(people: &HashMap<String, Person>) -> HashMap<String, Job> {
+    let mut jobs = HashMap::new();
+    let paths = std::fs::read_dir("jobs").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut job: Job = serde_yaml::from_str(&front_matter).unwrap();
+        job.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        job.body = markdown2html(&body);
+        job.people = get_people(people, &job.contacts, &path);
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        jobs.insert(path_str, job);
+    }
+    jobs
 }
 
 fn read_md_file_separate_front_matter(path: &PathBuf) -> (String, String) {

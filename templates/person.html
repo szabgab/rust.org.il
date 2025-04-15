@@ -13,6 +13,9 @@
             {% if person.home %}
                 <div><a href="{{person.home}}">home</a></div>
             {% endif %}
+            {% if person.phone %}
+                <div>Phone: {{person.phone}}</div>
+            {% endif %}
 
             {% if person.body %}
               <div>
