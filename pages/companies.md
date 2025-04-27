@@ -27,8 +27,14 @@ If you know about more companies, if you know more details about the use of Rust
 * [Evinced](https://www.evinced.com/)
     * Has a [Rust Engineer](https://www.evinced.com/careers/rust-engineer) position.
 
+* [EurekaLabs](https://eurekalabs.ai/)
+    * Had a Rust job post.
+
 * [Final](https://www.final.co.il/)
     * They hosted the [Rust Meetup](/events/) in September 2023.
+
+* [Flarion](https://www.flarion.io/)
+    * Some of our members work there.
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
