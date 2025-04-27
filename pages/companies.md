@@ -27,7 +27,7 @@ If you know about more companies, if you know more details about the use of Rust
 * [Evinced](https://www.evinced.com/)
     * Has a [Rust Engineer](https://www.evinced.com/careers/rust-engineer) position.
 
-* [EurekaLabs](https://eurekalabs.ai/)
+* [EurekaLabs](https://eurekalabs.xyz/)
     * Had a Rust job post.
 
 * [Final](https://www.final.co.il/)
