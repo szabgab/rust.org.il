@@ -6,7 +6,14 @@
           {% for event in future_events %}
             {% if event.future %}
                 <div id="{{event.slug}}">
-                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
+                    <h2>
+                        {% if event.online %}
+                        <i class="fa-solid fa-display" arial-hidden="true" title="Online"></i>
+                        {% else %}
+                        <i class="fa-solid fa-people-group" arial-hidden="true" title="In-person"></i>
+                        {% endif %}
+                        <a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})
+                    </h2>
                     {{event.body}}
                     {% include 'templates/incl/event_presentations_short_list.html' %}
                     <a class="button is-primary" href="{{event.register}}">register</a>
@@ -20,7 +27,14 @@
           {% for event in events %}
             {% unless event.future %}
                 <div id="{{event.slug}}">
-                    <h2><a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})</h2>
+                    <h2>
+                        {% if event.online %}
+                        <i class="fa-solid fa-display" arial-hidden="true" title="Online"></i>
+                        {% else %}
+                        <i class="fa-solid fa-people-group" arial-hidden="true" title="In-person"></i>
+                        {% endif %}
+                        <a href="{{event.slug}}">{{event.date}} {{event.title}}</a> ({% if event.online %}virtual{% else %}in-person{% endif %}, {{event.language}})
+                    </h2>
                     {{event.body}}
                     {% include 'templates/incl/event_presentations_short_list.html' %}
                     <!-- <a href="{{event.register}}">register</a> -->
