@@ -16,6 +16,12 @@ If you would like to make changes to this site feel free to talk to [Gabor](http
 
 ## For the 10 years of Rust 1.0 event
 
+Original organizers of Rust-TLV
+
+* Yuval Adam
+* Adam Gutglick
+
+
 * Where is your meetup group located, for how long does it exist, in which frequency are you meeting?
 
 The first event of the group was in September 2018 with 78 registered attendees, so I guess the group was created a bit before that.
