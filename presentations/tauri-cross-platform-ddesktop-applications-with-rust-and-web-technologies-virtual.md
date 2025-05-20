@@ -13,6 +13,7 @@ Meet [Tauri](https://tauri.app/), designed for secure and lightweight desktop ap
 
 In this session, I will introduce Tauri, and we will build a simple application using it together.
 
+[slides](/slides/TauriSlideshow.pdf)
 
 * [Electron JS](https://www.electronjs.org/)
 * [Tauri](https://tauri.app/)
