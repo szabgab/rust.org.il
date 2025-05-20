@@ -33,3 +33,20 @@ In this session, I will introduce Tauri, and we will build a simple application 
 * [Frontend masters](https://frontendmasters.com/)
 * [Pluralsight](https://www.pluralsight.com/)
 
+
+## Timestamps
+
+```
+00:00 Intro by Gabor
+01:02 Intro by Liel
+35:35 First live demo
+39:41 npm install
+41:50 apt install dependencies
+45:15 The application is running
+45:55 VS Code
+50:30 How to generate release of Tauri?
+55:30 How to limit the package creation?
+57:03 End of demo
+57:05 continue presentation: Permissions
+1:07:50 Second demo: Task manager
+```
