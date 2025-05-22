@@ -2,7 +2,7 @@
 title: Power up NodeJS with Rust
 speakers:
     - people/ariel-boukris.md
-length: 0
+length: 40
 language: Hebrew
 ---
 
