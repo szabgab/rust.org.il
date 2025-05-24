@@ -32,21 +32,4 @@ description: The Israeli community of people programming in Rust
 
 * There is a Discord group called [Rust Open Source Committers](https://discord.com/channels/1027509789774839818/1027509790928273470). It isn't very active.
 
-<!--
 
-## Group sizes
-
-Number of members on date:
-
-| group        | 2025.05.24 |
-| -----------  | ---------- |
-| Rust-TLV     | 1,304 |
-| Code-Mavens  | 3,822 |
-| WhatsApp     |   122 |
-| LinkedIn     |   158 |
-| Mailing list |    38 |
-| Telegram     |   157 |
-| Facebook     |   315 |
-| Discord      |    21 |
-
--->
