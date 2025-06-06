@@ -10,6 +10,9 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Amazon](https://www.amazon.com/)
 
+* [BioCatch](https://www.biocatch.com/)
+    * Presentation: [Microdosing Rust to your organization](/presentations/microdosing-rust-to-your-organization)
+
 * [Coralogix](https://coralogix.com/)
     * They are hosting a meetup in September 2024.
     * [Ariel Assaraf](https://www.linkedin.com/in/ariel-assaraf-ab621896/) CEO
@@ -33,11 +36,18 @@ If you know about more companies, if you know more details about the use of Rust
 * [Final](https://www.final.co.il/)
     * They hosted the [Rust Meetup](/events/) in September 2023.
 
+* [Fireblocks](https://www.fireblocks.com/)
+    * In their job ads they mention Rust.
+    * They do not have Rust projects on [GitHub](https://github.com/fireblocks).
+
 * [Flarion](https://www.flarion.io/)
     * Some of our members work there.
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
+
+* Hyperspace Tel Aviv
+    * I saw a job post on LinkedIn
 
 * [Intezer](https://intezer.com/)
     * They have several Open Source projects written in Rust. See their [GitHub](https://github.com/intezer) account.
@@ -51,8 +61,8 @@ If you know about more companies, if you know more details about the use of Rust
 * [Microsoft](https://www.microsoft.com/)
     * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [events](/events/). See the [Video](https://youtu.be/Fi--zxTU-8w).
 
-* [Spectral](https://spectralops.io/)
-    * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
+* [Palo Alto Networks](https://www.paloaltonetworks.com/)
+    * [GitHub](https://github.com/PaloAltoNetworks)
 
 * [Pelanor](https://www.pelanor.io/)
     * They are building a cloud financial management platform and all (well, probably 99%) of the backend is written in Rust!
@@ -63,25 +73,14 @@ If you know about more companies, if you know more details about the use of Rust
 * [Redis](https://redis.com/)
     * See the [presentation](/events/)
 
+* [Spectral](https://spectralops.io/)
+    * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
+
 * [StarkWare](https://starkware.co/)
     * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).
 
-* Hyperspace Tel Aviv
-    * I saw a job post on LinkedIn
-
-* [Fireblocks](https://www.fireblocks.com/)
-    * In their job ads they mention Rust.
-    * They do not have Rust projects on [GitHub](https://github.com/fireblocks).
-
-* [Palo Alto Networks](https://www.paloaltonetworks.com/)
-    * [GitHub](https://github.com/PaloAltoNetworks)
-
 * [Tabnine](https://www.tabnine.com/)
     * Presentation: [Enum variants](/presentations/enum-variants)
-
-* [BioCatch](https://www.biocatch.com/)
-    * Presentation: [Microdosing Rust to your organization](/presentations/microdosing-rust-to-your-organization)
-
 
 
 ## TODO
