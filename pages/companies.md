@@ -24,14 +24,21 @@ If you know about more companies, if you know more details about the use of Rust
     * See their [presentations](/events/).
     * [Daniel Brodie](https://www.linkedin.com/in/danielbrodie/) CTO and Co-Founder at Cynero
 
+* [DoControl](https://www.docontrol.io/)
+    * [DoControl on LinkedIn](https://www.linkedin.com/company/do-control/)
+
 * [DriveNets](https://drivenets.com/)
     * Has an Open Source project on [GitHub](https://github.com/drivenets) written in Rust.
 
 * [Evinced](https://www.evinced.com/)
     * Has a [Rust Engineer](https://www.evinced.com/careers/rust-engineer) position.
+    * [Evinced on LinkedIn](https://www.linkedin.com/company/evinced/)
 
 * [EurekaLabs](https://eurekalabs.xyz/)
     * Had a Rust job post.
+    * [Rust at Work - conversation with Eli Shalom and Igal Tabachnik of Eureka Labs](https://rust.code-maven.com/rust-at-work-eureka-labs)
+    * [Eli Shalom](https://www.linkedin.com/in/elishalom/) Co-founder & CTO
+    * [Igal Tabachnik](https://www.linkedin.com/in/igaltabachnik/) Senior Software Engineer
 
 * [Final](https://www.final.co.il/)
     * They hosted the [Rust Meetup](/events/) in September 2023.
@@ -41,7 +48,8 @@ If you know about more companies, if you know more details about the use of Rust
     * They do not have Rust projects on [GitHub](https://github.com/fireblocks).
 
 * [Flarion](https://www.flarion.io/)
-    * Some of our members work there.
+    * [Rust at Work a conversation with Ran Reichman Co-Founder and CEO of Flarion](https://rust.code-maven.com/rust-at-work-flarion)
+    * [Ran Reichman](https://www.linkedin.com/in/ran-reichman-740163b7/) Co-Founder and CEO
 
 * [Greenvibe](https://greenvibe.io/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
@@ -63,6 +71,7 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Palo Alto Networks](https://www.paloaltonetworks.com/)
     * [GitHub](https://github.com/PaloAltoNetworks)
+    * [Senior Rust Software Engineer - Data Classification (Cortex Cloud)](https://www.linkedin.com/jobs/view/4243847819)
 
 * [Pelanor](https://www.pelanor.io/)
     * They are building a cloud financial management platform and all (well, probably 99%) of the backend is written in Rust!
@@ -72,6 +81,13 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Redis](https://redis.com/)
     * See the [presentation](/events/)
+    * [Senior Rust Software Engineer](https://www.linkedin.com/jobs/view/4194286670)
+
+* [Satori](https://satoricyber.com/)
+    * [Satori on LinkedIn](https://www.linkedin.com/company/satori/)
+
+* [ShipIn](https://shipin.ai/)
+    * [ShipIn on LinkedIn](https://www.linkedin.com/company/shipin/)
 
 * [Spectral](https://spectralops.io/)
     * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
@@ -82,6 +98,8 @@ If you know about more companies, if you know more details about the use of Rust
 * [Tabnine](https://www.tabnine.com/)
     * Presentation: [Enum variants](/presentations/enum-variants)
 
+* [Varonis](https://www.varonis.com/)
+    * Job post: [Software Engineer (Rust) – Endpoint](https://www.linkedin.com/jobs/view/4160534145/)
 
 ## TODO
 
