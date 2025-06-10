@@ -98,6 +98,9 @@ If you know about more companies, if you know more details about the use of Rust
 * [Tabnine](https://www.tabnine.com/)
     * Presentation: [Enum variants](/presentations/enum-variants)
 
+* [Trigo](https://trigoretail.com/)
+    * [Daniel Gabay](https://www.linkedin.com/in/daniel-gabay/) CEO & Co-Founder
+
 * [Varonis](https://www.varonis.com/)
     * Job post: [Software Engineer (Rust) – Endpoint](https://www.linkedin.com/jobs/view/4160534145/)
 
