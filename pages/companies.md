@@ -16,6 +16,9 @@ If you know about more companies, if you know more details about the use of Rust
     * Presentation: [Microdosing Rust to your organization](/presentations/microdosing-rust-to-your-organization)
     * [Ben Avrahami](https://www.linkedin.com/in/ben-avrahami-b4855a1a7/)
 
+* [Checkpoint](https://www.checkpoint.com/)
+    * [Checkpoint on LinkedIn](https://www.linkedin.com/company/check-point-software-technologies/)
+
 * [Coralogix](https://coralogix.com/)
     * [Coralogix on LinkedIn](https://www.linkedin.com/company/coralogix/)
     * They hosted a Rust-related meetup in September 2024.
@@ -56,43 +59,53 @@ If you know about more companies, if you know more details about the use of Rust
     * They do not have Rust projects on [GitHub](https://github.com/fireblocks).
 
 * [Flarion](https://www.flarion.io/)
-    * [Rust at Work a conversation with Ran Reichman Co-Founder and CEO of Flarion](https://rust.code-maven.com/rust-at-work-flarion)
+    * [Flarion on LinkedIn](https://www.linkedin.com/company/flarion/)
     * [Ran Reichman](https://www.linkedin.com/in/ran-reichman-740163b7/) Co-Founder and CEO
+    * [Rust at Work a conversation with Ran Reichman Co-Founder and CEO of Flarion](https://rust.code-maven.com/rust-at-work-flarion)
 
 * [Greenvibe](https://greenvibe.io/)
+    * [Greenvibe on LinkedIn](https://www.linkedin.com/company/greenvibe-sensing-technologies/)
     * Open Source projects on [GitHub](https://github.com/greenvibe-io). Some of them are in Rust.
 
-* Hyperspace Tel Aviv
+* [Hyperspace](https://www.hyper-space.io/)
+    * [Hyperspace](https://www.linkedin.com/company/hyperspace-db/)
     * I saw a job post on LinkedIn
 
 * [Intezer](https://intezer.com/)
+    * [Intezer on LinkedIn](https://www.linkedin.com/company/intezer-labs/)
     * They have several Open Source projects written in Rust. See their [GitHub](https://github.com/intezer) account.
 
 * [MetalBear](https://metalbear.co)
-    * They are developing the [mirrored](https://github.com/metalbear-co/mirrord) project.
-    * They have many more Open Source projects written in Rust. See [GitHub](https://github.com/metalbear-co).
+    * [MetalBear on LinkedIn](https://www.linkedin.com/company/metalbearco/)
     * [Eyal Bukchin](https://www.linkedin.com/in/eyal-bukchin/) CTO and Co-Founder
     * [Aviram Hassan](https://www.linkedin.com/in/aviram-hassan/) CEO and Co-Founder
+    * They are developing the [mirrored](https://github.com/metalbear-co/mirrord) project.
+    * They have many more Open Source projects written in Rust. See [GitHub](https://github.com/metalbear-co).
 
 * [Microsoft](https://www.microsoft.com/)
-    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/) See [events](/events/). See the [Video](https://youtu.be/Fi--zxTU-8w).
+    * [Microsoft on LinkedIn](https://www.linkedin.com/company/microsoft/)
+    * Presentation by [Tomer Cohen](https://www.linkedin.com/in/tomercode/)
+    * See [events](/events/). See the [Video](https://youtu.be/Fi--zxTU-8w).
 
 * [Nanit](https://www.nanit.com/)
     * [Nanit on LinkedIn](https://www.linkedin.com/company/nanit/)
     * [Eddie Mishelevich](https://www.linkedin.com/in/eddie-mishelevich-b1016b56/)
 
-
 * [Palo Alto Networks](https://www.paloaltonetworks.com/)
+    * [Palo Alto Networks on LinkedIn](https://www.linkedin.com/company/palo-alto-networks/)
     * [GitHub](https://github.com/PaloAltoNetworks)
     * [Senior Rust Software Engineer - Data Classification (Cortex Cloud)](https://www.linkedin.com/jobs/view/4243847819)
 
 * [Pelanor](https://www.pelanor.io/)
+    * [Pelanor on LinkedIn](https://www.linkedin.com/company/pelanor/)
     * They are building a cloud financial management platform and all (well, probably 99%) of the backend is written in Rust!
 
 * [Pinecone](https://www.pinecone.io/)
+    * [Pinecone on LinkedIn](https://www.linkedin.com/company/pinecone-io/)
     * A few Open Source projects on [GitHub](https://github.com/pinecone-io) written in Rust.
 
 * [Redis](https://redis.com/)
+    * [Redis on LinkedIn](https://www.linkedin.com/company/redisinc/)
     * See the [presentation](/events/)
     * [Senior Rust Software Engineer](https://www.linkedin.com/jobs/view/4194286670)
 
@@ -102,19 +115,23 @@ If you know about more companies, if you know more details about the use of Rust
 * [ShipIn](https://shipin.ai/)
     * [ShipIn on LinkedIn](https://www.linkedin.com/company/shipin/)
 
-* [Spectral](https://spectralops.io/)
+* [Spectral](https://spectralops.io/), a CheckPoint company.
     * They have several Rust-base Open Source projects on [GitHub](https://github.com/SpectralOps).
 
 * [StarkWare](https://starkware.co/)
+    * [StarkWare on LinkedIn](https://www.linkedin.com/company/starkware/)
     * They have a few Open Source projects on [GitHub](https://github.com/starkware-libs).
 
 * [Tabnine](https://www.tabnine.com/)
+    * [Tabnine on LinkedIn](https://www.linkedin.com/company/tabnine/)
     * Presentation: [Enum variants](/presentations/enum-variants)
 
 * [Trigo](https://trigoretail.com/)
+    * [Trigo on LinkedIn](https://www.linkedin.com/company/trigoretail/)
     * [Daniel Gabay](https://www.linkedin.com/in/daniel-gabay/) CEO & Co-Founder
 
 * [Varonis](https://www.varonis.com/)
+    * [Varonis on LinkedIn](https://www.linkedin.com/company/varonis/)
     * Job post: [Software Engineer (Rust) – Endpoint](https://www.linkedin.com/jobs/view/4160534145/)
 
 ## TODO
