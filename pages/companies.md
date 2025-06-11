@@ -10,11 +10,12 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Amazon](https://www.amazon.com/)
 
-* [BioCatch](https://www.biocatch.com/)
+* [BioCatch](https://www.biocatch.com/) - [on LinkedIn](https://www.linkedin.com/company/biocatch/)
     * Presentation: [Microdosing Rust to your organization](/presentations/microdosing-rust-to-your-organization)
+    * [Ben Avrahami](https://www.linkedin.com/in/ben-avrahami-b4855a1a7/)
 
-* [Coralogix](https://coralogix.com/)
-    * They are hosting a meetup in September 2024.
+* [Coralogix](https://coralogix.com/) - [on LinkedIn](https://www.linkedin.com/company/coralogix/)
+    * They hosted a Rust-related meetup in September 2024.
     * [Ariel Assaraf](https://www.linkedin.com/in/ariel-assaraf-ab621896/) CEO
     * [Roy Prager](https://www.linkedin.com/in/roy-prager-40656a119/) Software Engineer
     * [Oron Sharabi](https://www.linkedin.com/in/oron-sharabi-27615b26/) R&D Team leader
