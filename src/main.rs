@@ -479,7 +479,7 @@ fn load_people() -> HashMap<String, Person> {
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         person.body = markdown2html(&body);
         if let Some(img) = &person.img {
-            let file = PathBuf::from(format!("img/{}", img));
+            let file = PathBuf::from(format!("img/{img}"));
             if !file.exists() {
                 panic!("File '{file:?}' used in '{path:?}' does not exist");
             }
