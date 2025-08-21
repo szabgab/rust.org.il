@@ -10,6 +10,7 @@ description: The Israeli community of people programming in Rust
 
 ## WhatsApp
 
+* [Annuncements only group](https://chat.whatsapp.com/JPsJlufW5D1ECfkTQq5b9a)
 * For fast communication with other Rust developers join the [Rust in Hebrew](https://chat.whatsapp.com/GSDu36xgHTTKFlwsoO2CI5) WhatsApp group!
 
 ## LinkedIn
@@ -22,6 +23,7 @@ description: The Israeli community of people programming in Rust
 
 ## Telegram
 
+* [Announcement only group](https://t.me/RustInIsrael)
 * Join the [Rust Israel Telegram group](https://t.me/rustlang_il) isn't too active!
 
 ## Facebook
