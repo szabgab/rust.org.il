@@ -2,7 +2,7 @@
 title: Typesetting with Typst for fun and profit
 speakers:
     - people/igor-khanin.md
-length: 40
+length: 30
 language: Hebrew
 ---
 
