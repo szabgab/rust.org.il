@@ -16,7 +16,7 @@ _____
 
 ## Rust videos in Hebrew
 
-* A series of introductory [videos about programming Rust in Hebrew](https://he.code-maven.com/rust)
+* A series of introductory [videos about programming Rust in Hebrew](https://rust-he.code-maven.com/)
 
 
 ## Rust Training in Israel in Hebrew or English

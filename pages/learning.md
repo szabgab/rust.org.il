@@ -12,7 +12,7 @@ description: Learning Rust
 
 * There is a partial [Hebrew translation of the "Rust Programming Language" book](https://github.com/IttayWeiss/rustbook-heb).
 * There are many [videos in Hebrew about Rust](https://www.youtube.com/playlist?list=PLm2NBp4tb5F3KhdFXhQPgL7I8_jfyDOVN).
-* There are several partial [Rust video courses in Hebrew](https://he.code-maven.com/rust).
+* There are several partial [Rust video courses in Hebrew](https://rust-he.code-maven.com/).
 * Also the presentation [What I learned From Learning Rust](https://www.youtube.com/watch?v=HRhAkSdvGx4).
 
 ## Learning materials in English
