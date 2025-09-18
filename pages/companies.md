@@ -6,7 +6,7 @@ description: List of companies In Israel that use Rust along with some informati
 On this page we try to showcase all the companies in Israel that use Rust. We include local companies and international companies that have a local office where some people write Rust.
 For each company we try to include some explanation what they use Rust for and some "evidence". e.g. A link to a presentation they gave. The fact that they hosted a Rust event. If they have Open Source projects written in Rust.
 
-If you know about more companies, if you know more details about the use of Rust in these companies, if you have other evidence that they use Rust, please send a Pull-Request to improve this page.
+If you know about more companies, if you know more details about the use of Rust in these companies, if you have other evidence that they use Rust, please send a [Pull-Request](https://github.com/szabgab/rust.org.il/) to improve this page.
 
 * [Amazon](https://www.amazon.com/)
     * [Amazon on LinkedIn](https://www.linkedin.com/company/amazon/)
@@ -132,6 +132,7 @@ If you know about more companies, if you know more details about the use of Rust
 
 * [Varonis](https://www.varonis.com/)
     * [Varonis on LinkedIn](https://www.linkedin.com/company/varonis/)
+    * [Hosted Rust Meetup on 2025.09.17](/events/2025-09-17-in-person)
     * Job post: [Software Engineer (Rust) – Endpoint](https://www.linkedin.com/jobs/view/4160534145/)
 
 ## TODO
