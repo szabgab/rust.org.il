@@ -8,4 +8,6 @@ language: Hebrew
 
 This talk will provide an introduction to [Typst](https://typst.app/), an up-and-coming Rust based typesetting system which is of particular interest to Hebrew speakers. We'll see some of what makes it unique, how to get started, and some more interesting use cases (like integrating it into your Rust projects).
 
-Source code of [typst](https://github.com/typst/typst)
+[Slides](https://github.com/IgKh/rust-tlv-typst-talk/blob/master/slides.pdf)
+[Slides source code and demo](https://github.com/IgKh/rust-tlv-typst-talk/)
+
