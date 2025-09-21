@@ -81,7 +81,7 @@ struct Person {
 #[derive(Deserialize, Debug, Serialize, Clone)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
-struct Presentaton {
+struct Presentation {
     title: String,
 
     length: u8,
@@ -136,7 +136,7 @@ struct Event {
     schedule: Vec<String>,
 
     #[serde(default = "get_default_empty_vector_of_presentations")]
-    presentations: Vec<Presentaton>,
+    presentations: Vec<Presentation>,
 }
 
 fn get_default_empty_vector_of_people() -> Vec<Person> {
@@ -146,7 +146,7 @@ fn get_default_empty_vector_of_people() -> Vec<Person> {
 fn get_default_empty_vector_of_strings() -> Vec<String> {
     Vec::new()
 }
-fn get_default_empty_vector_of_presentations() -> Vec<Presentaton> {
+fn get_default_empty_vector_of_presentations() -> Vec<Presentation> {
     Vec::new()
 }
 
@@ -258,17 +258,17 @@ fn generate_markdown_pages(pages: Vec<Page>, events: HashMap<String, Event>, pat
     }
 }
 
-fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Path) {
+fn generate_videos_page(presentations: &HashMap<String, Presentation>, path: &Path) {
     let mut presentations_in_hebrew = presentations
         .values()
         .filter(|presentation| presentation.video_he.is_some())
-        .collect::<Vec<&Presentaton>>();
+        .collect::<Vec<&Presentation>>();
     presentations_in_hebrew.sort_by_key(|presentation| &presentation.title);
 
     let mut presentations_in_english = presentations
         .values()
         .filter(|presentation| presentation.video_en.is_some())
-        .collect::<Vec<&Presentaton>>();
+        .collect::<Vec<&Presentation>>();
     presentations_in_english.sort_by_key(|presentation| &presentation.title);
 
     let template = include_str!("../templates/videos.html");
@@ -281,12 +281,12 @@ fn generate_videos_page(presentations: &HashMap<String, Presentaton>, path: &Pat
 }
 
 fn generate_presentation_pages(
-    presentations: &HashMap<String, Presentaton>,
+    presentations: &HashMap<String, Presentation>,
     events: &HashMap<String, Event>,
     path: &Path,
 ) {
     let template = include_str!("../templates/presentations.html");
-    let mut all_presentations = presentations.values().collect::<Vec<&Presentaton>>();
+    let mut all_presentations = presentations.values().collect::<Vec<&Presentation>>();
     all_presentations.sort_by_key(|presentation| &presentation.title);
 
     let globals = liquid::object!({
@@ -355,7 +355,7 @@ fn generate_event_pages(events: &HashMap<String, Event>, path: &Path) {
 
 fn generate_people_pages(
     people: &HashMap<String, Person>,
-    presentations: &HashMap<String, Presentaton>,
+    presentations: &HashMap<String, Presentation>,
     projects: &HashMap<String, Project>,
     path: &Path,
 ) {
@@ -389,7 +389,7 @@ fn generate_people_pages(
         let mut presentations_by_this_person = presentations
             .values()
             .filter(|presentation| presentation.speakers.contains(&filename))
-            .collect::<Vec<&Presentaton>>();
+            .collect::<Vec<&Presentation>>();
         presentations_by_this_person.sort_by_key(|presentation| &presentation.title);
 
         let mut projects_by_this_person = projects
@@ -493,7 +493,7 @@ fn load_people() -> HashMap<String, Person> {
     people
 }
 
-fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Presentaton> {
+fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Presentation> {
     let mut presentations = HashMap::new();
     let paths = std::fs::read_dir("presentations").unwrap();
     for path in paths {
@@ -506,7 +506,7 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         }
 
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut presentation: Presentaton = serde_yaml::from_str(&front_matter).unwrap();
+        let mut presentation: Presentation = serde_yaml::from_str(&front_matter).unwrap();
         presentation.body = markdown2html(&body);
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         presentation.people = get_people(people, &presentation.speakers, &path);
@@ -535,7 +535,7 @@ fn get_people(
 }
 
 fn load_events(
-    presentatons: &HashMap<String, Presentaton>,
+    presentatons: &HashMap<String, Presentation>,
 ) -> Result<HashMap<String, Event>, Box<dyn Error>> {
     let utc: DateTime<Utc> = Utc::now();
     let today = utc.format("%Y.%m.%d").to_string();
