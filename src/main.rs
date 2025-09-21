@@ -158,7 +158,7 @@ fn get_default_empty_string() -> String {
     String::new()
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     // let utc: DateTime<Utc> = Utc::now();
     // let today = utc.format("%Y.%m.%d");
 
@@ -167,7 +167,7 @@ fn main() {
     let people = load_people();
     let jobs = load_jobs(&people.clone());
     let presentations = load_presentations(&people.clone());
-    let events = load_events(&presentations.clone());
+    let events = load_events(&presentations.clone())?;
     let projects = load_projects(&people.clone());
 
     generate_people_pages(&people, &presentations, &projects, &path);
@@ -183,6 +183,8 @@ fn main() {
     generate_project_pages(projects, &people, &path);
     generate_job_pages(jobs, &people, &path);
     copy_static_files(&path);
+
+    Ok(())
 }
 
 fn copy_static_files(path: &Path) {
@@ -532,7 +534,9 @@ fn get_people(
         .collect::<Vec<_>>()
 }
 
-fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, Event> {
+fn load_events(
+    presentatons: &HashMap<String, Presentaton>,
+) -> Result<HashMap<String, Event>, Box<dyn Error>> {
     let utc: DateTime<Utc> = Utc::now();
     let today = utc.format("%Y.%m.%d").to_string();
 
@@ -554,6 +558,15 @@ fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, E
         event.body = markdown2html(&body);
         event.future = event.date >= today;
 
+        for presentation_slug in &event.schedule {
+            if !presentatons.contains_key(presentation_slug) {
+                return Err(Box::new(std::io::Error::new(
+                    std::io::ErrorKind::NotFound,
+                    format!("Presentation '{presentation_slug}' in '{path:?}' does not exist"),
+                )));
+            }
+        }
+
         let presentations = event
             .schedule
             .iter()
@@ -565,7 +578,7 @@ fn load_events(presentatons: &HashMap<String, Presentaton>) -> HashMap<String, E
         events.insert(path_str, event);
     }
 
-    events
+    Ok(events)
 }
 
 fn load_jobs(people: &HashMap<String, Person>) -> HashMap<String, Job> {
