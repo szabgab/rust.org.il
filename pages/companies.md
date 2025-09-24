@@ -130,6 +130,8 @@ To meet these challenges, we turn to Rust, with its unique mix of performance an
 * [Tabnine](https://www.tabnine.com/)
     * [Tabnine on LinkedIn](https://www.linkedin.com/company/tabnine/)
     * Presentation: [Enum variants](/presentations/enum-variants)
+    * [Eran Yahav](https://www.linkedin.com/in/eranyahav/) Co-founder CTO
+    * [Eran Dvey Aharon](https://www.linkedin.com/in/eran-dvey-aharon/) VP R&D
 
 Tabnine's Unique Rust Architecture
 
