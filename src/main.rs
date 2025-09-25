@@ -105,6 +105,23 @@ struct Presentation {
 }
 
 #[derive(Deserialize, Debug, Serialize, Clone)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
+struct Break {
+    title: String,
+
+    length: u8,
+}
+
+#[derive(Deserialize, Debug, Serialize, Clone)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
+enum ScheduleItem {
+    Presentation(Presentation),
+    Break(Break),
+}
+
+#[derive(Deserialize, Debug, Serialize, Clone)]
 enum Language {
     English,
     Hebrew,
@@ -135,8 +152,8 @@ struct Event {
     #[serde(default = "get_default_empty_vector_of_strings")]
     schedule: Vec<String>,
 
-    #[serde(default = "get_default_empty_vector_of_presentations")]
-    presentations: Vec<Presentation>,
+    #[serde(default = "get_default_empty_vector_of_schedule_items")]
+    schedule_items: Vec<ScheduleItem>,
 }
 
 fn get_default_empty_vector_of_people() -> Vec<Person> {
@@ -146,7 +163,7 @@ fn get_default_empty_vector_of_people() -> Vec<Person> {
 fn get_default_empty_vector_of_strings() -> Vec<String> {
     Vec::new()
 }
-fn get_default_empty_vector_of_presentations() -> Vec<Presentation> {
+fn get_default_empty_vector_of_schedule_items() -> Vec<ScheduleItem> {
     Vec::new()
 }
 
@@ -558,8 +575,29 @@ fn load_events(
         event.body = markdown2html(&body);
         event.future = event.date >= today;
 
+        //let schedule_items = [String::from("mingling"), String::from("break")];
+        let special_items = HashMap::from([
+            (
+                String::from("mingling"),
+                Break {
+                    title: String::from("Mingling"),
+                    length: 30,
+                },
+            ),
+            (
+                String::from("break"),
+                Break {
+                    title: String::from("Break"),
+                    length: 15,
+                },
+            ),
+        ]);
+        let special_names = special_items.keys().collect::<Vec<_>>();
+
         for presentation_slug in &event.schedule {
-            if !presentatons.contains_key(presentation_slug) {
+            if !special_names.contains(&presentation_slug)
+                && !presentatons.contains_key(presentation_slug)
+            {
                 return Err(Box::new(std::io::Error::new(
                     std::io::ErrorKind::NotFound,
                     format!("Presentation '{presentation_slug}' in '{path:?}' does not exist"),
@@ -567,12 +605,17 @@ fn load_events(
             }
         }
 
-        let presentations = event
+        let schedule_items = event
             .schedule
             .iter()
-            .map(|presentation_slug| presentatons[presentation_slug].clone())
+            .map(|presentation_slug| {
+                if special_names.contains(&presentation_slug) {
+                    return ScheduleItem::Break(special_items[presentation_slug].clone());
+                }
+                ScheduleItem::Presentation(presentatons[presentation_slug].clone())
+            })
             .collect::<Vec<_>>();
-        event.presentations = presentations;
+        event.schedule_items = schedule_items;
 
         let path_str = path.as_os_str().to_str().unwrap().to_string();
         events.insert(path_str, event);
@@ -620,6 +663,7 @@ fn render_page(
     let partials = load_templates()?;
 
     let template = liquid::ParserBuilder::with_stdlib()
+        .filter(TypeStr)
         .partials(partials)
         .build()?
         .parse(template)?;
@@ -665,4 +709,33 @@ fn markdown2html(content: &str) -> String {
         },
     )
     .unwrap()
+}
+
+use liquid_core::{
+    Display_filter, Filter, FilterReflection, ParseFilter, Result, Runtime, Value, ValueView,
+};
+
+#[derive(Clone, ParseFilter, FilterReflection)]
+#[filter(name = "type", description = "Type", parsed(TypeFilter))]
+pub struct TypeStr;
+
+#[derive(Debug, Default, Display_filter)]
+#[name = "typestr"]
+pub struct TypeFilter;
+
+impl Filter for TypeFilter {
+    fn evaluate(&self, input: &dyn ValueView, _runtime: &dyn Runtime) -> Result<Value> {
+        let keys = ["Presentation", "Break"];
+        match input.as_object() {
+            Some(obj) => {
+                for key in keys {
+                    if obj.contains_key(key) {
+                        return Ok(Value::scalar(key.to_string()));
+                    }
+                }
+                Ok(Value::scalar("Unknown Item"))
+            }
+            None => Ok(Value::scalar("Not an object")),
+        }
+    }
 }

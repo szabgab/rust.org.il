@@ -1,11 +1,17 @@
                   <ul>
-                  {% for presentation in event.presentations %}
+                  {% for item in event.schedule_items %}
+                      {%- assign it = item | type -%}
                       <li>
-                        <a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a>
-                          ({{presentation.language}})
-                          {% for speaker in presentation.people %}
-                             <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
-                          {% endfor %}
+                        {%- if it == "Presentation" %}
+                          <a href="/presentations/{{item.Presentation.slug}}">{{item.Presentation.title}}</a>
+                            ({{item.Presentation.language}})
+                            {% for speaker in item.Presentation.people %}
+                               <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
+                            {% endfor %}
+                        {% endif %}
+                        {%- if it == "Break" %}
+                           {{item.Break.title}}
+                        {% endif %}
                       </li>
                   {% endfor %}
                   </ul>

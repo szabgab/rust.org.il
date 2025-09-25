@@ -434,6 +434,7 @@ version = "0.1.0"
 dependencies = [
  "chrono",
  "liquid",
+ "liquid-core",
  "markdown",
  "serde",
  "serde_yaml",

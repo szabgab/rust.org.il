@@ -14,17 +14,19 @@
 
           {{event.body}}
 
-          {% if event.presentations.size > 0 %}
+          {% if event.schedule_items.size > 0 %}
             <h2>Presentations</h2>
-            {% for presentation in event.presentations %}
-              <div>
-                  <h3><a href="/presentations/{{presentation.slug}}">{{presentation.title}}</a> ({{presentation.language}})</h3>
-                  <div>Length: {{presentation.length}} min</div>
+            {% for item in event.schedule_items %}
+              {%- assign it = item | type -%}
+              {%- if it == "Presentation" %}
+                <div>
+                  <h3><a href="/presentations/{{item.Presentation.slug}}">{{item.Presentation.title}}</a> ({{item.Presentation.language}})</h3>
+                  <div>Length: {{item.Presentation.length}} min</div>
 
-                  <div>{{ presentation.body}}</div>
+                  <div>{{ item.Presentation.body}}</div>
 
                   <h4>Speakers</h4>
-                  {% for speaker in presentation.people %}
+                  {% for speaker in item.Presentation.people %}
                     <div>
                       <a href="/people/{{speaker.slug}}">{{speaker.name}}</a>
                       {% if speaker.img %}
@@ -32,7 +34,14 @@
                       {% endif %}
                     </div>
                   {% endfor %}
+                </div>
+              {% endif %}
+                            {%- if it == "Break" %}
+              <div>
+                <h3>{{item.Break.title}}</h3>
+                Length: {{item.Break.length}} minutes
               </div>
+              {% endif %}
               <hr>
             {% endfor %}
           {% endif %}
@@ -47,20 +56,27 @@
           <p>Date: {{event.date}}</p>
           <p>Start: {{event.time}}</p>
           <p>{{event.body}}</p>
-          {% if event.presentations.size > 0 %}
-            {% for presentation in event.presentations %}
+          {% if event.schedule_items.size > 0 %}
+            {% for item in event.schedule_items %}
+              {%- assign it = item | type -%}
+              {%- if it == "Presentation" %}
+                <p>
+                * <b>{{item.Presentation.title}}</b> 
+                {% for speaker in item.Presentation.people %}
+                    by <a href="https://rust.org.il/people/{{speaker.slug}}">{{speaker.name}}</a>
+                {% endfor %}
+
+                </p>
+                <p>Language: ({{item.Presentation.language}})</p>
+                <p>Length: {{item.Presentation.length}} min</p>
+
+                <p>{{ item.Presentation.body}}</p>
+              {% endif %}
+              {%- if it == "Break" %}
               <p>
-              * <b>{{presentation.title}}</b> 
-              {% for speaker in presentation.people %}
-                  by <a href="https://rust.org.il/people/{{speaker.slug}}">{{speaker.name}}</a>
-              {% endfor %}
-
+                * <b>{{item.Break.title}}</b> ({{item.Break.length}} minutes)
               </p>
-              <p>Language: ({{presentation.language}})</p>
-              <p>Length: {{presentation.length}} min</p>
-
-              <p>{{ presentation.body}}</p>
-
+              {% endif %}
             {% endfor %}
           {% endif %}
         </div>
