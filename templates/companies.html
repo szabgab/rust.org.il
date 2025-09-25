@@ -1,0 +1,54 @@
+{% include 'templates/incl/header.html' %}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        {{title}}
+      </h1>
+      <div class="content">
+       Companies in Israel using Rust<br>
+       List of companies In Israel that use Rust along with some information on what they use it for.<br>
+
+       On this page we try to showcase all the companies in Israel that use Rust. We include local companies and international companies that have a local office where some people write Rust.
+       For each company we try to include some explanation what they use Rust for and some "evidence". e.g. A link to a presentation they gave. The fact that they hosted a Rust event. If they have Open Source projects written in Rust.
+
+       If you know about more companies, if you know more details about the use of Rust in these companies, if you have other evidence that they use Rust, please send a <a href="https://github.com/szabgab/rust.org.il/">Pull-Request</a> to improve this page.
+
+
+
+        {% for company in companies %}
+          <div class="box">
+            <article class="media">
+              <div class="media-left">
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <a href="{{company.url}}"><strong>{{company.name}}</strong></a>
+                    <br />
+                    <ul>
+                      {% if company.linkedin %}
+                        <li><a href="{{company.linkedin}}">{{company.name}} on LinkedIn</a></li>
+                      {% endif %}
+                      {% for link in company.links %}
+                        <li>{{link}}</li>
+                      {% endfor %}
+                    </ul>
+
+                    {% if company.body %}
+                      <div>
+                        {{company.body}}
+                      </div>
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        {% endfor %}
+
+        <hr>
+      </div>
+    </div>
+  </section>
+{% include 'templates/incl/footer.html' %}

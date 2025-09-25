@@ -9,6 +9,22 @@ pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySo
 #[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
+struct Company {
+    name: String,
+    url: String,
+    linkedin: Option<String>,
+    links: Option<Vec<String>>,
+
+    #[serde(default = "get_default_empty_string")]
+    slug: String,
+
+    #[serde(default = "get_default_empty_string")]
+    body: String,
+}
+
+#[derive(Deserialize, Debug, Serialize)]
+#[serde(deny_unknown_fields)]
+#[allow(dead_code)]
 struct Job {
     title: String,
     company: String,
@@ -182,6 +198,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let path = std::path::PathBuf::from("_site");
     let pages = load_pages();
     let people = load_people();
+    let companies = load_companies();
     let jobs = load_jobs(&people.clone());
     let presentations = load_presentations(&people.clone());
     let events = load_events(&presentations.clone())?;
@@ -200,6 +217,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     generate_project_pages(projects, &people, &path);
     generate_job_pages(jobs, &people, &path);
     copy_static_files(&path);
+    generate_companies_pages(&companies, &path);
 
     Ok(())
 }
@@ -218,6 +236,21 @@ fn copy_static_files(path: &Path) {
             std::fs::copy(&src, &dest).unwrap();
         }
     }
+}
+
+fn generate_companies_pages(companies: &HashMap<String, Company>, path: &Path) {
+    let template = include_str!("../templates/companies.html");
+
+    let mut companies = companies.values().collect::<Vec<&Company>>();
+    companies.sort_by(|a, b| a.name.cmp(&b.name));
+
+    let globals = liquid::object!({
+        "title": "Companies using Rust in Israel",
+        "companies": companies,
+    });
+    let companies_path = path.join("companies");
+    std::fs::create_dir_all(&companies_path).unwrap();
+    render_page(globals, template, companies_path.join("index.html")).unwrap();
 }
 
 fn generate_project_pages(
@@ -480,6 +513,28 @@ fn load_pages() -> Vec<Page> {
         pages.push(page);
     }
     pages
+}
+
+fn load_companies() -> HashMap<String, Company> {
+    let mut companies = HashMap::new();
+    let paths = std::fs::read_dir("companies").unwrap();
+    for path in paths {
+        let path = path.unwrap().path();
+        if path.extension().unwrap() == "swp" {
+            continue;
+        }
+        if path.file_name().unwrap() == "skeleton.md" {
+            continue;
+        }
+        let (front_matter, body) = read_md_file_separate_front_matter(&path);
+        let mut company: Company = serde_yaml::from_str(&front_matter).unwrap();
+        company.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+        company.body = markdown2html(&body);
+
+        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        companies.insert(path_str, company);
+    }
+    companies
 }
 
 fn load_people() -> HashMap<String, Person> {
