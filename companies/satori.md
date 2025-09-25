@@ -5,4 +5,4 @@ linkedin: https://www.linkedin.com/company/satori/
 links:
 ---
 
-
+* [Tomer Shani](https://www.linkedin.com/in/shani-tomer/), VP of Engineering
