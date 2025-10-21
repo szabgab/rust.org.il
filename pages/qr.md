@@ -1,5 +1,5 @@
 ---
-title: QR code
+title: QR code to rust.org.il
 description: The Israeli community of people programming in Rust
 ---
 
