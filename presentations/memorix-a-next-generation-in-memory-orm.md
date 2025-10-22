@@ -19,4 +19,6 @@ This presentation introduces Memorix, an open-source in-memory ORM written in Ru
 
 The talk includes practical examples and live coding to show how Memorix brings the same developer experience to in-memory data that modern ORMs provide for databases.
 
-Project: https://uvop.github.io/memorix/
+[Memorix project](https://uvop.github.io/memorix/)
+
+[slides](https://unimonkiez.github.io/rust-conf-presentation-memorix/)
