@@ -33,3 +33,4 @@ From that point our checks will run locally before every commit.
 * [42 Companies using Rust in production](https://kerkour.com/rust-in-production-2021) from April 8, 2021.
 
 
+* [Old Rust-TLV YouTube channel](https://www.youtube.com/channel/UC9dO1E01kuMoxhcBOhLgGUA/)
