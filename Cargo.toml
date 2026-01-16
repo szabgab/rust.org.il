@@ -10,5 +10,5 @@ liquid = "0.26.9"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.9"
 markdown = "1.0.0-alpha.21"
-chrono = "0.4.38"
+chrono = "0.4.43"
 liquid-core = "0.26.11"
