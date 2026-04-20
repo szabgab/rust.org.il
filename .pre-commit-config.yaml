@@ -54,4 +54,9 @@ repos:
       always_run: true
       pass_filenames: false
       files: \.rs$
+    - id: cargo-run
+      name: cargo-run
+      language: system
+      entry: cargo run
+      always_run: true
 
