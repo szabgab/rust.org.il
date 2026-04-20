@@ -10,4 +10,4 @@ links:
 * [Senior Rust Software Engineer](https://www.linkedin.com/jobs/view/4194286670)
 * [Uri Bechar](https://www.linkedin.com/in/uribechar/), SVP Redis platform SW Engineering, Israel Site Lead.
 * [Uri Shachar](https://www.linkedin.com/in/uri-shachar-852b29/), Senior Director - Next Gen engineering.
-
+* [Redis on GitHub](https://github.com/redis/)

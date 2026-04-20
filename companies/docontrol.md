@@ -6,3 +6,4 @@ links:
 ---
 
 * [Liel Ran](https://www.linkedin.com/in/lielran/) Co-Founder & CTO
+* [Liel Ran on GitHub](https://github.com/lielran)

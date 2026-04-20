@@ -6,3 +6,5 @@ links:
 ---
 
 * [Tomer Shani](https://www.linkedin.com/in/shani-tomer/), VP of Engineering
+* [A Commvault company](https://www.commvault.com/)
+* [Commvault on GitHub](https://github.com/Commvault)
