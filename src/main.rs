@@ -14,6 +14,7 @@ struct Company {
     url: String,
     linkedin: Option<String>,
     links: Option<Vec<String>>,
+    github: Option<String>,
 
     #[serde(default = "get_default_empty_string")]
     slug: String,

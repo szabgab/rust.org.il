@@ -35,6 +35,9 @@
                       {% if company.linkedin %}
                         <li><a href="{{company.linkedin}}">{{company.name}} on LinkedIn</a></li>
                       {% endif %}
+                      {% if company.github %}
+                        <li><a href="{{company.github}}">{{company.name}} on GitHub</a></li>
+                      {% endif %}
                       {% for link in company.links %}
                         <li>{{link}}</li>
                       {% endfor %}
