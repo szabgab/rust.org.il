@@ -2,6 +2,7 @@
 name: Evinced
 url: https://www.evinced.com/
 linkedin: https://www.linkedin.com/company/evinced/
+github: https://github.com/GetEvinced
 links:
 ---
 
@@ -9,4 +10,3 @@ links:
 * [Yoav Lavi](https://www.linkedin.com/in/yoav-lavi-0b191a102/), Senior Software Developer.
 * [Koral Bonfil](https://www.linkedin.com/in/koral-bonfil/), Talent Acquisition Lead.
 
-* [Evinced on GitHub](https://github.com/GetEvinced)

@@ -2,6 +2,7 @@
 name: Nuvoton
 url: https://nuvoton.co.il/
 linkedin: https://www.linkedin.com/company/nuvoton-technology-israel-ltd/
+github: https://github.com/Nuvoton-Israel
 links:
 ---
 
@@ -13,4 +14,3 @@ links:
 * [Dita Aviran](https://www.linkedin.com/in/dita-aviran/) VP HR
 * [Oren Goldstein](https://www.linkedin.com/in/oren-gold/) R&D developer
 
-* [Nuvoton-Israel on GitHub](https://github.com/Nuvoton-Israel)

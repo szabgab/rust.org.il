@@ -2,6 +2,7 @@
 name: Coralogix
 url: https://coralogix.com/
 linkedin: https://www.linkedin.com/company/coralogix/
+github: https://github.com/coralogix/
 links:
 ---
 
@@ -9,5 +10,4 @@ links:
 * [Ariel Assaraf](https://www.linkedin.com/in/ariel-assaraf-ab621896/) CEO
 * [Roy Prager](https://www.linkedin.com/in/roy-prager-40656a119/) Software Engineer
 * [Oron Sharabi](https://www.linkedin.com/in/oron-sharabi-27615b26/) R&D Team leader
-* [Coralogix on GitHub](https://github.com/coralogix/)
 
