@@ -228,7 +228,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     validate_root(&root)?;
 
-    let path = std::path::PathBuf::from("_site");
     community.load_pages();
     community.load_people();
     community.load_companies();
@@ -236,8 +235,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_presentations();
     community.load_events()?;
     community.load_projects();
-
-    community.generate(&path);
+    community.generate();
 
     Ok(())
 }
@@ -533,26 +531,28 @@ fn path_to_root_relative_key(root: &std::path::Path, path: &Path) -> String {
 }
 
 impl Community {
-    fn generate(&mut self, path: &Path) {
-        generate_people_pages(&self.people, &self.presentations, &self.projects, path);
+    fn generate(&mut self) {
+        let path = std::path::PathBuf::from("_site");
 
-        generate_event_pages(&self.events, path);
+        generate_people_pages(&self.people, &self.presentations, &self.projects, &path);
 
-        generate_presentation_pages(&self.presentations, &self.events, path);
+        generate_event_pages(&self.events, &path);
 
-        generate_videos_page(&self.presentations, path);
+        generate_presentation_pages(&self.presentations, &self.events, &path);
+
+        generate_videos_page(&self.presentations, &path);
 
         generate_markdown_pages(
             std::mem::take(&mut self.pages),
             std::mem::take(&mut self.events),
-            path,
+            &path,
         );
 
-        generate_project_pages(std::mem::take(&mut self.projects), &self.people, path);
-        generate_job_pages(std::mem::take(&mut self.jobs), &self.people, path);
-        generate_companies_pages(&self.companies, path);
+        generate_project_pages(std::mem::take(&mut self.projects), &self.people, &path);
+        generate_job_pages(std::mem::take(&mut self.jobs), &self.people, &path);
+        generate_companies_pages(&self.companies, &path);
 
-        copy_static_files(path);
+        copy_static_files(&path);
     }
 
     fn load_pages(&mut self) {
