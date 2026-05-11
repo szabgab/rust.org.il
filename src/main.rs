@@ -196,14 +196,22 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let utc: DateTime<Utc> = Utc::now();
     // let today = utc.format("%Y.%m.%d");
 
+    let args: Vec<String> = std::env::args().collect();
+
+    let root = if args.len() > 1 {
+        std::path::PathBuf::from(&args[1])
+    } else {
+        std::env::current_dir()?
+    };
+
     let path = std::path::PathBuf::from("_site");
-    let pages = load_pages();
-    let people = load_people();
-    let companies = load_companies();
-    let jobs = load_jobs(&people.clone());
-    let presentations = load_presentations(&people.clone());
-    let events = load_events(&presentations.clone())?;
-    let projects = load_projects(&people.clone());
+    let pages = load_pages(&root);
+    let people = load_people(&root);
+    let companies = load_companies(&root);
+    let jobs = load_jobs(&root, &people.clone());
+    let presentations = load_presentations(&root, &people.clone());
+    let events = load_events(&root, &presentations.clone())?;
+    let projects = load_projects(&root, &people.clone());
 
     generate_people_pages(&people, &presentations, &projects, &path);
 
@@ -464,9 +472,12 @@ fn generate_people_pages(
     }
 }
 
-fn load_projects(people: &HashMap<String, Person>) -> HashMap<String, Project> {
+fn load_projects(
+    root: &std::path::Path,
+    people: &HashMap<String, Person>,
+) -> HashMap<String, Project> {
     let mut projects = HashMap::new();
-    let paths = std::fs::read_dir("projects").unwrap();
+    let paths = std::fs::read_dir(root.join("projects")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -489,16 +500,23 @@ fn load_projects(people: &HashMap<String, Person>) -> HashMap<String, Project> {
         //println!("{:?}", speakers);
         project.people = authors;
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         projects.insert(path_str, project);
     }
 
     projects
 }
 
-fn load_pages() -> Vec<Page> {
+fn path_to_root_relative_key(root: &std::path::Path, path: &Path) -> String {
+    path.strip_prefix(root)
+        .unwrap_or(path)
+        .to_string_lossy()
+        .replace('\\', "/")
+}
+
+fn load_pages(root: &std::path::Path) -> Vec<Page> {
     let mut pages = Vec::new();
-    let paths = std::fs::read_dir("pages").unwrap();
+    let paths = std::fs::read_dir(root.join("pages")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -516,9 +534,9 @@ fn load_pages() -> Vec<Page> {
     pages
 }
 
-fn load_companies() -> HashMap<String, Company> {
+fn load_companies(root: &std::path::Path) -> HashMap<String, Company> {
     let mut companies = HashMap::new();
-    let paths = std::fs::read_dir("companies").unwrap();
+    let paths = std::fs::read_dir(root.join("companies")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -532,15 +550,15 @@ fn load_companies() -> HashMap<String, Company> {
         company.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         company.body = markdown2html(&body);
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         companies.insert(path_str, company);
     }
     companies
 }
 
-fn load_people() -> HashMap<String, Person> {
+fn load_people(root: &std::path::Path) -> HashMap<String, Person> {
     let mut people = HashMap::new();
-    let paths = std::fs::read_dir("people").unwrap();
+    let paths = std::fs::read_dir(root.join("people")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -554,21 +572,24 @@ fn load_people() -> HashMap<String, Person> {
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         person.body = markdown2html(&body);
         if let Some(img) = &person.img {
-            let file = PathBuf::from(format!("img/{img}"));
+            let file = root.join(format!("img/{img}"));
             if !file.exists() {
                 panic!("File '{file:?}' used in '{path:?}' does not exist");
             }
         }
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         people.insert(path_str, person);
     }
     people
 }
 
-fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Presentation> {
+fn load_presentations(
+    root: &std::path::Path,
+    people: &HashMap<String, Person>,
+) -> HashMap<String, Presentation> {
     let mut presentations = HashMap::new();
-    let paths = std::fs::read_dir("presentations").unwrap();
+    let paths = std::fs::read_dir(root.join("presentations")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -584,7 +605,7 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         presentation.people = get_people(people, &presentation.speakers, &path);
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         presentations.insert(path_str, presentation);
     }
     presentations
@@ -608,13 +629,14 @@ fn get_people(
 }
 
 fn load_events(
+    root: &std::path::Path,
     presentatons: &HashMap<String, Presentation>,
 ) -> Result<HashMap<String, Event>, Box<dyn Error>> {
     let utc: DateTime<Utc> = Utc::now();
     let today = utc.format("%Y.%m.%d").to_string();
 
     let mut events = HashMap::new();
-    let paths = std::fs::read_dir("events").unwrap();
+    let paths = std::fs::read_dir(root.join("events")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -673,16 +695,16 @@ fn load_events(
             .collect::<Vec<_>>();
         event.schedule_items = schedule_items;
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         events.insert(path_str, event);
     }
 
     Ok(events)
 }
 
-fn load_jobs(people: &HashMap<String, Person>) -> HashMap<String, Job> {
+fn load_jobs(root: &std::path::Path, people: &HashMap<String, Person>) -> HashMap<String, Job> {
     let mut jobs = HashMap::new();
-    let paths = std::fs::read_dir("jobs").unwrap();
+    let paths = std::fs::read_dir(root.join("jobs")).unwrap();
     for path in paths {
         let path = path.unwrap().path();
         if path.extension().unwrap() == "swp" {
@@ -697,7 +719,7 @@ fn load_jobs(people: &HashMap<String, Person>) -> HashMap<String, Job> {
         job.body = markdown2html(&body);
         job.people = get_people(people, &job.contacts, &path);
 
-        let path_str = path.as_os_str().to_str().unwrap().to_string();
+        let path_str = path_to_root_relative_key(root, &path);
         jobs.insert(path_str, job);
     }
     jobs
