@@ -9,6 +9,7 @@ pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySo
 struct Community {
     data_root: PathBuf,
     pages: Vec<Page>,
+    people: HashMap<String, Person>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -212,20 +213,21 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut community = Community {
         data_root: root.clone(),
         pages: Vec::new(),
+        people: HashMap::new(),
     };
 
     validate_root(&root)?;
 
     let path = std::path::PathBuf::from("_site");
     community.load_pages();
-    let people = load_people(&root);
+    community.load_people();
     let companies = load_companies(&root);
-    let jobs = load_jobs(&root, &people.clone());
-    let presentations = load_presentations(&root, &people.clone());
+    let jobs = load_jobs(&root, &community.people.clone());
+    let presentations = load_presentations(&root, &community.people.clone());
     let events = load_events(&root, &presentations.clone())?;
-    let projects = load_projects(&root, &people.clone());
+    let projects = load_projects(&root, &community.people.clone());
 
-    generate_people_pages(&people, &presentations, &projects, &path);
+    generate_people_pages(&community.people, &presentations, &projects, &path);
 
     generate_event_pages(&events, &path);
 
@@ -235,8 +237,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     generate_markdown_pages(community.pages, events, &path);
 
-    generate_project_pages(projects, &people, &path);
-    generate_job_pages(jobs, &people, &path);
+    generate_project_pages(projects, &community.people, &path);
+    generate_job_pages(jobs, &community.people, &path);
     copy_static_files(&path);
     generate_companies_pages(&companies, &path);
 
@@ -588,6 +590,34 @@ impl Community {
         }
         self.pages = pages;
     }
+
+    fn load_people(&mut self) {
+        let mut people = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("people")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut person: Person = serde_yml::from_str(&front_matter).unwrap();
+            person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            person.body = markdown2html(&body);
+            if let Some(img) = &person.img {
+                let file = self.data_root.join(format!("img/{img}"));
+                if !file.exists() {
+                    panic!("File '{file:?}' used in '{path:?}' does not exist");
+                }
+            }
+
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            people.insert(path_str, person);
+        }
+        self.people = people;
+    }
 }
 
 fn load_companies(root: &std::path::Path) -> HashMap<String, Company> {
@@ -610,34 +640,6 @@ fn load_companies(root: &std::path::Path) -> HashMap<String, Company> {
         companies.insert(path_str, company);
     }
     companies
-}
-
-fn load_people(root: &std::path::Path) -> HashMap<String, Person> {
-    let mut people = HashMap::new();
-    let paths = std::fs::read_dir(root.join("people")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
-        }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut person: Person = serde_yml::from_str(&front_matter).unwrap();
-        person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        person.body = markdown2html(&body);
-        if let Some(img) = &person.img {
-            let file = root.join(format!("img/{img}"));
-            if !file.exists() {
-                panic!("File '{file:?}' used in '{path:?}' does not exist");
-            }
-        }
-
-        let path_str = path_to_root_relative_key(root, &path);
-        people.insert(path_str, person);
-    }
-    people
 }
 
 fn load_presentations(
