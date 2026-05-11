@@ -237,25 +237,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_events()?;
     community.load_projects();
 
-    generate_people_pages(
-        &community.people,
-        &community.presentations,
-        &community.projects,
-        &path,
-    );
-
-    generate_event_pages(&community.events, &path);
-
-    generate_presentation_pages(&community.presentations, &community.events, &path);
-
-    generate_videos_page(&community.presentations, &path);
-
-    generate_markdown_pages(community.pages, community.events, &path);
-
-    generate_project_pages(community.projects, &community.people, &path);
-    generate_job_pages(community.jobs, &community.people, &path);
-    copy_static_files(&path);
-    generate_companies_pages(&community.companies, &path);
+    community.generate(&path);
 
     Ok(())
 }
@@ -551,6 +533,28 @@ fn path_to_root_relative_key(root: &std::path::Path, path: &Path) -> String {
 }
 
 impl Community {
+    fn generate(&mut self, path: &Path) {
+        generate_people_pages(&self.people, &self.presentations, &self.projects, path);
+
+        generate_event_pages(&self.events, path);
+
+        generate_presentation_pages(&self.presentations, &self.events, path);
+
+        generate_videos_page(&self.presentations, path);
+
+        generate_markdown_pages(
+            std::mem::take(&mut self.pages),
+            std::mem::take(&mut self.events),
+            path,
+        );
+
+        generate_project_pages(std::mem::take(&mut self.projects), &self.people, path);
+        generate_job_pages(std::mem::take(&mut self.jobs), &self.people, path);
+        generate_companies_pages(&self.companies, path);
+
+        copy_static_files(path);
+    }
+
     fn load_pages(&mut self) {
         let mut pages = Vec::new();
         let paths = std::fs::read_dir(self.data_root.join("pages")).unwrap();
