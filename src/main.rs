@@ -11,6 +11,7 @@ struct Community {
     pages: Vec<Page>,
     people: HashMap<String, Person>,
     companies: HashMap<String, Company>,
+    jobs: HashMap<String, Job>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -216,6 +217,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         pages: Vec::new(),
         people: HashMap::new(),
         companies: HashMap::new(),
+        jobs: HashMap::new(),
     };
 
     validate_root(&root)?;
@@ -224,7 +226,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_pages();
     community.load_people();
     community.load_companies();
-    let jobs = load_jobs(&root, &community.people.clone());
+    community.load_jobs();
     let presentations = load_presentations(&root, &community.people.clone());
     let events = load_events(&root, &presentations.clone())?;
     let projects = load_projects(&root, &community.people.clone());
@@ -240,7 +242,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     generate_markdown_pages(community.pages, events, &path);
 
     generate_project_pages(projects, &community.people, &path);
-    generate_job_pages(jobs, &community.people, &path);
+    generate_job_pages(community.jobs, &community.people, &path);
     copy_static_files(&path);
     generate_companies_pages(&community.companies, &path);
 
@@ -642,6 +644,29 @@ impl Community {
         }
         self.companies = companies;
     }
+
+    fn load_jobs(&mut self) {
+        let mut jobs = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("jobs")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut job: Job = serde_yml::from_str(&front_matter).unwrap();
+            job.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            job.body = markdown2html(&body);
+            job.people = get_people(&self.people, &job.contacts, &path);
+
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            jobs.insert(path_str, job);
+        }
+        self.jobs = jobs;
+    }
 }
 
 fn load_presentations(
@@ -760,29 +785,6 @@ fn load_events(
     }
 
     Ok(events)
-}
-
-fn load_jobs(root: &std::path::Path, people: &HashMap<String, Person>) -> HashMap<String, Job> {
-    let mut jobs = HashMap::new();
-    let paths = std::fs::read_dir(root.join("jobs")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
-        }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut job: Job = serde_yml::from_str(&front_matter).unwrap();
-        job.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        job.body = markdown2html(&body);
-        job.people = get_people(people, &job.contacts, &path);
-
-        let path_str = path_to_root_relative_key(root, &path);
-        jobs.insert(path_str, job);
-    }
-    jobs
 }
 
 fn read_md_file_separate_front_matter(path: &PathBuf) -> (String, String) {
