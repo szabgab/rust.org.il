@@ -13,6 +13,7 @@ struct Community {
     companies: HashMap<String, Company>,
     jobs: HashMap<String, Job>,
     presentations: HashMap<String, Presentation>,
+    events: HashMap<String, Event>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -220,6 +221,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         companies: HashMap::new(),
         jobs: HashMap::new(),
         presentations: HashMap::new(),
+        events: HashMap::new(),
     };
 
     validate_root(&root)?;
@@ -230,7 +232,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_companies();
     community.load_jobs();
     community.load_presentations();
-    let events = load_events(&root, &community.presentations.clone())?;
+    community.load_events()?;
     let projects = load_projects(&root, &community.people.clone());
 
     generate_people_pages(
@@ -240,13 +242,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         &path,
     );
 
-    generate_event_pages(&events, &path);
+    generate_event_pages(&community.events, &path);
 
-    generate_presentation_pages(&community.presentations, &events, &path);
+    generate_presentation_pages(&community.presentations, &community.events, &path);
 
     generate_videos_page(&community.presentations, &path);
 
-    generate_markdown_pages(community.pages, events, &path);
+    generate_markdown_pages(community.pages, community.events, &path);
 
     generate_project_pages(projects, &community.people, &path);
     generate_job_pages(community.jobs, &community.people, &path);
@@ -698,6 +700,77 @@ impl Community {
         }
         self.presentations = presentations;
     }
+
+    fn load_events(&mut self) -> Result<(), Box<dyn Error>> {
+        let utc: DateTime<Utc> = Utc::now();
+        let today = utc.format("%Y.%m.%d").to_string();
+
+        let mut events = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("events")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut event: Event = serde_yml::from_str(&front_matter)
+                .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
+            event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            event.body = markdown2html(&body);
+            event.future = event.date >= today;
+
+            let special_items = HashMap::from([
+                (
+                    String::from("mingling"),
+                    Break {
+                        title: String::from("Mingling"),
+                        length: 30,
+                    },
+                ),
+                (
+                    String::from("break"),
+                    Break {
+                        title: String::from("Break"),
+                        length: 15,
+                    },
+                ),
+            ]);
+            let special_names = special_items.keys().collect::<Vec<_>>();
+
+            for presentation_slug in &event.schedule {
+                if !special_names.contains(&presentation_slug)
+                    && !self.presentations.contains_key(presentation_slug)
+                {
+                    return Err(Box::new(std::io::Error::new(
+                        std::io::ErrorKind::NotFound,
+                        format!("Presentation '{presentation_slug}' in '{path:?}' does not exist"),
+                    )));
+                }
+            }
+
+            let schedule_items = event
+                .schedule
+                .iter()
+                .map(|presentation_slug| {
+                    if special_names.contains(&presentation_slug) {
+                        return ScheduleItem::Break(special_items[presentation_slug].clone());
+                    }
+                    ScheduleItem::Presentation(self.presentations[presentation_slug].clone())
+                })
+                .collect::<Vec<_>>();
+            event.schedule_items = schedule_items;
+
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            events.insert(path_str, event);
+        }
+
+        self.events = events;
+        Ok(())
+    }
 }
 
 fn get_people(
@@ -715,80 +788,6 @@ fn get_people(
         .iter()
         .map(|speaker| people[speaker].clone())
         .collect::<Vec<_>>()
-}
-
-fn load_events(
-    root: &std::path::Path,
-    presentatons: &HashMap<String, Presentation>,
-) -> Result<HashMap<String, Event>, Box<dyn Error>> {
-    let utc: DateTime<Utc> = Utc::now();
-    let today = utc.format("%Y.%m.%d").to_string();
-
-    let mut events = HashMap::new();
-    let paths = std::fs::read_dir(root.join("events")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
-        }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut event: Event = serde_yml::from_str(&front_matter)
-            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
-        event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        event.body = markdown2html(&body);
-        event.future = event.date >= today;
-
-        //let schedule_items = [String::from("mingling"), String::from("break")];
-        let special_items = HashMap::from([
-            (
-                String::from("mingling"),
-                Break {
-                    title: String::from("Mingling"),
-                    length: 30,
-                },
-            ),
-            (
-                String::from("break"),
-                Break {
-                    title: String::from("Break"),
-                    length: 15,
-                },
-            ),
-        ]);
-        let special_names = special_items.keys().collect::<Vec<_>>();
-
-        for presentation_slug in &event.schedule {
-            if !special_names.contains(&presentation_slug)
-                && !presentatons.contains_key(presentation_slug)
-            {
-                return Err(Box::new(std::io::Error::new(
-                    std::io::ErrorKind::NotFound,
-                    format!("Presentation '{presentation_slug}' in '{path:?}' does not exist"),
-                )));
-            }
-        }
-
-        let schedule_items = event
-            .schedule
-            .iter()
-            .map(|presentation_slug| {
-                if special_names.contains(&presentation_slug) {
-                    return ScheduleItem::Break(special_items[presentation_slug].clone());
-                }
-                ScheduleItem::Presentation(presentatons[presentation_slug].clone())
-            })
-            .collect::<Vec<_>>();
-        event.schedule_items = schedule_items;
-
-        let path_str = path_to_root_relative_key(root, &path);
-        events.insert(path_str, event);
-    }
-
-    Ok(events)
 }
 
 fn read_md_file_separate_front_matter(path: &PathBuf) -> (String, String) {
