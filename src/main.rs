@@ -10,6 +10,7 @@ struct Community {
     data_root: PathBuf,
     pages: Vec<Page>,
     people: HashMap<String, Person>,
+    companies: HashMap<String, Company>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -214,6 +215,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         data_root: root.clone(),
         pages: Vec::new(),
         people: HashMap::new(),
+        companies: HashMap::new(),
     };
 
     validate_root(&root)?;
@@ -221,7 +223,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let path = std::path::PathBuf::from("_site");
     community.load_pages();
     community.load_people();
-    let companies = load_companies(&root);
+    community.load_companies();
     let jobs = load_jobs(&root, &community.people.clone());
     let presentations = load_presentations(&root, &community.people.clone());
     let events = load_events(&root, &presentations.clone())?;
@@ -240,7 +242,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     generate_project_pages(projects, &community.people, &path);
     generate_job_pages(jobs, &community.people, &path);
     copy_static_files(&path);
-    generate_companies_pages(&companies, &path);
+    generate_companies_pages(&community.companies, &path);
 
     Ok(())
 }
@@ -618,28 +620,28 @@ impl Community {
         }
         self.people = people;
     }
-}
 
-fn load_companies(root: &std::path::Path) -> HashMap<String, Company> {
-    let mut companies = HashMap::new();
-    let paths = std::fs::read_dir(root.join("companies")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
-        }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut company: Company = serde_yml::from_str(&front_matter).unwrap();
-        company.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        company.body = markdown2html(&body);
+    fn load_companies(&mut self) {
+        let mut companies = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("companies")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut company: Company = serde_yml::from_str(&front_matter).unwrap();
+            company.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            company.body = markdown2html(&body);
 
-        let path_str = path_to_root_relative_key(root, &path);
-        companies.insert(path_str, company);
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            companies.insert(path_str, company);
+        }
+        self.companies = companies;
     }
-    companies
 }
 
 fn load_presentations(
