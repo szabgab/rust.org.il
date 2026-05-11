@@ -197,12 +197,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let today = utc.format("%Y.%m.%d");
 
     let args: Vec<String> = std::env::args().collect();
+    println!("args: {args:?}");
 
     let root = if args.len() > 1 {
         std::path::PathBuf::from(&args[1])
     } else {
         std::env::current_dir()?
     };
+
+    validate_root(&root)?;
 
     let path = std::path::PathBuf::from("_site");
     let pages = load_pages(&root);
@@ -227,6 +230,48 @@ fn main() -> Result<(), Box<dyn Error>> {
     generate_job_pages(jobs, &people, &path);
     copy_static_files(&path);
     generate_companies_pages(&companies, &path);
+
+    Ok(())
+}
+
+fn validate_root(root: &Path) -> Result<(), Box<dyn Error>> {
+    if !root.exists() {
+        return Err(Box::new(std::io::Error::new(
+            std::io::ErrorKind::NotFound,
+            format!("Data root '{}' does not exist", root.display()),
+        )));
+    }
+
+    if !root.is_dir() {
+        return Err(Box::new(std::io::Error::new(
+            std::io::ErrorKind::InvalidInput,
+            format!("Data root '{}' is not a directory", root.display()),
+        )));
+    }
+
+    for folder in [
+        "pages",
+        "people",
+        "companies",
+        "jobs",
+        "presentations",
+        "events",
+        "projects",
+        "img",
+        "slides",
+    ] {
+        let path = root.join(folder);
+        if !path.is_dir() {
+            return Err(Box::new(std::io::Error::new(
+                std::io::ErrorKind::NotFound,
+                format!(
+                    "Data root '{}' is missing required folder '{}'",
+                    root.display(),
+                    folder
+                ),
+            )));
+        }
+    }
 
     Ok(())
 }
