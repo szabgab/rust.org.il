@@ -477,7 +477,7 @@ fn load_projects(people: &HashMap<String, Person>) -> HashMap<String, Project> {
         }
 
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut project: Project = serde_yaml::from_str(&front_matter)
+        let mut project: Project = serde_yml::from_str(&front_matter)
             .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
         project.body = markdown2html(&body);
         project.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
@@ -506,7 +506,7 @@ fn load_pages() -> Vec<Page> {
         }
 
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut page: Page = serde_yaml::from_str(&front_matter)
+        let mut page: Page = serde_yml::from_str(&front_matter)
             .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
         page.content = markdown2html(&body);
         page.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
@@ -528,7 +528,7 @@ fn load_companies() -> HashMap<String, Company> {
             continue;
         }
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut company: Company = serde_yaml::from_str(&front_matter).unwrap();
+        let mut company: Company = serde_yml::from_str(&front_matter).unwrap();
         company.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         company.body = markdown2html(&body);
 
@@ -550,7 +550,7 @@ fn load_people() -> HashMap<String, Person> {
             continue;
         }
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut person: Person = serde_yaml::from_str(&front_matter).unwrap();
+        let mut person: Person = serde_yml::from_str(&front_matter).unwrap();
         person.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         person.body = markdown2html(&body);
         if let Some(img) = &person.img {
@@ -579,7 +579,7 @@ fn load_presentations(people: &HashMap<String, Person>) -> HashMap<String, Prese
         }
 
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut presentation: Presentation = serde_yaml::from_str(&front_matter).unwrap();
+        let mut presentation: Presentation = serde_yml::from_str(&front_matter).unwrap();
         presentation.body = markdown2html(&body);
         presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         presentation.people = get_people(people, &presentation.speakers, &path);
@@ -625,7 +625,7 @@ fn load_events(
         }
 
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut event: Event = serde_yaml::from_str(&front_matter)
+        let mut event: Event = serde_yml::from_str(&front_matter)
             .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
         event.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         event.body = markdown2html(&body);
@@ -692,7 +692,7 @@ fn load_jobs(people: &HashMap<String, Person>) -> HashMap<String, Job> {
             continue;
         }
         let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut job: Job = serde_yaml::from_str(&front_matter).unwrap();
+        let mut job: Job = serde_yml::from_str(&front_matter).unwrap();
         job.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
         job.body = markdown2html(&body);
         job.people = get_people(people, &job.contacts, &path);
