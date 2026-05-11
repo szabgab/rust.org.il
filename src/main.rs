@@ -6,6 +6,11 @@ use std::path::{Path, PathBuf};
 
 pub type Partials = liquid::partials::EagerCompiler<liquid::partials::InMemorySource>;
 
+struct Community {
+    data_root: PathBuf,
+    pages: Vec<Page>,
+}
+
 #[derive(Deserialize, Debug, Serialize)]
 #[serde(deny_unknown_fields)]
 #[allow(dead_code)]
@@ -204,11 +209,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     } else {
         std::env::current_dir()?
     };
+    let mut community = Community {
+        data_root: root.clone(),
+        pages: Vec::new(),
+    };
 
     validate_root(&root)?;
 
     let path = std::path::PathBuf::from("_site");
-    let pages = load_pages(&root);
+    community.load_pages();
     let people = load_people(&root);
     let companies = load_companies(&root);
     let jobs = load_jobs(&root, &people.clone());
@@ -224,7 +233,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     generate_videos_page(&presentations, &path);
 
-    generate_markdown_pages(pages, events, &path);
+    generate_markdown_pages(community.pages, events, &path);
 
     generate_project_pages(projects, &people, &path);
     generate_job_pages(jobs, &people, &path);
@@ -559,24 +568,26 @@ fn path_to_root_relative_key(root: &std::path::Path, path: &Path) -> String {
         .replace('\\', "/")
 }
 
-fn load_pages(root: &std::path::Path) -> Vec<Page> {
-    let mut pages = Vec::new();
-    let paths = std::fs::read_dir(root.join("pages")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
+impl Community {
+    fn load_pages(&mut self) {
+        let mut pages = Vec::new();
+        let paths = std::fs::read_dir(self.data_root.join("pages")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut page: Page = serde_yml::from_str(&front_matter)
+                .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
+            page.content = markdown2html(&body);
+            page.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+
+            pages.push(page);
         }
-
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut page: Page = serde_yml::from_str(&front_matter)
-            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
-        page.content = markdown2html(&body);
-        page.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-
-        pages.push(page);
+        self.pages = pages;
     }
-    pages
 }
 
 fn load_companies(root: &std::path::Path) -> HashMap<String, Company> {
