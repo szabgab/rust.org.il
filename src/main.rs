@@ -14,6 +14,7 @@ struct Community {
     jobs: HashMap<String, Job>,
     presentations: HashMap<String, Presentation>,
     events: HashMap<String, Event>,
+    projects: HashMap<String, Project>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -222,6 +223,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         jobs: HashMap::new(),
         presentations: HashMap::new(),
         events: HashMap::new(),
+        projects: HashMap::new(),
     };
 
     validate_root(&root)?;
@@ -233,12 +235,12 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_jobs();
     community.load_presentations();
     community.load_events()?;
-    let projects = load_projects(&root, &community.people.clone());
+    community.load_projects();
 
     generate_people_pages(
         &community.people,
         &community.presentations,
-        &projects,
+        &community.projects,
         &path,
     );
 
@@ -250,7 +252,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     generate_markdown_pages(community.pages, community.events, &path);
 
-    generate_project_pages(projects, &community.people, &path);
+    generate_project_pages(community.projects, &community.people, &path);
     generate_job_pages(community.jobs, &community.people, &path);
     copy_static_files(&path);
     generate_companies_pages(&community.companies, &path);
@@ -541,41 +543,6 @@ fn generate_people_pages(
     }
 }
 
-fn load_projects(
-    root: &std::path::Path,
-    people: &HashMap<String, Person>,
-) -> HashMap<String, Project> {
-    let mut projects = HashMap::new();
-    let paths = std::fs::read_dir(root.join("projects")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
-        }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut project: Project = serde_yml::from_str(&front_matter)
-            .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
-        project.body = markdown2html(&body);
-        project.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        let authors = project
-            .authors
-            .iter()
-            .map(|speaker| people[speaker].clone())
-            .collect::<Vec<_>>();
-        //println!("{:?}", speakers);
-        project.people = authors;
-
-        let path_str = path_to_root_relative_key(root, &path);
-        projects.insert(path_str, project);
-    }
-
-    projects
-}
-
 fn path_to_root_relative_key(root: &std::path::Path, path: &Path) -> String {
     path.strip_prefix(root)
         .unwrap_or(path)
@@ -770,6 +737,37 @@ impl Community {
 
         self.events = events;
         Ok(())
+    }
+
+    fn load_projects(&mut self) {
+        let mut projects = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("projects")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut project: Project = serde_yml::from_str(&front_matter)
+                .unwrap_or_else(|err| panic!("Could not parse front matter in {path:?} {err}"));
+            project.body = markdown2html(&body);
+            project.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            let authors = project
+                .authors
+                .iter()
+                .map(|speaker| self.people[speaker].clone())
+                .collect::<Vec<_>>();
+            project.people = authors;
+
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            projects.insert(path_str, project);
+        }
+
+        self.projects = projects;
     }
 }
 
