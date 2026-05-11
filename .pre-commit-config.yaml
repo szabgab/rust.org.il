@@ -59,4 +59,5 @@ repos:
       language: system
       entry: cargo run
       always_run: true
+      pass_filenames: false
 
