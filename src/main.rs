@@ -12,6 +12,7 @@ struct Community {
     people: HashMap<String, Person>,
     companies: HashMap<String, Company>,
     jobs: HashMap<String, Job>,
+    presentations: HashMap<String, Presentation>,
 }
 
 #[derive(Deserialize, Debug, Serialize)]
@@ -218,6 +219,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         people: HashMap::new(),
         companies: HashMap::new(),
         jobs: HashMap::new(),
+        presentations: HashMap::new(),
     };
 
     validate_root(&root)?;
@@ -227,17 +229,22 @@ fn main() -> Result<(), Box<dyn Error>> {
     community.load_people();
     community.load_companies();
     community.load_jobs();
-    let presentations = load_presentations(&root, &community.people.clone());
-    let events = load_events(&root, &presentations.clone())?;
+    community.load_presentations();
+    let events = load_events(&root, &community.presentations.clone())?;
     let projects = load_projects(&root, &community.people.clone());
 
-    generate_people_pages(&community.people, &presentations, &projects, &path);
+    generate_people_pages(
+        &community.people,
+        &community.presentations,
+        &projects,
+        &path,
+    );
 
     generate_event_pages(&events, &path);
 
-    generate_presentation_pages(&presentations, &events, &path);
+    generate_presentation_pages(&community.presentations, &events, &path);
 
-    generate_videos_page(&presentations, &path);
+    generate_videos_page(&community.presentations, &path);
 
     generate_markdown_pages(community.pages, events, &path);
 
@@ -667,33 +674,30 @@ impl Community {
         }
         self.jobs = jobs;
     }
-}
 
-fn load_presentations(
-    root: &std::path::Path,
-    people: &HashMap<String, Person>,
-) -> HashMap<String, Presentation> {
-    let mut presentations = HashMap::new();
-    let paths = std::fs::read_dir(root.join("presentations")).unwrap();
-    for path in paths {
-        let path = path.unwrap().path();
-        if path.extension().unwrap() == "swp" {
-            continue;
+    fn load_presentations(&mut self) {
+        let mut presentations = HashMap::new();
+        let paths = std::fs::read_dir(self.data_root.join("presentations")).unwrap();
+        for path in paths {
+            let path = path.unwrap().path();
+            if path.extension().unwrap() == "swp" {
+                continue;
+            }
+            if path.file_name().unwrap() == "skeleton.md" {
+                continue;
+            }
+
+            let (front_matter, body) = read_md_file_separate_front_matter(&path);
+            let mut presentation: Presentation = serde_yml::from_str(&front_matter).unwrap();
+            presentation.body = markdown2html(&body);
+            presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
+            presentation.people = get_people(&self.people, &presentation.speakers, &path);
+
+            let path_str = path_to_root_relative_key(&self.data_root, &path);
+            presentations.insert(path_str, presentation);
         }
-        if path.file_name().unwrap() == "skeleton.md" {
-            continue;
-        }
-
-        let (front_matter, body) = read_md_file_separate_front_matter(&path);
-        let mut presentation: Presentation = serde_yml::from_str(&front_matter).unwrap();
-        presentation.body = markdown2html(&body);
-        presentation.slug = path.file_stem().unwrap().to_str().unwrap().to_string();
-        presentation.people = get_people(people, &presentation.speakers, &path);
-
-        let path_str = path_to_root_relative_key(root, &path);
-        presentations.insert(path_str, presentation);
+        self.presentations = presentations;
     }
-    presentations
 }
 
 fn get_people(
