@@ -26,6 +26,8 @@ jobs:
       - name: Checkout site source
         uses: actions/checkout@v7
 
+      - run: rustup update
+
       - name: Rust version
         run: |
           rustc -vV
