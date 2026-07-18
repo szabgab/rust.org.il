@@ -26,9 +26,16 @@ jobs:
       - name: Checkout site source
         uses: actions/checkout@v7
 
-      - name: Check our code
+      - name: Rust version
+        run: |
+          rustc -vV
+
+      - name: cargo fmt
         run: |
           cargo fmt --all -- --check
+
+      - name: cargo clippy
+        run: |
           cargo clippy --all-targets --all-features -- -D warnings
 
       - name: Setup Pages
