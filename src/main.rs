@@ -184,21 +184,27 @@ struct Event {
     schedule_items: Vec<ScheduleItem>,
 }
 
+#[allow(dead_code)]
 fn get_default_empty_vector_of_people() -> Vec<Person> {
     Vec::new()
 }
 
+#[allow(dead_code)]
 fn get_default_empty_vector_of_strings() -> Vec<String> {
     Vec::new()
 }
+
+#[allow(dead_code)]
 fn get_default_empty_vector_of_schedule_items() -> Vec<ScheduleItem> {
     Vec::new()
 }
 
+#[allow(dead_code)]
 fn get_default_false() -> bool {
     false
 }
 
+#[allow(dead_code)]
 fn get_default_empty_string() -> String {
     String::new()
 }
