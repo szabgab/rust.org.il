@@ -8,7 +8,7 @@ edition = "2024"
 [dependencies]
 liquid = "0.26.9"
 serde = { version = "1.0", features = ["derive"] }
-serde_yml = "0.0.12"
+serde_yml = "0.0.13"
 markdown = "1.0.0"
 chrono = "0.4.43"
 liquid-core = "0.26.11"
