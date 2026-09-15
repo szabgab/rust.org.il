@@ -7,4 +7,4 @@ home:
 img: gavrie-philipson.jpeg
 ---
 
-Software developer and cofounder of [Rusty Bits](https://www.rustybits.io/), a software consultancy.
+[Software architecture advisor](https://gavrie.co.il/)
