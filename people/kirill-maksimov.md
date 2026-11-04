@@ -1,6 +1,6 @@
 ---
 name: Kirill Maksimov
-linkedin:
+linkedin: https://www.linkedin.com/in/netoneko/
 github: netoneko
 crates:
 home:
