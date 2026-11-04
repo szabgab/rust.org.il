@@ -10,3 +10,5 @@ I built an operating system with a custom kernel that can run ssh, llama.cpp and
 
 The most difficult part that brought the most progress was a journey to self host the kernel, being able to build it from source using Rust and cargo.
 
+[Slides](https://akuma.sh/self-hosting-rust-kernel/)
+
